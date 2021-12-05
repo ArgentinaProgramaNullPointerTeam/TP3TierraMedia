@@ -13,8 +13,8 @@ import persistence.UsuarioDAO;
 public class UsuarioDAOImpl implements UsuarioDAO {
 	public Usuario findByUsername(String nombre) {
 		try {
-			String sql = "SELECT u.id_usuario, u.nombre, u.password, u.dinero_disponible, u.tiempo_disponible, tipo.id_tipo_atraccion, tipo.nombre AS 'tipo_atraccion', u.is_admin, u.status"
-					+ "FROM 'usuario' AS u INNER JOIN 'tipo_atraccion' AS tipo"
+			String sql = "SELECT u.id_usuario, u.nombre, u.password, u.dinero_disponible, u.tiempo_disponible, tipo.id_tipo_atraccion, tipo.nombre AS 'tipo_atraccion', u.is_admin, u.status "
+					+ "FROM 'usuario' AS u INNER JOIN 'tipo_atraccion' AS tipo "
 					+ "ON u.id_tipo_atraccion = tipo.id_tipo_atraccion WHERE u.status = '1' AND tipo.status = '1' AND u.nombre = ?";
 			Connection conn = ConnectionProvider.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
