@@ -54,4 +54,12 @@ public class ConnectionProvider {
 		}
 		return connection;
 	}
+	
+	//Para probar los test
+	public static Connection getConnection(String url) throws SQLException {
+		if (connection == null) {
+			connection = DriverManager.getConnection("jdbc:sqlite:" + url);
+		}
+		return connection;
+	}
 }
