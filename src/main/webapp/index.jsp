@@ -29,11 +29,11 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link" aria-current="page" href="index.html">Inicio</a>
-        <a class="nav-link" href="itinerario.html">Itinerario Comprado</a>
-        <a class="nav-link" href="nosotros.html">Nosotros</a>
+        <a class="nav-link" aria-current="page" href="index.jsp">Inicio</a>
+        <a class="nav-link" href="itinerario.jsp">Itinerario Comprado</a>
+        <a class="nav-link" href="nosotros.jsp">Nosotros</a>
       </div>
-        <a class="nav-link" href="seccionesAdm.html">Administracion de Tierra Media</a>
+        <a class="nav-link" href="login.jsp">Administracion de Tierra Media</a>
     </div>
   </div>
  
