@@ -26,9 +26,9 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link" aria-current="page" href="index.html">Inicio</a>
-        <a class="nav-link" href="seccionesAdm.html">Administracion de Tierra Media</a>
-        <a class="nav-link" href="nosotros.html">Sobre nosotros</a>
+        <a class="nav-link" aria-current="page" href="index.jsp">Inicio</a>
+        <a class="nav-link" href="login.jsp">Administracion de Tierra Media</a>
+        <a class="nav-link" href="nosotros.jsp">Sobre nosotros</a>
       </div>
     </div>
   </div>
@@ -44,7 +44,7 @@
                 <div>
                     <div class="row box-shadow">
                         <div class="col-md-6">
-                            <img src= "src/logo argentina programa.jpg">
+                            <img src= "assets/img/logo argentina programa.jpg">
                         </div>
                         <div class="col-md-5">
                             <div class="lib-row lib-header">

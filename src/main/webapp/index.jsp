@@ -45,7 +45,7 @@
       <nav>
         <div class="container-fluid">
         
-          <img src="https://tse2.mm.bing.net/th?id=OIP.kMctu5IQqTgvUQ1SriPpWQHaEe&pid=Api&P=0&w=277&h=168" alt="" width="430" height="250" class="d-inline-block align-text-top" style="margin-top: 4%">
+          <img src="assets/img/th.jpg" alt="" width="430" height="250" class="d-inline-block align-text-top" style="margin-top: 4%">
               
            
         </nav>
@@ -57,16 +57,16 @@
         <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active" data-interval="10000">
-              <img src="src/carruissel.png" class="d-block w-100" alt="...">
+              <img src="assets/img/carruissel.png" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item" data-interval="2000">
-              <img src="src/carruissel1.png" class="d-block w-100" alt="...">
+              <img src="assets/img/carruissel1.png" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-              <img src="src/carruissel2.png" class="d-block w-100" alt="...">
+              <img src="assets/img/carruissel2.png" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-              <img src="src/carruissel3.png" class="d-block w-100" alt="...">
+              <img src="assets/img/carruissel3.png" class="d-block w-100" alt="...">
             </div>
           </div>
           <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
@@ -88,7 +88,7 @@
 <div data-aos="fade-right">
     <div class="tarjetasAtracciones">
       <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="src/fondo.jpg" alt="Card image cap">
+        <img class="card-img-top" src="assets/img/fondo.jpg" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">Bosque Negro</h5>
           <ul class="list-group list-group-flush">
@@ -102,7 +102,7 @@
       </div>
 
       <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="src/fondo.jpg" alt="Card image cap">
+        <img class="card-img-top" src="assets/img/fondo.jpg" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">Moria</h5>
           <ul class="list-group list-group-flush">
@@ -117,7 +117,7 @@
 
 
       <div class="card" style="width: 18rem;">
-        <img class="card-img-top"  src="src/fondo.jpg"  alt="Card image cap">
+        <img class="card-img-top"  src="assets/img/fondo.jpg"  alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">Mordor</h5>
           <ul class="list-group list-group-flush">
@@ -136,7 +136,7 @@
 
     <div class="tarjetasAtracciones">
       <div class="card" style="width: 18rem;">
-        <img class="card-img-top"  src="src/fondo.jpg"  alt="Card image cap">
+        <img class="card-img-top"  src="assets/img/fondo.jpg"  alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">Lothlórien</h5>
           <ul class="list-group list-group-flush">
@@ -150,7 +150,7 @@
       </div>
 
       <div class="card" style="width: 18rem;">
-        <img class="card-img-top"  src="src/fondo.jpg"  alt="Card image cap">
+        <img class="card-img-top"  src="assets/img/fondo.jpg"  alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">Erebor</h5>
           <ul class="list-group list-group-flush">
@@ -165,7 +165,7 @@
 
 
       <div class="card" style="width: 18rem;">
-        <img class="card-img-top"  src="src/fondo.jpg"  alt="Card image cap">
+        <img class="card-img-top"  src="assets/img/fondo.jpg"  alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">Minas de tirith</h5>
           <ul class="list-group list-group-flush">
@@ -183,7 +183,7 @@
   <div data-aos="fade-right">
     <div class="tarjetasAtracciones">
       <div class="card" style="width: 18rem;">
-        <img class="card-img-top"  src="src/fondo.jpg"  alt="Card image cap">
+        <img class="card-img-top"  src="assets/img/fondo.jpg"  alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">La comarca</h5>
           <ul class="list-group list-group-flush">
@@ -197,7 +197,7 @@
       </div>
 
       <div class="card" style="width: 18rem;">
-        <img class="card-img-top"  src="src/fondo.jpg"  alt="Card image cap">
+        <img class="card-img-top"  src="assets/img/fondo.jpg"  alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">Abismo de Helm</h5>
           <ul class="list-group list-group-flush">
@@ -220,7 +220,7 @@
 
     <div class="tarjetasAtracciones">
       <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="src/aventura1.jpg" alt="Card image cap">
+        <img class="card-img-top" src="assets/img/aventura1.jpg" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">Pack Aventura</h5>
           <ul class="list-group list-group-flush">
@@ -235,7 +235,7 @@
    
 
       <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="src/degustacion.jpeg" alt="Card image cap">
+        <img class="card-img-top" src="assets/img/degustacion.jpeg" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">Pack degustación</h5>
           <ul class="list-group list-group-flush">
@@ -251,7 +251,7 @@
 
 
       <div class="card" style="width: 18rem;">
-        <img class="card-img-top"  src="src/paisaje.jpg"  alt="Card image cap">
+        <img class="card-img-top"  src="assets/img/paisaje.jpg"  alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">Pack Paisaje</h5>
           <ul class="list-group list-group-flush">
@@ -271,7 +271,7 @@
 
     <div class="tarjetasAtracciones">
       <div class="card" style="width: 18rem;">
-        <img class="card-img-top"  src="src/aventura2.jpg"  alt="Card image cap">
+        <img class="card-img-top"  src="assets/img/aventura2.jpg"  alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">Pack Aventura Recargado</h5>
           <ul class="list-group list-group-flush">

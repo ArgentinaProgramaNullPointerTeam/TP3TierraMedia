@@ -17,7 +17,7 @@
 
   
 <body>
-<h1>Administracion - Tierra Media</h1>
+<h1>Inicio de sesión - Tierra Media</h1>
 
 <div class="container h-100">
 		<div class="d-flex justify-content-center h-100">
