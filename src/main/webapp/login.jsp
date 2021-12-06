@@ -28,26 +28,22 @@
 					</div>
 				</div>
 				<div class="d-flex justify-content-center form_container">
-					<form>
-						<div class="input-group mb-3">
-							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-user"></i></span>
-							</div>
-							<input type="text" name="" class="form-control input_user" value="" placeholder="Usuario">
-						</div>
-						<div class="input-group mb-2">
-							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-key"></i></span>
-							</div>
-							<input type="password" name="" class="form-control input_pass" value="" placeholder="Contraseña">
-						</div>
-						<div class="form-group">
-							
-						</div>
-							<div class="d-flex justify-content-center mt-3 login_container">
-				 	<button type="button" name="button" class="btn login_btn">Iniciar sesión</button>
-				   </div>
-					</form>
+						<form action="login" method="post">
+
+				<div class="mb-3">
+					<label for="username" class="form-label">Usuario</label> <input
+						class="form-control" name="username">
+				</div>
+
+				<div class="mb-3">
+					<label for="password" class="form-label">Contraseña</label> <input
+						type="password" class="form-control" name="password">
+				</div>
+
+				<div class="d-grid gap-2">
+					<button type="submit" class="btn btn-lg btn-primary">Ingresar</button>
+				</div>
+			</form>
 				</div>
 		
 				<div class="mt-4">
