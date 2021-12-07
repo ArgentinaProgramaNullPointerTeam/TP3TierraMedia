@@ -36,4 +36,12 @@ public class UsuarioDAOTests {
 		assertEquals(usuarioEsperado, usuarioObtenido);
 	}
 
+	@Test
+	public void findUsuarioTest() {
+		UsuarioDAO usuarioDAO = DAOFactory.getUsuarioDAO();
+		Usuario usuarioEsperado = new Usuario(1, "Eowyn", "pass", 1, 10, 8, 0, 1);
+		Usuario usuarioObtenido = usuarioDAO.find(1);
+		assertEquals(usuarioEsperado, usuarioObtenido);
+	}
+
 }
