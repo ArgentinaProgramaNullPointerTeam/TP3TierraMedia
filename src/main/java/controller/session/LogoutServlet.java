@@ -12,13 +12,14 @@ import jakarta.servlet.http.HttpServletResponse;
 @WebServlet("/logout")
 public class LogoutServlet extends HttpServlet {
 	private static final long serialVersionUID = -7039347658790577829L;
+
 	@Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    	req.getSession().removeAttribute("usuario");
+	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.getSession().removeAttribute("usuario");
+		req.getSession().removeAttribute("id");
 		req.setAttribute("flash", "¡Hasta pronto!");
-		
-		RequestDispatcher dispatcher = getServletContext()
-  		      .getRequestDispatcher("/login.jsp");
-  		    dispatcher.forward(req, resp); 	
-    }
+
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/login.jsp");
+		dispatcher.forward(req, resp);
+	}
 }

@@ -21,23 +21,23 @@ public class LoginServlet extends HttpServlet {
 		super.init();
 		loginService = new LoginService();
 	}
-	
-    @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    	String username = req.getParameter("username");
-    	String password = req.getParameter("password");
-    	
-    	Usuario usuario = loginService.login(username, password);
-    	
-    	if (!usuario.isNull()) {
-    		req.getSession().setAttribute("usuario", usuario);
-    		resp.sendRedirect("index.jsp");    		
-       	} else {
-    		req.setAttribute("flash", "Nombre de usuario o contraseña incorrectos");
-    		
-    		RequestDispatcher dispatcher = getServletContext()
-      		      .getRequestDispatcher("/login.jsp");
-      		    dispatcher.forward(req, resp);
-    	}
-    }
+
+	@Override
+	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String username = req.getParameter("username");
+		String password = req.getParameter("password");
+
+		Usuario usuario = loginService.login(username, password);
+
+		if (!usuario.isNull()) {
+			req.getSession().setAttribute("usuario", usuario);
+			req.getSession().setAttribute("id", usuario.getId());
+			resp.sendRedirect("index.jsp");
+		} else {
+			req.setAttribute("flash", "Nombre de usuario o contraseña incorrectos");
+
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/login.jsp");
+			dispatcher.forward(req, resp);
+		}
+	}
 }
