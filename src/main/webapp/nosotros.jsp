@@ -25,15 +25,15 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link" aria-current="page" href="index.jsp">Inicio</a>
+     	<a class="nav-link" href="login.jsp">Acceder</a>
+        <a class="nav-link" href="/turismo/logout">Salir</a>
+        <a class="nav-link" style="margin-left:95px" aria-current="page" href="index.jsp">Inicio</a>
         <a class="nav-link" href="itinerario.jsp">Itinerario Comprado</a>
         <a class="nav-link" href="nosotros.jsp">Sobre nosotros</a>
+        
       </div>
-        <div>
-        <a class="nav-link" href="login.jsp">Acceder</a>
-    </div>
     </div>
   </div>
 </nav>
