@@ -15,7 +15,10 @@
 	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <title>Tierra Media</title>
 </head>
+
+
 <body>
+
 	<form action="list" method="post">
 	<div class="container">
     <div class="row">
