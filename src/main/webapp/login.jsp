@@ -43,6 +43,13 @@
 
   
 <body>
+	<c:if test="${flash != null}">
+				<div class="alert alert-danger">
+					<p>
+						<c:out value="${flash}" />
+					</p>
+				</div>
+			</c:if>
 
 <div class="container h-100">
 		<div class="d-flex justify-content-center h-100">
@@ -56,12 +63,13 @@
 				
 				
 				<div class="d-flex justify-content-center form_container">
-					<form>
+						<form action="login" method="post">
 					<h5 style="margin-left:25%; margin-top: 1%;">Tierra Media</h5>
 						<div class="input-group mb-3">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
+						
 							<input type="text" name="" class="form-control input_user" value="" placeholder="Usuario">
 						</div>
 						<div class="input-group mb-2">
