@@ -6,8 +6,10 @@ h1 {
     align-items: center;
 }
 
+
 		body,
 		html {
+		
 			margin: 0;
 			padding: 0;
 			height: 100%;
@@ -72,4 +74,6 @@ h1 {
 			box-shadow: none !important;
 			outline: 0px !important;
 		}
+		
+		
 		

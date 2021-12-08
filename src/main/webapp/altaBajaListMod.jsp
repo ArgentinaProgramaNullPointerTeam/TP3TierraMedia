@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!doctype html>
 <html lang="en">
   <head>
@@ -11,6 +14,7 @@
             rel="stylesheet"
             integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
             crossorigin="anonymous">
+            <link rel="shortcut icon" href="https://http2.mlstatic.com/anillo-unico-poder-el-hobbit-el-senor-de-los-anillos-titanio-D_NQ_NP_626248-MLM25995146386_092017-O.jpg" >
     <title>Tierra Media</title>
 
   </head>
@@ -29,9 +33,12 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a class="nav-link" aria-current="page" href="index.jsp">Inicio</a>
-        <a class="nav-link" href="seccionesAdm.jsp">Administracion de Tierra Media</a>
-        <a class="nav-link" href="nosotros.jsp">Nosotros</a>
+        <a class="nav-link" href="itinerario.jsp">Itinerario Comprado</a>
+        <a class="nav-link" href="nosotros.jsp">Sobre nosotros</a>
       </div>
+        </div>
+        <a class="nav-link" href="login.jsp">Acceder</a>
+    </div>
     </div>
   </div>
 </nav>
@@ -42,6 +49,7 @@
 <body>
 
 		<!-- TABLAS ALTA BAJA LISTADO MODIFICACION -->
+		
 
 
 		<!-- Usuarios -->
@@ -49,9 +57,8 @@
             <div class="row">
                 <div class="col-12">
                     <h1>Usuarios:</h1> 
-                    <h4><button type="button" class="btn btn-success">Agregar &#x2795;</button>
-                    </h4>
-                    <a href="index.html" target="_blank">Tierra Media</a>
+                    <h4><button type="button" class="btn btn-success"><a href="formUsuarios.jsp">Agregar &#x2795;</button></a></h4>
+                    <a href="index.jsp" target="_blank">Tierra Media</a>
                     <div class="table-responsive">
                         <table class="table table-bordered" table style= "background-color:#FFE4C4">
                             <thead>
@@ -111,9 +118,8 @@
             <div class="row">
                 <div class="col-12">
                     <h1>Atracciones:</h1> 
-                    <h4><button type="button" class="btn btn-success">Agregar &#x2795;</button>
-                    </h4>
-                    <a href="index.html" target="_blank">Tierra Media</a>
+                    <h4><button type="button" class="btn btn-success"><a href="formAtracciones.jsp">Agregar &#x2795;</button></a></h4>
+                    <a href="index.jsp" target="_blank">Tierra Media</a>
                     <div class="table-responsive">
                         <table class="table table-bordered" table style= "background-color:#FFE4C4">
                             <thead>
@@ -182,9 +188,8 @@
             <div class="row">
                 <div class="col-12">
                     <h1>Promociones:</h1> 
-                    <h4><button type="button" class="btn btn-success">Agregar &#x2795;</button>
-                    </h4>
-                    <a href="index.html" target="_blank">Tierra Media</a>
+                    <h4><button type="button" class="btn btn-success"><a href="formPromociones.jsp">Agregar &#x2795;</button></a></h4>
+                    <a href="index.jsp" target="_blank">Tierra Media</a>
                     <div class="table-responsive">
                         <table class="table table-bordered" table style= "background-color:#FFE4C4">
                             <thead>

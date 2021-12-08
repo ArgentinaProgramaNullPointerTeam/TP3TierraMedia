@@ -1,0 +1,17 @@
+@charset "ISO-8859-1";@charset "utf-8";
+
+.header {
+    color: #36A0FF;
+    font-size: 35px;
+    padding: 15px;
+}
+
+.bigicon {
+    font-size: 35px;
+    color: #36A0FF;
+  
+}
+
+.col-md-8{
+	margin:0 0 10px 0;
+}

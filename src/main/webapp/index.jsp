@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -21,19 +25,21 @@
   <div class="container-fluid">
     <a class="navbar-brand" href="#"></a>
     <form class="d-flex">
-      <input class="form-control me-2" type="search" placeholder="Escribi la atracción que buscas" aria-label="Buscar">
+      <input class="form-control me-2" type="search" placeholder="Escribi la atracciÃ³n que buscas" aria-label="Buscar">
       <button class="btn btn-outline-success" type="submit">Buscar</button>
     </form>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a class="nav-link" aria-current="page" href="index.jsp">Inicio</a>
         <a class="nav-link" href="itinerario.jsp">Itinerario Comprado</a>
-        <a class="nav-link" href="nosotros.jsp">Nosotros</a>
+        <a class="nav-link" href="nosotros.jsp">Sobre nosotros</a>
       </div>
-        <a class="nav-link" href="login.jsp">Administracion de Tierra Media</a>
+        <div>
+        <a class="nav-link" href="login.jsp">Acceder</a>
+    </div>
     </div>
   </div>
  
@@ -45,11 +51,10 @@
       <nav>
         <div class="container-fluid">
         
-          <img src="assets/img/th.jpg" alt="" width="430" height="250" class="d-inline-block align-text-top" style="margin-top: 4%">
-              
+         
            
         </nav>
-        <h1>Turismo Tierra Media</h1>
+        <h1 style="margin-top: 8%">Turismo Tierra Media</h1>
       
        </header>
        
@@ -83,7 +88,7 @@
     </div>
 
     <div data-aos="flip-left">      
-<h2 style="margin-top: 5%; margin-left: 25%;"><u>A continuación verás nuestra oferta de atracciones</u> </h2> </div>
+<h2 style="margin-top: 5%; margin-left: 25%;"><u>A continuaciÃ³n verÃ¡s nuestra oferta de atracciones</u> </h2> </div>
 
 <div data-aos="fade-right">
     <div class="tarjetasAtracciones">
@@ -97,7 +102,7 @@
             <li class="list-group-item">Costo: 3 monedas</li>
             <li class="list-group-item">Tipo: AVENTURA</li>
             </ul>
-          <a href="#" class="btn btn-success">Comprar atracción</a>
+          <a href="#" class="btn btn-success">Comprar atracciÃ³n</a>
         </div>
       </div>
 
@@ -111,7 +116,7 @@
             <li class="list-group-item">Costo: 10 monedas</li>
             <li class="list-group-item">Tipo: AVENTURA</li>
             </ul>
-            <a href="#" class="btn btn-success">Comprar atracción</a>
+            <a href="#" class="btn btn-success">Comprar atracciÃ³n</a>
         </div>
       </div>
 
@@ -126,7 +131,7 @@
 <li class="list-group-item">Costo: 20 monedas</li>
 <li class="list-group-item">Tipo: AVENTURA</li>
 </ul>
-         <a href="#" class="btn btn-success">Comprar atracción</a>
+         <a href="#" class="btn btn-success">Comprar atracciÃ³n</a>
         </div>
       </div>
     </div>
@@ -138,14 +143,14 @@
       <div class="card" style="width: 18rem;">
         <img class="card-img-top"  src="assets/img/fondo.jpg"  alt="Card image cap">
         <div class="card-body">
-          <h5 class="card-title">Lothlórien</h5>
+          <h5 class="card-title">LothlÃ³rien</h5>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">Cupos: 30</li>
             <li class="list-group-item">Tiempo: 1 hora</li>
             <li class="list-group-item">Costo: 35 monedas</li>
-            <li class="list-group-item">Tipo: DEGUSTACIÓN</li>
+            <li class="list-group-item">Tipo: DEGUSTACIÃ“N</li>
             </ul>
-         <a href="#" class="btn btn-success">Comprar atracción</a>
+         <a href="#" class="btn btn-success">Comprar atracciÃ³n</a>
         </div>
       </div>
 
@@ -159,7 +164,7 @@
             <li class="list-group-item">Costo: 12 monedas</li>
             <li class="list-group-item">Tipo: PAISAJE</li>
             </ul>
-         <a href="#" class="btn btn-success">Comprar atracción</a>
+         <a href="#" class="btn btn-success">Comprar atracciÃ³n</a>
         </div>
       </div>
 
@@ -174,7 +179,7 @@
             <li class="list-group-item">Costo: 5 monedas</li>
             <li class="list-group-item">Tipo: PAISAJE</li>
             </ul>
-         <a href="#" class="btn btn-success">Comprar atracción</a>
+         <a href="#" class="btn btn-success">Comprar atracciÃ³n</a>
         </div>
       </div>
     </div>
@@ -190,9 +195,9 @@
             <li class="list-group-item">Cupos: 150</li>
             <li class="list-group-item">Tiempo: 6.5 horas</li>
             <li class="list-group-item">Costo: 3 monedas </li>
-            <li class="list-group-item">Tipo: DEGUSTACIÓN</li>
+            <li class="list-group-item">Tipo: DEGUSTACIÃ“N</li>
             </ul>
-         <a href="#" class="btn btn-success">Comprar atracción</a>
+         <a href="#" class="btn btn-success">Comprar atracciÃ³n</a>
         </div>
       </div>
 
@@ -206,7 +211,7 @@
             <li class="list-group-item">Costo: 5 monedas</li>
             <li class="list-group-item">Tipo: PAISAJE</li>
             </ul>
-         <a href="#" class="btn btn-success">Comprar atracción</a>
+         <a href="#" class="btn btn-success">Comprar atracciÃ³n</a>
         </div>
       </div>
 
@@ -215,7 +220,7 @@
 
 
   <div data-aos="fade-right">
-    <h2 style="margin-top: 5%; margin-left: 30%;"><u>Aquí podrás ver nuestras promociones</u> </h2></div>
+    <h2 style="margin-top: 5%; margin-left: 30%;"><u>AquÃ­ podrÃ¡s ver nuestras promociones</u> </h2></div>
     <div data-aos="zoom-in-right">
 
     <div class="tarjetasAtracciones">
@@ -237,15 +242,15 @@
       <div class="card" style="width: 18rem;">
         <img class="card-img-top" src="assets/img/degustacion.jpeg" alt="Card image cap">
         <div class="card-body">
-          <h5 class="card-title">Pack degustación</h5>
+          <h5 class="card-title">Pack degustaciÃ³n</h5>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">Incluye: Lothlórien</li>
+            <li class="list-group-item">Incluye: LothlÃ³rien</li>
             <li class="list-group-item">Incluye: La comarca</li>
             <li class="list-group-item">Costo: 36 monedas</li>
-            <li class="list-group-item">Tipo: DEGUSTACIÓN
+            <li class="list-group-item">Tipo: DEGUSTACIÃ“N
             </li>
             </ul>
-            <a href="#" class="btn btn-success">Comprar pack Degustación</a>
+            <a href="#" class="btn btn-success">Comprar pack DegustaciÃ³n</a>
         </div>
       </div>
 
@@ -295,7 +300,7 @@
       <iframe  src="https://www.youtube.com/embed/3a5k0roFFMg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
 
-  <div> <h3 class="footerFrase">Tierra Media creado por Null Pointer Team con sudor y lágrimas jaja</h3>  </div>
+  <div> <h3 class="footerFrase">Tierra Media creado por Null Pointer Team con sudor y lÃ¡grimas jaja</h3>  </div>
 
     </footer>
     <!-- Option 1: Bootstrap Bundle with Popper -->

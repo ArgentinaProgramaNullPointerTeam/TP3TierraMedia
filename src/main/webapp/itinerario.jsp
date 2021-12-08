@@ -8,6 +8,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="css/estiloIndex.css">
+    <link rel="shortcut icon" href="https://http2.mlstatic.com/anillo-unico-poder-el-hobbit-el-senor-de-los-anillos-titanio-D_NQ_NP_626248-MLM25995146386_092017-O.jpg" >
     <title>Tierra Media</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,9 +31,9 @@
       <div class="navbar-nav">
         <a class="nav-link" aria-current="page" href="index.jsp">Inicio</a>
         <a class="nav-link" href="itinerario.jsp">Itinerario Comprado</a>
-        <a class="nav-link" href="nosotros.jsp">Nosotros</a>
+        <a class="nav-link" href="nosotros.jsp">Sobre nosotros</a>
       </div>
-        <a class="nav-link" href="login.jsp">Administracion de Tierra Media</a>
+        <a class="nav-link" href="login.jsp">Acceder</a>
     </div>
   </div>
  
