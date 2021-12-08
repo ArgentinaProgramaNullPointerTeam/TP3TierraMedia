@@ -8,7 +8,7 @@ public class PromocionAXB extends Promocion {
 	private int costoDeVisita;
 
 	public PromocionAXB(int id, String nombre, int tipoAtraccion, int cantAtracciones, List<Atraccion> atracciones,
-			String tipoPromocion, int descuento, int status) {
+			String tipoPromocion, int descuento, Boolean status) {
 		super(id, nombre, tipoAtraccion, cantAtracciones, atracciones, tipoPromocion, status);
 		this.idAtraccionGratuita = descuento;
 		this.ListaAtracciones = atracciones;
@@ -35,4 +35,9 @@ public class PromocionAXB extends Promocion {
 	public int getidAtraccionGratuita() {
 		return this.idAtraccionGratuita;
 	}
+
+	public void setIdAtraccionGratuita(int idAtraccionGratuita) {
+		this.idAtraccionGratuita = idAtraccionGratuita;
+	}
+	
 }

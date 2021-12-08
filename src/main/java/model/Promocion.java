@@ -16,14 +16,14 @@ public abstract class Promocion extends Producto {
 	private Map<String, String> errores;
 
 	public Promocion(int id, String nombre, int tipoAtraccion, int cantAtracciones, List<Atraccion> atracciones,
-			String tipoPromocion, int status) {
+			String tipoPromocion, Boolean status) {
 		this.id = id;
 		this.nombre = nombre;
 		this.tipoAtraccion = tipoAtraccion;
 		this.tipoDePromocion = tipoPromocion;
 		this.cantAtracciones = cantAtracciones;
 		this.atracciones = atracciones;
-		this.status = this.toBoolean(status);
+		this.status = status;
 	}
 
 	public Promocion(String nombre, int tipoAtraccion, int cantAtracciones, List<Atraccion> atracciones,
@@ -38,7 +38,16 @@ public abstract class Promocion extends Producto {
 	public List<Atraccion> getAtracciones() {
 		return atracciones;
 	}
+	
+	public void setAtracciones(List<Atraccion> atracciones) {
+		this.atracciones = atracciones;
+	}
 
+	@Override
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	
 	@Override
 	public String getNombre() {
 		return this.nombre;
@@ -116,10 +125,18 @@ public abstract class Promocion extends Producto {
 	public int getTipoAtracciones() {
 		return this.tipoAtraccion;
 	}
+	@Override
+	public void setTipoAtracciones(int tipoAtraccion) {
+		this.tipoAtraccion = tipoAtraccion;
+	}
 
 	@Override
 	public boolean esPromocion() {
 		return true;
+	}
+	
+	public void setTipoDePromocion(String tipoDePromocion) {
+		this.tipoDePromocion = tipoDePromocion;
 	}
 
 	@Override
@@ -159,10 +176,6 @@ public abstract class Promocion extends Producto {
 
 	public Map<String, String> getErrors() {
 		return errores;
-	}
-
-	private boolean toBoolean(int noBoolean) {
-		return noBoolean == 1;
 	}
 
 	@Override

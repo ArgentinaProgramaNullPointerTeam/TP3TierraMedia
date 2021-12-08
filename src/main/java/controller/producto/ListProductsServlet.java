@@ -13,7 +13,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import model.Producto;
 import services.producto.ProductoService;
 
-@WebServlet("/producto/edit.adm")
+@WebServlet("/producto/list.do")
 public class ListProductsServlet extends HttpServlet implements Servlet {
 	private static final long serialVersionUID = 4269229300666995937L;
 	private ProductoService productoService;

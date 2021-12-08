@@ -43,6 +43,23 @@ public class Atraccion extends Producto {
 	}
 
 	@Override
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	
+	public void setCostoDeVisita(int costoDeVisita) {
+		this.costoDeVisita = costoDeVisita;
+	}
+	
+	public void setTiempoDeVisita(double tiempoDeVisita) {
+		this.tiempoDeVisita = tiempoDeVisita;
+	}
+
+	public void setCupo(int cupo) {
+		this.cupo = cupo;
+	}
+	
+	@Override
 	public int getCostoDeVisita() {
 		return costoDeVisita;
 	}
@@ -55,6 +72,11 @@ public class Atraccion extends Producto {
 	@Override
 	public int getTipoAtracciones() {
 		return tipoAtraccion;
+	}
+	
+	@Override
+	public void setTipoAtracciones(int tipoAtraccion) {
+		this.tipoAtraccion = tipoAtraccion;	
 	}
 
 	@Override

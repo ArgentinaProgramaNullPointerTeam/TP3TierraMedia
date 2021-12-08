@@ -16,7 +16,7 @@ public class Usuario {
 	private Map<String, String> errores;
 
 	public Usuario(int id, String nombre, String password, int atraccionPreferida, int dineroDisponible,
-			double tiempoDisponible, int isAdmin, int status) {
+			double tiempoDisponible, Boolean isAdmin, Boolean status) {
 		this.id = id;
 		this.nombre = nombre;
 		this.password = password;
@@ -24,19 +24,24 @@ public class Usuario {
 		this.dineroDisponible = dineroDisponible;
 		this.tiempoDisponible = tiempoDisponible;
 		this.itinerario = new Itinerario(id);
-		this.isAdmin = this.toBoolean(isAdmin);
-		this.status = this.toBoolean(status);
+		this.isAdmin = isAdmin;
+		this.status = status;
 	}
 
 	public Usuario(String nombre, String password, int atraccionPreferida, int dineroDisponible,
-			double tiempoDisponible, int isAdmin) {
+			double tiempoDisponible, Boolean isAdmin) {
 		this.nombre = nombre;
 		this.password = password;
 		this.atraccionPreferida = atraccionPreferida;
 		this.dineroDisponible = dineroDisponible;
 		this.tiempoDisponible = tiempoDisponible;
 		this.itinerario = new Itinerario(id);
-		this.isAdmin = this.toBoolean(isAdmin);
+		this.isAdmin = isAdmin;
+	}
+
+	
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public String getPassword() {
@@ -51,12 +56,28 @@ public class Usuario {
 		return this.nombre;
 	}
 
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
 	public int getAtraccionPreferida() {
 		return atraccionPreferida;
 	}
 
+	public void setAtraccionPreferida(int atraccionPreferida) {
+		this.atraccionPreferida = atraccionPreferida;
+	}
+
 	public int getDineroDisponible() {
 		return dineroDisponible;
+	}
+
+	public void setDineroDisponible(int dineroDisponible) {
+		this.dineroDisponible = dineroDisponible;
+	}
+
+	public void setTiempoDisponible(double tiempoDisponible) {
+		this.tiempoDisponible = tiempoDisponible;
 	}
 
 	public double getTiempoDisponible() {
@@ -75,12 +96,16 @@ public class Usuario {
 		return status;
 	}
 
-	public void setStatus(boolean status) {
+	public void setStatus(Boolean status) {
 		this.status = status;
 	}
 
 	public boolean isAdmin() {
 		return isAdmin;
+	}
+
+	public void setAdmin(Boolean isAdmin) {
+		this.isAdmin = isAdmin;
 	}
 
 	public boolean checkPass(String password) {
@@ -116,10 +141,6 @@ public class Usuario {
 	public String toString() {
 		return "Nombre de usuario= " + nombre + ", Atraccion preferida= " + atraccionPreferida + ", Dinero disponible= "
 				+ dineroDisponible + ", Tiempo disponible= " + tiempoDisponible;
-	}
-
-	private boolean toBoolean(int noBoolean) {
-		return noBoolean == 1;
 	}
 
 	public boolean isValid() {
