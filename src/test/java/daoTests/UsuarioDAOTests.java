@@ -41,7 +41,7 @@ public class UsuarioDAOTests {
 		ArrayList<Producto> compra = new ArrayList<Producto>();
 		compra.add(atraccion1);
 
-		Usuario usuarioEsperado = new Usuario(1, "Eowyn", "pass", 1, 10, 8, 0, 1);
+		Usuario usuarioEsperado = new Usuario(1, "Eowyn", "pass", 1, 10, 8, false, true);
 		Itinerario itinerarioEsperado = new Itinerario(1, usuarioEsperado.getId(), compra);
 		usuarioEsperado.setItinerario(itinerarioEsperado);
 		HashMap<Integer, Usuario> usuariosEsperados = new HashMap<Integer, Usuario>();
@@ -55,7 +55,7 @@ public class UsuarioDAOTests {
 	@Test
 	public void findUsuarioNameTest() {
 		UsuarioDAO usuarioDAO = DAOFactory.getUsuarioDAO();
-		Usuario usuarioEsperado = new Usuario(1, "Eowyn", "pass", 1, 10, 8, 0, 1);
+		Usuario usuarioEsperado = new Usuario(1, "Eowyn", "pass", 1, 10, 8, false, true);
 		Usuario usuarioObtenido = usuarioDAO.findByUsername("Eowyn");
 		assertEquals(usuarioEsperado, usuarioObtenido);
 	}
@@ -63,9 +63,65 @@ public class UsuarioDAOTests {
 	@Test
 	public void findUsuarioTest() {
 		UsuarioDAO usuarioDAO = DAOFactory.getUsuarioDAO();
-		Usuario usuarioEsperado = new Usuario(1, "Eowyn", "pass", 1, 10, 8, 0, 1);
+		Usuario usuarioEsperado = new Usuario(1, "Eowyn", "pass", 1, 10, 8, false, true);
 		Usuario usuarioObtenido = usuarioDAO.find(1);
 		assertEquals(usuarioEsperado, usuarioObtenido);
 	}
 
+	@Test
+	public void insertarUsuarioTest() {
+
+		UsuarioDAO usuarioDAO = DAOFactory.getUsuarioDAO();
+
+		Atraccion atraccion1 = new Atraccion(1, "Moria", 1, 1, 6, 1, 1);
+		ArrayList<Producto> compra = new ArrayList<Producto>();
+		compra.add(atraccion1);
+
+		Usuario usuarioEsperado1 = new Usuario(1, "Eowyn", "pass", 1, 10, 8, false, true);
+		Usuario usuarioEsperado2 = new Usuario(2, "Gandalf", "pass", 1, 8, 5.5, false, true);
+		Itinerario itinerarioEsperado = new Itinerario(1, usuarioEsperado1.getId(), compra);
+		usuarioEsperado1.setItinerario(itinerarioEsperado);
+
+		HashMap<Integer, Usuario> usuariosEsperados = new HashMap<Integer, Usuario>();
+		usuariosEsperados.put(usuarioEsperado1.getId(), usuarioEsperado1);
+		usuariosEsperados.put(usuarioEsperado2.getId(), usuarioEsperado2);
+
+		usuarioDAO.insert(usuarioEsperado2);
+		HashMap<Integer, Usuario> usuariosObtenidos = usuarioDAO.findAll();
+		assertEquals(usuariosEsperados, usuariosObtenidos);
+	}
+
+	@Test
+	public void updateUsuarioTest() {
+		UsuarioDAO usuarioDAO = DAOFactory.getUsuarioDAO();
+
+		Atraccion atraccion1 = new Atraccion(1, "Moria", 1, 1, 6, 1, 1);
+		ArrayList<Producto> compra = new ArrayList<Producto>();
+		compra.add(atraccion1);
+
+		Usuario usuarioEsperado1 = new Usuario(1, "Eowyn", "pass", 1, 8, 8, false, true);
+
+		Itinerario itinerarioEsperado = new Itinerario(1, usuarioEsperado1.getId(), compra);
+		usuarioEsperado1.setItinerario(itinerarioEsperado);
+
+		HashMap<Integer, Usuario> usuariosEsperados = new HashMap<Integer, Usuario>();
+		usuariosEsperados.put(usuarioEsperado1.getId(), usuarioEsperado1);
+
+		usuarioDAO.update(usuarioEsperado1);
+		HashMap<Integer, Usuario> usuariosObtenidos = usuarioDAO.findAll();
+		assertEquals(usuariosEsperados, usuariosObtenidos);
+	}
+
+	@Test
+	public void deleteUsuarioTest() {
+		UsuarioDAO usuarioDAO = DAOFactory.getUsuarioDAO();
+
+		Usuario usuario = new Usuario(1, "Eowyn", "pass", 1, 10, 8, false, true);
+
+		HashMap<Integer, Usuario> usuariosEsperados = new HashMap<Integer, Usuario>();
+
+		usuarioDAO.delete(usuario);
+		HashMap<Integer, Usuario> usuariosObtenidos = usuarioDAO.findAll();
+		assertEquals(usuariosEsperados, usuariosObtenidos);
+	}
 }

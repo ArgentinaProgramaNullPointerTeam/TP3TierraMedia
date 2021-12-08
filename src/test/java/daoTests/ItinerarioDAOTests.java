@@ -57,5 +57,4 @@ public class ItinerarioDAOTests {
 
 		assertEquals(itinerariosEsperados, itinerariosObtenidos);
 	}
-
 }

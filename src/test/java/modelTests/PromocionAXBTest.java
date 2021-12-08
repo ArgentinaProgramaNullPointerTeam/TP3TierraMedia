@@ -32,7 +32,7 @@ public class PromocionAXBTest {
 		pack.add(atraccion2);
 		pack.add(atraccion3);
 
-		promo = new PromocionAXB(1, "Pack 1", 1, 3, pack, "AXB", 3, 1);
+		promo = new PromocionAXB(1, "Pack 1", 1, 3, pack, "AXB", 3, true);
 	}
 
 	@Test

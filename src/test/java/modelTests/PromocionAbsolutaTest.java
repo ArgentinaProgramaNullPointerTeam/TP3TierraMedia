@@ -29,7 +29,7 @@ public class PromocionAbsolutaTest {
 		pack.add(atraccion1);
 		pack.add(atraccion2);
 
-		promo = new PromocionAbsoluta(1, "Pack 1", 1, 2, pack, "Absoluta", 25, 1);
+		promo = new PromocionAbsoluta(1, "Pack 1", 1, 2, pack, "Absoluta", 25, true);
 	}
 
 	@Test
