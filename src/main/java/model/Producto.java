@@ -10,6 +10,8 @@ public abstract class Producto {
 	// Devuelve el costo de la visita
 	public abstract int getCostoDeVisita();
 
+	public abstract void setTipoAtracciones(int tipoAtraccion);
+	
 	// Devuelve el id del tipo de atraccion
 	public abstract int getTipoAtracciones();
 
@@ -18,6 +20,8 @@ public abstract class Producto {
 
 	// Devuelve el nombre
 	public abstract String getNombre();
+	
+	public abstract void setNombre(String nombre);
 
 	// Resta cupos
 	public abstract void restarCupo();

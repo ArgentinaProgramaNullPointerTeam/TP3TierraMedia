@@ -8,7 +8,7 @@ public class PromocionAbsoluta extends Promocion {
 	private Map<String, String> errores;
 
 	public PromocionAbsoluta(int id, String nombre, int tipoAtraccion, int cantAtracciones, List<Atraccion> atracciones,
-			String tipoPromocion, int descuento, int status) {
+			String tipoPromocion, int descuento, Boolean status) {
 		super(id, nombre, tipoAtraccion, cantAtracciones, atracciones, tipoPromocion, status);
 		this.descuento = descuento;
 	}
@@ -26,6 +26,10 @@ public class PromocionAbsoluta extends Promocion {
 
 	public int getDescuento() {
 		return descuento;
+	}
+	
+	public void setDescuento(int descuento) {
+		this.descuento = descuento;
 	}
 
 	public Map<String, String> getErrors() {

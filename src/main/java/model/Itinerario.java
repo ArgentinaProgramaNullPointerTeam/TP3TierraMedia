@@ -28,7 +28,7 @@ public class Itinerario {
 		}
 		return listaArchivo;
 	}
-
+	
 	public int getIdUsuario() {
 		return this.idUsuario;
 	}

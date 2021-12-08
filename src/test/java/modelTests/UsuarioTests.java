@@ -26,8 +26,8 @@ public class UsuarioTests {
 
 	@Before
 	public void setup() {
-		usuario = new Usuario(1, "Sam", "pass", 1, 50, 3, 0, 1);
-		u1 = new Usuario(2, "pepito", "pass", 1, 100, 100, 0, 1);
+		usuario = new Usuario(1, "Sam", "pass", 1, 50, 3, false, true);
+		u1 = new Usuario(2, "pepito", "pass", 1, 100, 100, false, true);
 
 		a1 = new Atraccion(1, "a1", 10, 3, 20, 1, 1);
 		a2 = new Atraccion(2, "a2", 4, 2.5, 20, 1, 1);
@@ -37,23 +37,23 @@ public class UsuarioTests {
 		List<Atraccion> packUno = new ArrayList<Atraccion>();
 		packUno.add(a1);
 		packUno.add(a2);
-		p1 = new PromocionAbsoluta(1, "Pack uno", 1, 2, packUno, "Absoluta", 10, 1);
+		p1 = new PromocionAbsoluta(1, "Pack uno", 1, 2, packUno, "Absoluta", 10, true);
 
 		List<Atraccion> packDos = new ArrayList<Atraccion>();
 		packDos.add(a1);
 		packDos.add(a3);
-		p2 = new PromocionPorcentual(2, "Pack dos", 1, 2, packDos, "Porcentual", 0.3, 1);
+		p2 = new PromocionPorcentual(2, "Pack dos", 1, 2, packDos, "Porcentual", 0.3, true);
 
 		List<Atraccion> packTres = new ArrayList<Atraccion>();
 		packTres.add(a1);
 		packTres.add(a3);
 		packTres.add(a2);
-		p3 = new PromocionAXB(3, "Pack tres", 1, 3, packTres, "AXB", 3, 1);
+		p3 = new PromocionAXB(3, "Pack tres", 1, 3, packTres, "AXB", 3, true);
 
 		List<Atraccion> packCuatro = new ArrayList<Atraccion>();
 		packCuatro.add(a2);
 		packCuatro.add(a4);
-		p4 = new PromocionAbsoluta(4, "Pack Cuatro", 1, 2, packCuatro, "Absoluta", 5, 1);
+		p4 = new PromocionAbsoluta(4, "Pack Cuatro", 1, 2, packCuatro, "Absoluta", 5, true);
 	}
 
 	@After

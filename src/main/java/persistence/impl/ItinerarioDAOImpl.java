@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 
 import model.Atraccion;
@@ -49,6 +50,48 @@ public class ItinerarioDAOImpl implements ItinerarioDAO {
 		}
 	}
 
+	@Override
+	public int insert(Itinerario itinerario) {
+		int rows = 0;
+		try {
+			List<Producto> listaCompra = new LinkedList<Producto>();
+			String sqlPromo = "INSERT INTO itinerario (id_usuario, id_promocion) VALUES (?, ?)";
+			String sqlAtraccion = "INSERT INTO itinerario (id_usuario, id_atraccion) VALUES (?, ?)";
+			Connection conn = ConnectionProvider.getConnection();
+			PreparedStatement promoComprada = conn.prepareStatement(sqlPromo);
+			PreparedStatement atracComprada = conn.prepareStatement(sqlAtraccion);
+
+			listaCompra = itinerario.getListaCompra();
+
+			for (Producto producto : listaCompra) {
+				if (producto.esPromocion()) {
+					promoComprada.setInt(1, itinerario.getIdUsuario());
+					promoComprada.setInt(2, producto.getId());
+					rows = promoComprada.executeUpdate();
+				} else {
+					atracComprada.setInt(1, itinerario.getIdUsuario());
+					atracComprada.setInt(2, producto.getId());
+					rows = atracComprada.executeUpdate();
+				}
+			}
+			return rows;
+		} catch (Exception e) {
+			throw new MissingDataException(e);
+		}
+	}
+
+	@Override
+	public int update(Itinerario itinerario) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int delete(Itinerario itinerario) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
 	private Itinerario toItinerario(int idItinerario, int idUsuario, HashMap<Integer, Atraccion> atracciones,
 			HashMap<Integer, Promocion> promociones, ResultSet resultIdPromo, ResultSet resultIdAtrac) {
 		try {

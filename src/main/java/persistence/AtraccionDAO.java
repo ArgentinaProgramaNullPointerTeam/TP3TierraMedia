@@ -7,4 +7,5 @@ import persistence.commons.GenericDAO;
 
 public interface AtraccionDAO extends GenericDAO<Atraccion> {
 	public abstract HashMap<Integer, Atraccion> findAll();
+	public abstract Atraccion find(Integer id);
 }

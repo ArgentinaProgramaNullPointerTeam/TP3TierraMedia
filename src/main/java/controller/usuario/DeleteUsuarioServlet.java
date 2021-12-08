@@ -1,21 +1,17 @@
 package controller.usuario;
 
 import java.io.IOException;
-import java.util.List;
 
-import jakarta.servlet.RequestDispatcher;
-import jakarta.servlet.Servlet;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import model.Usuario;
 import services.usuario.UsuarioService;
 
-@WebServlet("/usuario/list.do")
-public class ListUsuarioServlet extends HttpServlet implements Servlet {
-	private static final long serialVersionUID = -3922567452066205289L;
+@WebServlet("/usuario/delete.adm")
+public class DeleteUsuarioServlet extends HttpServlet {
+	private static final long serialVersionUID = -3813984032345940903L;
 	private UsuarioService usuarioService;
 
 	@Override
@@ -26,11 +22,10 @@ public class ListUsuarioServlet extends HttpServlet implements Servlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		List<Usuario> usuarios = usuarioService.list();
-		req.setAttribute("usuarios", usuarios);
+		Integer id = Integer.parseInt(req.getParameter("id"));
 
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/productos.jsp");
-		dispatcher.forward(req, resp);
+		usuarioService.delete(id);
 
+		resp.sendRedirect("/turismo/attractions/index.do");
 	}
 }
