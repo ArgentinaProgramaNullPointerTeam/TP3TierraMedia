@@ -13,26 +13,28 @@ import jakarta.servlet.http.HttpServletResponse;
 import model.Itinerario;
 import services.itinerario.ItinerarioService;
 
-
 @WebServlet("/itinerario/list.do")
 public class ListItinerarioServlet extends HttpServlet implements Servlet {
 	private static final long serialVersionUID = 985007788312045740L;
 	private ItinerarioService itinerarioService;
-	
+
 	@Override
 	public void init() throws ServletException {
 		super.init();
 		this.itinerarioService = new ItinerarioService();
 	}
-	
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		Integer id = Integer.parseInt(req.getParameter("id"));
 		List<Itinerario> itinerario = itinerarioService.list(id);
-		req.setAttribute("itinerario", itinerario);
+		if (!itinerario.isEmpty()) {
+			req.setAttribute("itinerario", itinerario);
+		} else {
+			req.setAttribute("flash", "No compraste nada aún");
+		}
 
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/productos.jsp");
 		dispatcher.forward(req, resp);
-
 	}
 }
