@@ -37,7 +37,7 @@ public class UsuarioDAOTests {
 	public void cargarUsuariosTest() {
 		UsuarioDAO usuarioDAO = DAOFactory.getUsuarioDAO();
 
-		Atraccion atraccion1 = new Atraccion(1, "Moria", 1, 1, 6, 1, 1);
+		Atraccion atraccion1 = new Atraccion(1, "Moria", 1, 1, 6, 1, true);
 		ArrayList<Producto> compra = new ArrayList<Producto>();
 		compra.add(atraccion1);
 
@@ -73,7 +73,7 @@ public class UsuarioDAOTests {
 
 		UsuarioDAO usuarioDAO = DAOFactory.getUsuarioDAO();
 
-		Atraccion atraccion1 = new Atraccion(1, "Moria", 1, 1, 6, 1, 1);
+		Atraccion atraccion1 = new Atraccion(1, "Moria", 1, 1, 6, 1, true);
 		ArrayList<Producto> compra = new ArrayList<Producto>();
 		compra.add(atraccion1);
 
@@ -95,7 +95,7 @@ public class UsuarioDAOTests {
 	public void updateUsuarioTest() {
 		UsuarioDAO usuarioDAO = DAOFactory.getUsuarioDAO();
 
-		Atraccion atraccion1 = new Atraccion(1, "Moria", 1, 1, 6, 1, 1);
+		Atraccion atraccion1 = new Atraccion(1, "Moria", 1, 1, 6, 1, true);
 		ArrayList<Producto> compra = new ArrayList<Producto>();
 		compra.add(atraccion1);
 

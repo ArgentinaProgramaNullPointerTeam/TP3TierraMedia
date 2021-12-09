@@ -15,7 +15,7 @@ public class AtraccionTests {
 
 	@Before
 	public void setUp() {
-		atraccion = new Atraccion(1, "Moria", 10, 2, 6, 1, 1);
+		atraccion = new Atraccion(1, "Moria", 10, 2, 6, 1, true);
 
 	}
 
@@ -69,8 +69,8 @@ public class AtraccionTests {
 
 	@Test
 	public void noEstaIncluidaTest() {
-		Producto atraccionIgual = new Atraccion(1, "Moria", 10, 2, 6, 1, 1);
-		Producto atraccionNoIgual = new Atraccion(2, "Isengard", 10, 2.5, 23, 1, 1);
+		Producto atraccionIgual = new Atraccion(1, "Moria", 10, 2, 6, 1, true);
+		Producto atraccionNoIgual = new Atraccion(2, "Isengard", 10, 2.5, 23, 1, true);
 
 		assertTrue(atraccion.esOContiene(atraccionIgual));
 		assertFalse(atraccion.esOContiene(atraccionNoIgual));

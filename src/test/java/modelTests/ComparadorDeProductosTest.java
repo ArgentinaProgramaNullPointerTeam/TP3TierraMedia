@@ -30,10 +30,10 @@ public class ComparadorDeProductosTest {
 	@Before
 	public void setup() {
 		u1 = new Usuario(1, "pepito", "pass", 1, 100, 100, false, true);
-		a1 = new Atraccion(1, "a1", 10, 3, 20, 1, 1);
-		a2 = new Atraccion(2, "a2", 4, 2.5, 20, 1, 1);
-		a3 = new Atraccion(3, "a3", 10, 5, 20, 1, 1);
-		a4 = new Atraccion(4, "a4", 8, 4, 20, 1, 1);
+		a1 = new Atraccion(1, "a1", 10, 3, 20, 1, true);
+		a2 = new Atraccion(2, "a2", 4, 2.5, 20, 1, true);
+		a3 = new Atraccion(3, "a3", 10, 5, 20, 1, true);
+		a4 = new Atraccion(4, "a4", 8, 4, 20, 1, true);
 
 		List<Atraccion> packUno = new ArrayList<Atraccion>();
 		packUno.add(a1);

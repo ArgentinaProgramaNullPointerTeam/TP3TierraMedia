@@ -14,9 +14,11 @@ import model.Atraccion;
 import model.Itinerario;
 import model.Producto;
 import model.Promocion;
+import model.Usuario;
 import persistence.AtraccionDAO;
 import persistence.ItinerarioDAO;
 import persistence.PromocionDAO;
+import persistence.UsuarioDAO;
 import persistence.commons.ConnectionProvider;
 import persistence.commons.DAOFactory;
 
@@ -42,7 +44,7 @@ public class ItinerarioDAOTests {
 		PromocionDAO promocionDAO = DAOFactory.getPromocionDAO();
 		ItinerarioDAO itinerarioDAO = DAOFactory.getItinerarioDAO();
 
-		Atraccion atraccion1 = new Atraccion(1, "Moria", 1, 1, 6, 1, 1);
+		Atraccion atraccion1 = new Atraccion(1, "Moria", 1, 1, 6, 1, true);
 		ArrayList<Producto> sugerenciasEsperadas = new ArrayList<Producto>();
 		sugerenciasEsperadas.add(atraccion1);
 		Itinerario itinerario = new Itinerario(1, 1, sugerenciasEsperadas);
@@ -56,5 +58,41 @@ public class ItinerarioDAOTests {
 				promocionesObtenidas);
 
 		assertEquals(itinerariosEsperados, itinerariosObtenidos);
+	}
+	
+	@Test
+	public void insertarItinerarioTest() {
+		AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
+		PromocionDAO promocionDAO = DAOFactory.getPromocionDAO();
+		ItinerarioDAO itinerarioDAO = DAOFactory.getItinerarioDAO();
+		UsuarioDAO usuarioDAO = DAOFactory.getUsuarioDAO();
+
+		Atraccion atraccion1 = new Atraccion(1, "Moria", 1, 1, 6, 1, true);
+		Atraccion atraccion2 = new Atraccion(2, "Minas Tirith", 2, 2.5, 25, 1, true);
+		
+		ArrayList<Producto> sugerenciasEsperadas = new ArrayList<Producto>();
+		sugerenciasEsperadas.add(atraccion1);
+		sugerenciasEsperadas.add(atraccion2);
+
+		Itinerario itinerarioEsperado = new Itinerario(1, 1, sugerenciasEsperadas);
+		itinerarioEsperado.setCostoItinerario(2);
+		itinerarioEsperado.setDuracionItinerario(2.5);
+
+		HashMap<Integer, Usuario> usuariosObtenidos = usuarioDAO.findAll();
+		HashMap<Integer, Atraccion> atraccionesObtenidas = atraccionDAO.findAll();
+		HashMap<Integer, Promocion> promocionesObtenidas = promocionDAO.findAll(atraccionesObtenidas);
+		HashMap<Integer, Itinerario> itinerariosObtenidos = itinerarioDAO.findById(1, atraccionesObtenidas,
+				promocionesObtenidas);
+		Itinerario itinerarioObtenido = itinerariosObtenidos.get(1);
+
+		Usuario usuarioObtenido = usuariosObtenidos.get(1);
+		usuarioObtenido.setItinerario(itinerarioObtenido);
+		usuarioObtenido.comprar(atraccion2);
+
+		usuarioDAO.update(usuarioObtenido);
+		itinerarioDAO.insert(itinerarioObtenido);
+		itinerarioObtenido = itinerariosObtenidos.get(1);
+
+		assertEquals(itinerarioEsperado, itinerarioObtenido);
 	}
 }

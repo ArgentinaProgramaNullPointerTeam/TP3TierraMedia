@@ -37,8 +37,8 @@ public class PromocionDAOTests {
 
 	@Test
 	public void cargarPromocionesTest() {
-		Atraccion atraccion1 = new Atraccion(2, "Minas Tirith", 2, 2.5, 25, 1, 1);
-		Atraccion atraccion2 = new Atraccion(3, "La Comarca", 3, 1, 150, 1, 1);
+		Atraccion atraccion1 = new Atraccion(2, "Minas Tirith", 2, 2.5, 25, 1, true);
+		Atraccion atraccion2 = new Atraccion(3, "La Comarca", 3, 1, 150, 1, true);
 		ArrayList<Atraccion> atraccionesEsperadas = new ArrayList<Atraccion>();
 		atraccionesEsperadas.add(atraccion1);
 		atraccionesEsperadas.add(atraccion2);
@@ -57,8 +57,8 @@ public class PromocionDAOTests {
 
 	@Test
 	public void insertPromocionesTest() {
-		Atraccion atraccion1 = new Atraccion(2, "Minas Tirith", 2, 2.5, 25, 1, 1);
-		Atraccion atraccion2 = new Atraccion(3, "La Comarca", 3, 1, 150, 1, 1);
+		Atraccion atraccion1 = new Atraccion(2, "Minas Tirith", 2, 2.5, 25, 1, true);
+		Atraccion atraccion2 = new Atraccion(3, "La Comarca", 3, 1, 150, 1, true);
 		ArrayList<Atraccion> atraccionesEsperadas = new ArrayList<Atraccion>();
 		atraccionesEsperadas.add(atraccion1);
 		atraccionesEsperadas.add(atraccion2);
@@ -82,8 +82,8 @@ public class PromocionDAOTests {
 
 	@Test
 	public void deletePromocionesTest() {
-		Atraccion atraccion1 = new Atraccion(2, "Minas Tirith", 2, 2.5, 25, 1, 1);
-		Atraccion atraccion2 = new Atraccion(3, "La Comarca", 3, 1, 150, 1, 1);
+		Atraccion atraccion1 = new Atraccion(2, "Minas Tirith", 2, 2.5, 25, 1, true);
+		Atraccion atraccion2 = new Atraccion(3, "La Comarca", 3, 1, 150, 1, true);
 		ArrayList<Atraccion> atraccionesEsperadas = new ArrayList<Atraccion>();
 		atraccionesEsperadas.add(atraccion1);
 		atraccionesEsperadas.add(atraccion2);
@@ -101,8 +101,8 @@ public class PromocionDAOTests {
 
 	@Test
 	public void updatePromocionesTest() {
-		Atraccion atraccion1 = new Atraccion(2, "Minas Tirith", 2, 2.5, 25, 1, 1);
-		Atraccion atraccion2 = new Atraccion(3, "La Comarca", 3, 1, 150, 1, 1);
+		Atraccion atraccion1 = new Atraccion(2, "Minas Tirith", 2, 2.5, 25, 1, true);
+		Atraccion atraccion2 = new Atraccion(3, "La Comarca", 3, 1, 150, 1, true);
 		ArrayList<Atraccion> atraccionesEsperadas = new ArrayList<Atraccion>();
 		atraccionesEsperadas.add(atraccion1);
 		atraccionesEsperadas.add(atraccion2);
@@ -120,8 +120,8 @@ public class PromocionDAOTests {
 	
 	@Test
 	public void findTest() {
-		Atraccion atraccion1 = new Atraccion(2, "Minas Tirith", 2, 2.5, 25, 1, 1);
-		Atraccion atraccion2 = new Atraccion(3, "La Comarca", 3, 1, 150, 1, 1);
+		Atraccion atraccion1 = new Atraccion(2, "Minas Tirith", 2, 2.5, 25, 1, true);
+		Atraccion atraccion2 = new Atraccion(3, "La Comarca", 3, 1, 150, 1, true);
 		ArrayList<Atraccion> atraccionesEsperadas = new ArrayList<Atraccion>();
 		atraccionesEsperadas.add(atraccion1);
 		atraccionesEsperadas.add(atraccion2);

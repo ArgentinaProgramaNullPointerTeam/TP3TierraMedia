@@ -33,9 +33,9 @@ public class AtraccionDAOTests {
 	@Test
 	public void cargarAtraccionesTest() {
 		AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
-		Atraccion atraccion1 = new Atraccion(1, "Moria", 1, 1, 6, 1, 1);
-		Atraccion atraccion2 = new Atraccion(2, "Minas Tirith", 2, 2.5, 25, 1, 1);
-		Atraccion atraccion3 = new Atraccion(3, "La Comarca", 3, 1, 150, 1, 1);
+		Atraccion atraccion1 = new Atraccion(1, "Moria", 1, 1, 6, 1, true);
+		Atraccion atraccion2 = new Atraccion(2, "Minas Tirith", 2, 2.5, 25, 1, true);
+		Atraccion atraccion3 = new Atraccion(3, "La Comarca", 3, 1, 150, 1, true);
 
 		HashMap<Integer, Atraccion> atraccionesEsperadas = new HashMap<Integer, Atraccion>();
 		atraccionesEsperadas.put(atraccion1.getId(), atraccion1);
@@ -49,10 +49,10 @@ public class AtraccionDAOTests {
 	@Test
 	public void insertTest() {
 		AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
-		Atraccion atraccion1 = new Atraccion(1, "Moria", 1, 1, 6, 1, 1);
-		Atraccion atraccion2 = new Atraccion(2, "Minas Tirith", 2, 2.5, 25, 1, 1);
-		Atraccion atraccion3 = new Atraccion(3, "La Comarca", 3, 1, 150, 1, 1);
-		Atraccion atraccion4 = new Atraccion(4, "Mordor", 3, 1, 150, 1, 1);
+		Atraccion atraccion1 = new Atraccion(1, "Moria", 1, 1, 6, 1, true);
+		Atraccion atraccion2 = new Atraccion(2, "Minas Tirith", 2, 2.5, 25, 1, true);
+		Atraccion atraccion3 = new Atraccion(3, "La Comarca", 3, 1, 150, 1, true);
+		Atraccion atraccion4 = new Atraccion(4, "Mordor", 3, 1, 150, 1, true);
 
 		HashMap<Integer, Atraccion> atraccionesEsperadas = new HashMap<Integer, Atraccion>();
 		atraccionesEsperadas.put(atraccion1.getId(), atraccion1);
@@ -69,7 +69,7 @@ public class AtraccionDAOTests {
 	@Test
 	public void findTest() {
 		AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
-		Atraccion atraccionEsperada = new Atraccion(1, "Moria", 1, 1, 6, 1, 1);
+		Atraccion atraccionEsperada = new Atraccion(1, "Moria", 1, 1, 6, 1, true);
 		Atraccion atraccionObtenida = atraccionDAO.find(1);
 
 		assertEquals(atraccionEsperada, atraccionObtenida);
@@ -78,9 +78,9 @@ public class AtraccionDAOTests {
 	@Test
 	public void updateTest() {
 		AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
-		Atraccion atraccion1 = new Atraccion(1, "Moria", 1, 2, 6, 1, 1);
-		Atraccion atraccion2 = new Atraccion(2, "Minas Tirith", 2, 2.5, 25, 1, 1);
-		Atraccion atraccion3 = new Atraccion(3, "La Comarca", 3, 1, 150, 1, 1);
+		Atraccion atraccion1 = new Atraccion(1, "Moria", 1, 2, 6, 1, true);
+		Atraccion atraccion2 = new Atraccion(2, "Minas Tirith", 2, 2.5, 25, 1, true);
+		Atraccion atraccion3 = new Atraccion(3, "La Comarca", 3, 1, 150, 1, true);
 
 		HashMap<Integer, Atraccion> atraccionesEsperadas = new HashMap<Integer, Atraccion>();
 		atraccionesEsperadas.put(atraccion1.getId(), atraccion1);
@@ -96,9 +96,9 @@ public class AtraccionDAOTests {
 	@Test
 	public void deleteTest() {
 		AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
-		Atraccion atraccion1 = new Atraccion(1, "Moria", 1, 1, 6, 1, 1);
-		Atraccion atraccion2 = new Atraccion(2, "Minas Tirith", 2, 2.5, 25, 1, 1);
-		Atraccion atraccion3 = new Atraccion(3, "La Comarca", 3, 1, 150, 1, 1);
+		Atraccion atraccion1 = new Atraccion(1, "Moria", 1, 1, 6, 1, true);
+		Atraccion atraccion2 = new Atraccion(2, "Minas Tirith", 2, 2.5, 25, 1, true);
+		Atraccion atraccion3 = new Atraccion(3, "La Comarca", 3, 1, 150, 1, true);
 
 		HashMap<Integer, Atraccion> atraccionesEsperadas = new HashMap<Integer, Atraccion>();
 		atraccionesEsperadas.put(atraccion1.getId(), atraccion1);
