@@ -114,7 +114,7 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 	private Atraccion toAtraccion(ResultSet resultados) {
 		try {
 			return new Atraccion(resultados.getInt(1), resultados.getString(2), resultados.getInt(3),
-					resultados.getDouble(5), resultados.getInt(4), resultados.getInt(6), resultados.getInt(8));
+					resultados.getDouble(5), resultados.getInt(4), resultados.getInt(6), resultados.getInt(8) == 1);
 		} catch (Exception e) {
 			throw new MissingDataException(e);
 		}

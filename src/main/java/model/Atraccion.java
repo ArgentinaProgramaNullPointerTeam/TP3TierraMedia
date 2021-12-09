@@ -14,14 +14,14 @@ public class Atraccion extends Producto {
 	private Map<String, String> errores;
 
 	public Atraccion(int id, String nombre, int costoDeVisita, double tiempoDeVisita, int cupo, int tipoAtraccion,
-			int status) {
+			Boolean status) {
 		this.id = id;
 		this.nombre = nombre;
 		this.costoDeVisita = costoDeVisita;
 		this.tiempoDeVisita = tiempoDeVisita;
 		this.cupo = cupo;
 		this.tipoAtraccion = tipoAtraccion;
-		this.status = this.toBoolean(status);
+		this.status = status;
 	}
 
 	public Atraccion(String nombre, int costoDeVisita, double tiempoDeVisita, int cupo, int tipoAtraccion) {
@@ -158,11 +158,7 @@ public class Atraccion extends Producto {
 	public Map<String, String> getErrors() {
 		return errores;
 	}
-
-	private boolean toBoolean(int noBoolean) {
-		return noBoolean == 1;
-	}
-
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
