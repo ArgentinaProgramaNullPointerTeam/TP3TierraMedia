@@ -52,7 +52,7 @@
 							<i title="tiempo" style="color: blue;" class="bi bi-clock-fill"></i> <c:out value="${usuario.getTiempoDisponible()}"></c:out>
 						</a></li>
 						<li><hr class="dropdown-divider"></li>
-						<li><a href="logout" class="btn btn-success">Cerrar sesión</a>
+						<li><a href="logout" style="margin-left:14px" class="btn btn-success">Cerrar sesión</a>
 					</ul>
 				</li>
 				</ul>
