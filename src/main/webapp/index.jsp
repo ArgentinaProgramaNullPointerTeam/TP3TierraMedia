@@ -98,15 +98,19 @@
 	</header>
 	
 <!-- Cards -->
-	<div data-aos="fade-right">
 
+	<div data-aos="fade-left">
 
+<c:forEach items="${productos}" var="productos">
 		<div class="tarjetasAtracciones">
-			<c:forEach items="${productos}" var="productos">
-				<div class="card" style="width: 18rem;">
+			
+				<div class="card" style="width: 25rem;">
+				
 					<img class="card-img-top" src="assets/img/fondo.jpg"
 						alt="Card image cap">
+						
 					<div class="card-body">
+					
 						<h5 class="card-title">${productos.getNombre()}</h5>
 						<ul class="list-group list-group-flush">
 							<li class="list-group-item">Cupos: ${productos.getCupo()}</li>
@@ -125,12 +129,20 @@
 							<c:otherwise>
 								<span>No disponible</span>
 							</c:otherwise>
+							
 						</c:choose>
+						
 					</div>
+					
 				</div>
-			</c:forEach>
+				
 		</div>
-	</div>
+			</c:forEach>
+			</div>
+			
+		
+
+
 
 	<footer> </footer>
 	<!-- Option 1: Bootstrap Bundle with Popper -->
