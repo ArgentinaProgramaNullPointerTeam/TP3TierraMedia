@@ -18,8 +18,8 @@ import persistence.commons.DAOFactory;
 import persistence.UsuarioDAO;
 
 public class ProductoService {
-	private List<Producto> productos = new ArrayList<Producto>();
-	private List<Producto> productosComprables = new ArrayList<Producto>();
+
+	
 	private HashMap<Integer, Atraccion> atracciones = new HashMap<Integer, Atraccion>();
 	private HashMap<Integer, Promocion> promociones = new HashMap<Integer, Promocion>();
 
@@ -36,6 +36,8 @@ public class ProductoService {
 	}
 	//Se arman los productos dependiendo si el usuario puede comprar o si hay cupo
 	public List<Producto> list(int id) {
+		List<Producto> productosComprables = new ArrayList<Producto>();
+		List<Producto> productos = new ArrayList<Producto>();
 		this.leerAtracciones();
 		this.leerPromociones();
 		if (!atracciones.isEmpty()) {
