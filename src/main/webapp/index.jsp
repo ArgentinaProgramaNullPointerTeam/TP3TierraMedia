@@ -103,8 +103,10 @@
 
 <c:forEach items="${productos}" var="productos">
 		
-					<div>
+				<div class="card" style="width: 18rem;">
 						<h5 class="card-title">${productos.getNombre()}</h5>
+						
+						 <img class="card-img-top" src="assets/img/fondo.jpg" alt="Card image cap">
 						<ul class="list-group list-group-flush">
 							<li class="list-group-item">Cupos: ${productos.getCupo()}</li>
 							<li class="list-group-item">Tiempo:
@@ -128,6 +130,7 @@
 						</c:choose>
 						</c:forEach>
 						
+					</div>
 					</div>
 					
 			

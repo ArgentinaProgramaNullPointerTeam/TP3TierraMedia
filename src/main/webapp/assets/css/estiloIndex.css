@@ -23,7 +23,16 @@ h5 {
 .wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
+  grid-gap: 50px;
+
+ 	
+}
+.card{
+	
+margin-top: 20%;
+ 	border: 0;
+ 	margin-left: 68px;
+   height: 50%;
 }
 
 .tarjetasAtracciones{
