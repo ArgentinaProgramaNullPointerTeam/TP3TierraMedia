@@ -43,7 +43,7 @@
 				</div>
 
 				<div class="d-grid gap-2">
-					<button type="submit" class="btn btn-lg btn-primary">Ingresar</button>
+					<button type="submit" class="btn btn-lg btn-primary">Iniciar sesión</button>
 				</div>
 			</form>
 

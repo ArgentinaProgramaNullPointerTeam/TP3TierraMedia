@@ -1,9 +1,14 @@
 @charset "utf-8";
 
+*{
+    margin: 0;
+    padding: 0;
+    
+}
 
 body {
     padding: 20px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Inconsolata', monospace;
     background-color: #f7f7f7;
 }
 

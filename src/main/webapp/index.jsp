@@ -61,16 +61,25 @@
  
 </nav>
   
+  
+				<!-- CUERPO -->	
   <body>
     
        <header>
+       
+       <main class="container">
+		<div class="bg-light p-4 rounded">
+			<h1 style="margin-top: 5%">
+				¡Bienvenido, <c:out value="${usuario.getNombre()}" />!
+			</h1>
+		</div>
+	</main>
+       
       <nav>
-        <div class="container-fluid">
-        
-         
+        <div class="container-fluid">   
            
         </nav>
-        <h1 style="margin-top: 8%">Turismo Tierra Media</h1>
+        <h2 style="margin-top: 8%">Turismo en la Tierra Media</h2>
       
        </header>
        
