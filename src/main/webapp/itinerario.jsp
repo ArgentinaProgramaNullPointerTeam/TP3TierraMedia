@@ -40,17 +40,58 @@
  
 </nav>
   <body>
-    <h1 style="margin-top: 10%;">ACA FALTA CREAR EL ITINERARIO de lo q cada usuariotiene comprado</h1>
-
-    <!-- Optional JavaScript; choose one of the two! -->
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-    -->
+    <main role="main" class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 style="margin-top: 7%">Su itinerario de compras:</h1> 
+                    <a href="index.jsp" target="_blank">Tierra Media</a>
+                    <div class="table-responsive">
+                        <table class="table table-bordered" table style= "background-color:#FFE4C4">
+                            <thead>
+                                <tr>
+                                    <th>Usuario</th>
+                                    <th>Le gusta</th>
+                                    <th>Tiempo disponible</th>
+                                    <th>Monedas</th>
+                                   
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Usuario1</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                   
+                                </tr>
+                                <tr>
+                                    <td>Usuario2</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                  
+                                </tr>
+                                 <tr>
+                                    <td>Usuario3</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    
+                                </tr>
+                                 <tr>
+                                    <td>Usuario4</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                   
+                                </tr>
+                               
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
   </body>
 </html>
