@@ -1,5 +1,13 @@
 @charset "utf-8";
 
+.cuadrado{
+padding:5px;
+margin:5px;
+background-color: #000000;
+border: solid 1px red;
+color: white;
+}
+
 *{
     margin: 0;
     padding: 0;

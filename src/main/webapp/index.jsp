@@ -57,7 +57,7 @@
       
        </header>
        
-      <div class="carruselPrueba">
+   <!--   <div class="carruselPrueba">
         <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active" data-interval="10000">
@@ -84,10 +84,10 @@
         </div>
       </div>
 
-    </div>
+    </div>  -->
 
     <div data-aos="flip-left">      
-<h2 style="margin-top: 5%; margin-left: 25%;"><u>A continuación verás nuestra oferta de atracciones</u> </h2> </div>
+<h2 style="margin-top: 5%; margin-left: 25%;"><u>A continuación verás nuestras ofertas de los productos</u> </h2> </div>
 
 <div data-aos="fade-right">
     <div class="tarjetasAtracciones">
@@ -219,7 +219,7 @@
 
 
   <div data-aos="fade-right">
-    <h2 style="margin-top: 5%; margin-left: 30%;"><u>Aquí podrás ver nuestras promociones</u> </h2></div>
+    
     <div data-aos="zoom-in-right">
 
     <div class="tarjetasAtracciones">
