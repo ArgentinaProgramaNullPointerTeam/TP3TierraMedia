@@ -32,14 +32,30 @@
       <span class="navbar-toggler-icon"></span>
     </button>
      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a href="logout" class="btn btn-success">Cerrar sesión</a>
- 
-        <a class="nav-link" style="margin-left:95px" aria-current="page" href="index.jsp">Inicio</a>
+      <div class="navbar-nav">      
+        <a class="nav-link" style="margin-left:5px" aria-current="page" href="index.jsp">Inicio</a>
         <a class="nav-link" href="itinerario.jsp">Itinerario Comprado</a>
         <a class="nav-link" href="nosotros.jsp">Sobre nosotros</a>
-        
       </div>
+      
+     <ul class="navbar-nav">
+      <li class="nav-item dropdown" style="margin-left:800px">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						<c:out value="${usuario.getNombre()}"></c:out>
+					</a>
+					<ul class="dropdown-menu dropdown-menu-end"
+						aria-labelledby="navbarDropdown">
+						<li><a class="dropdown-item disabled" style="color: black;">
+							<i title="monedas" style="color: gold;" class="bi bi-coin"></i> <c:out value="${usuario.getDineroDisponible()}"></c:out>
+						</a></li>
+						<li><a class="dropdown-item disabled" style="color: black;">
+							<i title="tiempo" style="color: blue;" class="bi bi-clock-fill"></i> <c:out value="${usuario.getTiempoDisponible()}"></c:out>
+						</a></li>
+						<li><hr class="dropdown-divider"></li>
+						<li><a href="logout" class="btn btn-success">Cerrar sesión</a>
+					</ul>
+				</li>
+				</ul>
     </div>
   </div>
  

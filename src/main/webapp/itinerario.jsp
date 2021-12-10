@@ -29,7 +29,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link" href="/turismo/logout">Salir</a>
+        <a href="logout" class="btn btn-success">Cerrar sesión</a>
         <a class="nav-link" style="margin-left:95px" aria-current="page" href="index.jsp">Inicio</a>
         <a class="nav-link" href="itinerario.jsp">Itinerario Comprado</a>
         <a class="nav-link" href="nosotros.jsp">Sobre nosotros</a>
