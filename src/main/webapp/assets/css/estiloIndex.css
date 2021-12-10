@@ -1,12 +1,5 @@
 @charset "utf-8";
 
-.cuadrado{
-padding:5px;
-margin:5px;
-background-color: #000000;
-border: solid 1px red;
-color: white;
-}
 
 *{
     margin: 0;
@@ -21,24 +14,25 @@ body, nav{
     background-color: #FAD6A5;
 }
 
-h1 {
-    color:black;
-    margin-left: 40%;
-    
-}
 
 h5 {
 	font-weight: 900;
 	text-decoration: underline;
 }
 
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
 .tarjetasAtracciones{
-    display: flex;
+      display: flex;
     flex-direction: row;
     justify-content: space-around;
-margin-top: 10%;;
+margin-top: 10%;
  	border: 0;
- 	align-items: center;
+ 	align-items: left;
    height: 50%;
 }
 
@@ -58,14 +52,10 @@ iframe{
   /*Sólo para que se vea, ya que la dirección al parecer está mal*/
   border: 10px solid white;
   margin-left: 65%;
-  margin-top: 5%;;
+  margin-top: 5%;
 }
 
 footer{
     background-color: rgb(223, 226, 206);
 }
 
-.carruselPrueba{
-width: 50%;
-margin-left: 28%;
-}

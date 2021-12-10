@@ -99,18 +99,11 @@
 	
 <!-- Cards -->
 
-	<div data-aos="fade-left">
+<div class="wrapper">
 
 <c:forEach items="${productos}" var="productos">
-		<div class="tarjetasAtracciones">
-			
-				<div class="card" style="width: 25rem;">
-				
-					<img class="card-img-top" src="assets/img/fondo.jpg"
-						alt="Card image cap">
-						
-					<div class="card-body">
-					
+		
+					<div>
 						<h5 class="card-title">${productos.getNombre()}</h5>
 						<ul class="list-group list-group-flush">
 							<li class="list-group-item">Cupos: ${productos.getCupo()}</li>
@@ -121,26 +114,26 @@
 							<li class="list-group-item">Tipo:
 								${productos.getTipoAtracciones()}</li>
 						</ul>
+	
 						<c:choose>
 							<c:when
 								test="${ usuario.puedeComprar(productos) && productos.hayCupo() }">
-								<a href="buy.do?id=${ product.getId() }" class="btn btn-success">Comprar</a>
+								<a href="buy.do?id=${ product.getId() }" class="btn btn-success">Comprar</a></div>
 							</c:when>
+								
 							<c:otherwise>
 								<span>No disponible</span>
 							</c:otherwise>
 							
 						</c:choose>
+						</c:forEach>
 						
 					</div>
 					
-				</div>
-				
-		</div>
-			</c:forEach>
-			</div>
 			
-		
+				
+	
+
 
 
 
