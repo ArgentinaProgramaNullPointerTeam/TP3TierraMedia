@@ -294,12 +294,6 @@
 
     <footer>
 
-   
-    <div class="videito" >
-      <iframe  src="https://www.youtube.com/embed/3a5k0roFFMg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  </div>
-
-  <div> <h3 class="footerFrase">Tierra Media creado por Null Pointer Team con sudor y lágrimas jaja</h3>  </div>
 
     </footer>
     <!-- Option 1: Bootstrap Bundle with Popper -->
