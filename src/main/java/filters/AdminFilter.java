@@ -22,9 +22,16 @@ public class AdminFilter implements Filter {
 		if (usuario != null && usuario.isAdmin()) {
 			chain.doFilter(request, response);
 		} else {
-			request.setAttribute("flash", "No tenes los permisos necesarios");
-			RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("/index.jsp");
-			dispatcher.forward(request, response);
+			if (usuario == null) {
+				request.setAttribute("flash", "No iniciaste sesión");
+				RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("/login.jsp");
+				dispatcher.forward(request, response);
+			} else {
+				request.setAttribute("flash", "No tenes los permisos necesarios");
+				RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("/index.jsp");
+				dispatcher.forward(request, response);
+			}
+
 		}
 	}
 }
