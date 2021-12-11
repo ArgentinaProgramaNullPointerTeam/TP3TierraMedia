@@ -65,6 +65,7 @@ public class Itinerario {
 		this.listaCompra.add(producto);
 		this.costoItinerario += producto.getCostoDeVisita();
 		this.duracionItinerario += producto.getTiempoDeVisita();
+		producto.restarCupo();
 	}
 
 	public boolean yaCompro(Producto otro) {

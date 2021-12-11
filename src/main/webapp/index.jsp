@@ -31,7 +31,6 @@
 
 <!-- CUERPO -->
 <body>
-
 	<header>
 
 		<main class="container">
@@ -42,6 +41,21 @@
 					! estás en Turismo en la Tierra Media
 				</h1>
 			</div>
+			<c:if test="${flash != null}">
+				<div class="alert alert-danger">
+					<p>
+						<c:out value="${flash}" />
+					</p>
+				</div>
+			</c:if>
+			
+			<c:if test="${success != null}">
+				<div class="alert alert-success">
+					<p>
+						<c:out value="${success}" />
+					</p>
+				</div>
+			</c:if>
 		</main>
 
 		<nav>

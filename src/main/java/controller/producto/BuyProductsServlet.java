@@ -30,10 +30,7 @@ public class BuyProductsServlet extends HttpServlet implements Servlet {
 		Integer id = Integer.parseInt(req.getParameter("id"));
 		Integer esPromo = Integer.parseInt(req.getParameter("esPromo"));
 		Usuario user = (Usuario) req.getSession().getAttribute("usuario");
-		Map<String, String> errors = productService.buy(user.getId(), id, esPromo == 1);
-		
-		Usuario usuarioActualizado = DAOFactory.getUsuarioDAO().find(user.getId());
-		req.getSession().setAttribute("usuario", usuarioActualizado);
+		Map<String, String> errors = productService.buy(user.getId(), id, esPromo == 1);	
 		
 		if (errors.isEmpty()) {
 			req.setAttribute("success", "¡Gracias por comprar!");
@@ -41,6 +38,8 @@ public class BuyProductsServlet extends HttpServlet implements Servlet {
 			req.setAttribute("errors", errors);
 			req.setAttribute("flash", "No ha podido realizarse la compra");
 		}
+		Usuario usuarioActualizado = DAOFactory.getUsuarioDAO().find(user.getId());
+		req.getSession().setAttribute("usuario", usuarioActualizado);
 		RequestDispatcher dispatcher = getServletContext()
 				.getRequestDispatcher("/index.do");
 		dispatcher.forward(req, resp);
