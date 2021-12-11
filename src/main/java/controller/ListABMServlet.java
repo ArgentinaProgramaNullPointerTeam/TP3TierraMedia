@@ -42,7 +42,7 @@ public class ListABMServlet extends HttpServlet implements Servlet {
 		req.setAttribute("promociones", promos);
 		req.setAttribute("atracciones", atracciones);
 
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/altaBajaListMod.jsp");
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/admin.jsp");
 		dispatcher.forward(req, resp);
 
 	}
