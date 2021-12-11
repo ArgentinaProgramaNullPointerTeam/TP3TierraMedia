@@ -32,6 +32,15 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 
 			if (resultados.next()) {
 				user = toUsuario(resultados);
+				ItinerarioDAO itinerarioDAO = DAOFactory.getItinerarioDAO();
+				AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
+				PromocionDAO promocionDAO = DAOFactory.getPromocionDAO();
+
+				Itinerario itinerarios = itinerarioDAO.findById(user.getId(),
+						atraccionDAO.findAll(), promocionDAO.findAll(atraccionDAO.findAll()));
+				if(itinerarios != null) {
+					user.setItinerario(itinerarios);
+				}
 			}
 
 			return user;
@@ -54,7 +63,17 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 			Usuario usuario = NullUser.build();
 			if (resultados.next()) {
 				usuario = toUsuario(resultados);
+				ItinerarioDAO itinerarioDAO = DAOFactory.getItinerarioDAO();
+				AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
+				PromocionDAO promocionDAO = DAOFactory.getPromocionDAO();
+
+				Itinerario itinerarios = itinerarioDAO.findById(usuario.getId(),
+						atraccionDAO.findAll(), promocionDAO.findAll(atraccionDAO.findAll()));
+				if(itinerarios != null) {
+					usuario.setItinerario(itinerarios);
+				}
 			}
+			
 
 			return usuario;
 		} catch (Exception e) {
