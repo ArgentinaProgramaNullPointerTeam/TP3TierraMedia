@@ -60,7 +60,7 @@ public class EditPromocionServlet extends HttpServlet {
 			resp.sendRedirect("/turismo/attractions/index.do");
 		} else {
 			req.setAttribute("atraccion", promocion);
-
+			req.setAttribute("errores", promocion.getErrors());
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/attractions/edit.jsp");
 			dispatcher.forward(req, resp);
 		}

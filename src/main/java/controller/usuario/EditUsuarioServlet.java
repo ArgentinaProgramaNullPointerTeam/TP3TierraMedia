@@ -52,7 +52,7 @@ public class EditUsuarioServlet extends HttpServlet {
 			resp.sendRedirect("/turismo/attractions/index.do");
 		} else {
 			req.setAttribute("usuario", usuario);
-
+			req.setAttribute("errores", usuario.getErrores());
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/attractions/edit.jsp");
 			dispatcher.forward(req, resp);
 		}
