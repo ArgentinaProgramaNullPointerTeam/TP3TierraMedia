@@ -76,10 +76,10 @@
 				<c:choose>
 					<c:when
 						test="${ usuario.puedeComprar(productos) && productos.hayCupo() }">
-						<a href="buy.do?id=${ productos.getId() }" class="btn btn-success">Comprar</a>
+						<a href="buy.do?id=${ productos.getId() }&esPromo=${ productos.esPromocion() ? 1 : 0 }" class="btn btn-success">Comprar</a>
 					</c:when>
 					<c:otherwise>
-						<a href="buy.do?id=${ productos.getId() }" class="btn disabled">Comprar</a>
+						<a href="buy.do?id=${ productos.getId() }&esPromo=${ productos.esPromocion() ? 1 : 0 }" class="btn disabled">Comprar</a>
 					</c:otherwise>
 				</c:choose>
 			</div>

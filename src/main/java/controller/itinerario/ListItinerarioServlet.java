@@ -27,8 +27,8 @@ public class ListItinerarioServlet extends HttpServlet implements Servlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		Integer id = (Integer) (req.getSession().getAttribute("id"));
-		List<Itinerario> itinerario = itinerarioService.list(id);
-		if (itinerario != null && !itinerario.isEmpty()) {
+		Itinerario itinerario = itinerarioService.list(id);
+		if (itinerario != null) {
 			req.setAttribute("itinerario", itinerario);
 		} else {
 			req.setAttribute("flash", "No compraste nada aún");

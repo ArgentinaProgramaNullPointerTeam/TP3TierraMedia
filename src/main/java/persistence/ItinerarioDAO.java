@@ -8,6 +8,6 @@ import model.Promocion;
 import persistence.commons.GenericDAO;
 
 public interface ItinerarioDAO extends GenericDAO<Itinerario> {
-	public abstract HashMap<Integer, Itinerario> findById(int id, HashMap<Integer, Atraccion> atracciones,
+	public abstract Itinerario findById(int id, HashMap<Integer, Atraccion> atracciones,
 			HashMap<Integer, Promocion> promociones);	
 }

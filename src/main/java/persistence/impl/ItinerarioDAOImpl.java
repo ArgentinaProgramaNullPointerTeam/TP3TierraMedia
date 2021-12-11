@@ -17,13 +17,13 @@ import persistence.commons.ConnectionProvider;
 import persistence.commons.MissingDataException;
 
 public class ItinerarioDAOImpl implements ItinerarioDAO {
-	public HashMap<Integer, Itinerario> findById(int idUsuario, HashMap<Integer, Atraccion> atracciones,
+	public Itinerario findById(int idUsuario, HashMap<Integer, Atraccion> atracciones,
 			HashMap<Integer, Promocion> promociones) {
 		try {
 			String sqlItinerarios = "SELECT * FROM itinerario WHERE id_usuario = ?";
 			String sqlIdPromociones = "SELECT id_promocion FROM itinerario WHERE id_usuario = ? AND id_promocion IS NOT NULL";
 			String sqlIdAtracciones = "SELECT id_atraccion FROM itinerario WHERE id_usuario = ? AND id_atraccion IS NOT NULL";
-			HashMap<Integer, Itinerario> itinerario = new HashMap<Integer, Itinerario>();
+			Itinerario itinerario = null;
 			Connection conn = ConnectionProvider.getConnection();
 
 			PreparedStatement statementItinerario = conn.prepareStatement(sqlItinerarios);
@@ -41,8 +41,8 @@ public class ItinerarioDAOImpl implements ItinerarioDAO {
 				ResultSet resultIdPromociones = declarIdPromociones.executeQuery();
 				ResultSet resultIdAtracciones = declarIdAtracciones.executeQuery();
 
-				itinerario.put(idItinerario, (toItinerario(idItinerario, idUsuario, atracciones, promociones,
-						resultIdPromociones, resultIdAtracciones)));
+				itinerario = toItinerario(idItinerario, idUsuario, atracciones, promociones,
+						resultIdPromociones, resultIdAtracciones);
 			}
 			return itinerario;
 		} catch (Exception e) {

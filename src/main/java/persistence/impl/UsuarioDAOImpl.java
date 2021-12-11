@@ -82,10 +82,10 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 				AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
 				PromocionDAO promocionDAO = DAOFactory.getPromocionDAO();
 
-				HashMap<Integer, Itinerario> itinerarios = itinerarioDAO.findById(cadaUsuario.getKey(),
+				Itinerario itinerarios = itinerarioDAO.findById(cadaUsuario.getKey(),
 						atraccionDAO.findAll(), promocionDAO.findAll(atraccionDAO.findAll()));
-				for (Entry<Integer, Itinerario> cadaItinerario : itinerarios.entrySet()) {
-					usuario.setItinerario(cadaItinerario.getValue());
+				if(itinerarios != null) {
+					usuario.setItinerario(itinerarios);
 				}
 			}
 			return usuarios;

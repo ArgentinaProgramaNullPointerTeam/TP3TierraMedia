@@ -47,14 +47,11 @@ public class ItinerarioDAOTests {
 		Atraccion atraccion1 = new Atraccion(1, "Moria", 1, 1, 6, 1, true);
 		ArrayList<Producto> sugerenciasEsperadas = new ArrayList<Producto>();
 		sugerenciasEsperadas.add(atraccion1);
-		Itinerario itinerario = new Itinerario(1, 1, sugerenciasEsperadas);
-
-		HashMap<Integer, Itinerario> itinerariosEsperados = new HashMap<Integer, Itinerario>();
-		itinerariosEsperados.put(itinerario.getIdUsuario(), itinerario);
+		Itinerario itinerariosEsperados = new Itinerario(1, 1, sugerenciasEsperadas);
 
 		HashMap<Integer, Atraccion> atraccionesObtenidas = atraccionDAO.findAll();
 		HashMap<Integer, Promocion> promocionesObtenidas = promocionDAO.findAll(atraccionesObtenidas);
-		HashMap<Integer, Itinerario> itinerariosObtenidos = itinerarioDAO.findById(1, atraccionesObtenidas,
+		Itinerario itinerariosObtenidos = itinerarioDAO.findById(1, atraccionesObtenidas,
 				promocionesObtenidas);
 
 		assertEquals(itinerariosEsperados, itinerariosObtenidos);
@@ -81,18 +78,15 @@ public class ItinerarioDAOTests {
 		HashMap<Integer, Usuario> usuariosObtenidos = usuarioDAO.findAll();
 		HashMap<Integer, Atraccion> atraccionesObtenidas = atraccionDAO.findAll();
 		HashMap<Integer, Promocion> promocionesObtenidas = promocionDAO.findAll(atraccionesObtenidas);
-		HashMap<Integer, Itinerario> itinerariosObtenidos = itinerarioDAO.findById(1, atraccionesObtenidas,
+		Itinerario itinerariosObtenidos = itinerarioDAO.findById(1, atraccionesObtenidas,
 				promocionesObtenidas);
-		Itinerario itinerarioObtenido = itinerariosObtenidos.get(1);
 
 		Usuario usuarioObtenido = usuariosObtenidos.get(1);
-		usuarioObtenido.setItinerario(itinerarioObtenido);
+		usuarioObtenido.setItinerario(itinerariosObtenidos);
 		usuarioObtenido.comprar(atraccion2);
 
 		usuarioDAO.update(usuarioObtenido);
-		itinerarioDAO.insert(itinerarioObtenido);
-		itinerarioObtenido = itinerariosObtenidos.get(1);
-
-		assertEquals(itinerarioEsperado, itinerarioObtenido);
+		itinerarioDAO.insert(itinerariosObtenidos);
+		assertEquals(itinerarioEsperado, itinerariosObtenidos);
 	}
 }

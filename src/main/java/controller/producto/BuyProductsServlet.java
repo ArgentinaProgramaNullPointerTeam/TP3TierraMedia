@@ -14,7 +14,7 @@ import model.Usuario;
 import persistence.commons.DAOFactory;
 import services.producto.ProductoService;
 
-@WebServlet("/producto/buy.do")
+@WebServlet("/buy.do")
 public class BuyProductsServlet extends HttpServlet implements Servlet {
 	private static final long serialVersionUID = -7794584260712569635L;
 	ProductoService productService;
@@ -29,7 +29,7 @@ public class BuyProductsServlet extends HttpServlet implements Servlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		Integer id = Integer.parseInt(req.getParameter("id"));
 		Integer esPromo = Integer.parseInt(req.getParameter("esPromo"));
-		Usuario user = (Usuario) req.getSession().getAttribute("user");
+		Usuario user = (Usuario) req.getSession().getAttribute("usuario");
 		Map<String, String> errors = productService.buy(user.getId(), id, esPromo == 1);
 		
 		Usuario usuarioActualizado = DAOFactory.getUsuarioDAO().find(user.getId());
@@ -42,7 +42,7 @@ public class BuyProductsServlet extends HttpServlet implements Servlet {
 			req.setAttribute("flash", "No ha podido realizarse la compra");
 		}
 		RequestDispatcher dispatcher = getServletContext()
-				.getRequestDispatcher("/attractions/index.do");
+				.getRequestDispatcher("/index.do");
 		dispatcher.forward(req, resp);
 	}
 }
