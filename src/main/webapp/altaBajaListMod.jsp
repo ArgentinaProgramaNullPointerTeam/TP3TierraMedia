@@ -39,7 +39,6 @@
                 <div class="col-12">
                     <h1>Usuarios:</h1> 
                     <h4><button type="button" class="btn btn-success"><a href="formUsuarios.jsp">Agregar &#x2795;</button></a></h4>
-                    <a href="index.jsp" target="_blank">Tierra Media</a>
                     <div class="table-responsive">
                         <table class="table table-bordered" table style= "background-color:#FFE4C4">
                             <thead>
@@ -82,7 +81,6 @@
                 <div class="col-12">
                     <h1>Atracciones:</h1> 
                     <h4><button type="button" class="btn btn-success"><a href="formAtracciones.jsp">Agregar &#x2795;</button></a></h4>
-                    <a href="index.jsp" target="_blank">Tierra Media</a>
                     <div class="table-responsive">
                         <table class="table table-bordered" table style= "background-color:#FFE4C4">
                             <thead>
@@ -123,7 +121,6 @@
                 <div class="col-12">
                     <h1>Promociones:</h1> 
                     <h4><button type="button" class="btn btn-success"><a href="formPromociones.jsp">Agregar &#x2795;</button></a></h4>
-                    <a href="index.jsp" target="_blank">Tierra Media</a>
                     <div class="table-responsive">
                         <table class="table table-bordered" table style= "background-color:#FFE4C4">
                             <thead>

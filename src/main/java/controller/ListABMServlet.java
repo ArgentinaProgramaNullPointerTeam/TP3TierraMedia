@@ -18,7 +18,7 @@ import services.promocion.PromocionService;
 import services.usuario.UsuarioService;
 
 @WebServlet("/abm.adm")
-public class ListUsuarioServlet extends HttpServlet implements Servlet {
+public class ListABMServlet extends HttpServlet implements Servlet {
 	private static final long serialVersionUID = -3922567452066205289L;
 	private UsuarioService usuarioService;
 	private PromocionService promocionService;
