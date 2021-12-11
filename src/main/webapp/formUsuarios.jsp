@@ -20,7 +20,8 @@
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <title>Tierra Media</title>
 </head>
-
+<!-- Nav -->
+<jsp:include page="/partials/nav.jsp"></jsp:include>
 <body>
 
 	<main class="container">
@@ -37,54 +38,58 @@
 					<div class="well well-sm">
 						<form action="login" method="post">
 							<fieldset>
-								<legend class="text-right header">Completar los campos</legend>
+								<legend style="margin-top:40px" class="text-right header">Completar los campos de un nuevo Usuario:</legend>
 								<form action="create.adm" method="post">
 									<div class="mb-3">
 										<label for="name" class="col-form-label">Usuario:</label> <input
 											type="text" class="form-control" id="name" name="nombre"
-											required value="${usuario.setNombre()}">
+											required value="">
 									</div>
 									<div class="mb-3">
 										<label for="password"
-											class='col-form-label ${usuario.errors.get("password") != null ? "is-invalid" : "" }'>Contraseña:</label>
+											class='col-form-label ${usuarios.errors.get("password") != null ? "is-invalid" : "" }'>Contraseña:</label>
 										<input class="form-control" id="password" name="password"
-											required value="${usuario.setPassword()}"></input>
+											required value="${usuarios.setPassword()}"></input>
 										<div class="invalid-feedback">
-											<c:out value='${usuario.errors.get("password")}'></c:out>
+											<c:out value='${usuarios.errors.get("password")}'></c:out>
 										</div>
 									</div>
 									<div class="mb-3">
-										<label for="name" class="col-form-label">¿Qué le gusta?:</label> <input
-											type="text" class="form-control" id="queLeGusta" name="queLeGusta"
-											required value="${usuario.setAtraccionPreferida()}">
+										<label for="name" class="col-form-label">¿Qué le
+											gusta?:</label> <input type="text" class="form-control"
+											id="queLeGusta" name="queLeGusta" required
+											value="${usuarios.setAtraccionPreferida()}">
 									</div>
 									<div class="mb-3">
 										<label for="coins"
-											class='col-form-label ${usuario.errors.get("coins") != null ? "is-invalid" : "" }'>Monedas:</label>
+											class='col-form-label ${usuarios.errors.get("coins") != null ? "is-invalid" : "" }'>Monedas:</label>
 										<input class="form-control" type="number" id="coins"
-											name="coins" required value="${usuario.setDineroDisponible()}"></input>
+											name="coins" required
+											value="${usuarios.setDineroDisponible()}"></input>
 										<div class="invalid-feedback">
-											<c:out value='${tmp_user.errors.get("coins")}'></c:out>
+											<c:out value='${usuarios.errors.get("coins")}'></c:out>
 										</div>
 									</div>
 
 									<div class="mb-3">
 										<label for="time"
-											class='col-form-label ${usuario.errors.get("time") != null ? "is-invalid" : "" }'>Tiempo:</label>
+											class='col-form-label ${usuarios.errors.get("time") != null ? "is-invalid" : "" }'>Tiempo:</label>
 										<input class="form-control" type="number" id="time"
-											name="time" required value="${usuario.setTiempoDisponible()}"></input>
+											name="time" required value="${usuarios.setTiempoDisponible()}"></input>
 										<div class="invalid-feedback">
-											<c:out value='${usuario.errors.get("time")}'></c:out>
+											<c:out value='${usuarios.errors.get("time")}'></c:out>
 										</div>
 									</div>
 
-								
+
 
 									<div>
 										<button type="submit" class="btn btn-primary">Hecho</button>
 										<a onclick="window.history.back();" class="btn btn-secondary"
 											role="button">Cancelar</a>
 									</div>
+									<br>
+									<br>
 							</fieldset>
 						</form>
 						</form>
