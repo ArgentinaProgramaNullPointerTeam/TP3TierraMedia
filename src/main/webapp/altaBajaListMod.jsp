@@ -96,47 +96,18 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <c:forEach items="${atracciones}" var="atracciones">
                                 <tr>
-                                    <td>Atraccion1</td> 
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td><c:out value="${ atracciones.getNombre() }"></c:out></td>
+                                    <td><c:out value="${ atracciones.getCupo() }"></c:out></td>
+                                     <td><c:out value="${ atracciones.getTiempoDeVisita() }"></c:out> Hs </td>
+                                     <td><c:out value="${ atracciones.getCostoDeVisita() }"></c:out> Monedas </td>
+                                     <td><c:out value="${ atracciones.getTipoAtracciones() }"></c:out></td>
                                     <td><button type="button" class="btn btn-danger">Borrar &#10060;</button>&nbsp;&nbsp;
                                        <button type="button" class="btn btn-secondary">Editar &#9998;</button></td>
                                 </tr>
-                                </tr> 
-                                <tr>
-                                    <td>Atraccion2</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td><button type="button" class="btn btn-danger">Borrar &#10060;</button>&nbsp;&nbsp;
-                                       <button type="button" class="btn btn-secondary">Editar &#9998;</button></td>
-                                </tr>
-                                </tr>
-                                 <tr>
-                                    <td>Atraccion3</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td><button type="button" class="btn btn-danger">Borrar &#10060;</button>&nbsp;&nbsp;
-                                       <button type="button" class="btn btn-secondary">Editar &#9998;</button></td>
-                                </tr>
-                                </tr>
-                                 <tr>
-                                    <td>Atraccion4</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td><button type="button" class="btn btn-danger">Borrar &#10060;</button>&nbsp;&nbsp;
-                                       <button type="button" class="btn btn-secondary">Editar &#9998;</button></td>
-                                </tr>
-                                </tr>
-                            </tbody>
+                         	</c:forEach> 
+                         </tbody>
                         </table>
                     </div>
                 </div>
@@ -158,44 +129,26 @@
                             <thead>
                                 <tr>
                                     <th>Promocion</th>
+                                    <th>Tipo</th>
                                     <th>Que incluye</th>
-                                    <th>Costo<th>
+                                    <th>Costo</th>
+                                    <th>Tiempo</th>
+                                    <th>Cupo</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                <c:forEach items="${promociones}" var="promociones">
                                 <tr>
-                                    <td>Promocion1</td>
-                                    <td></td>
-                                    <td></td>
+                                    <td><c:out value="${ promociones.getNombre() }"></c:out></td>
+                                    <td><c:out value="${ promociones.getTipoDePromocion() }"></c:out></td>
+                                     <td><c:out value="${ promociones.getIncluye() }"></c:out></td>
+                                     <td><c:out value="${ promociones.getCostoDeVisita() }"></c:out> Monedas </td>
+                                     <td><c:out value="${ promociones.getTiempoDeVisita() }"></c:out> Hs </td>
+                                     <td><c:out value="${ promociones.getCupo() }"></c:out></td>
                                     <td><button type="button" class="btn btn-danger">Borrar &#10060;</button>&nbsp;&nbsp;
                                        <button type="button" class="btn btn-secondary">Editar &#9998;</button></td>
                                 </tr>
-                                </tr>
-                                <tr>
-                                    <td>Promocion2</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td><button type="button" class="btn btn-danger">Borrar &#10060;</button>&nbsp;&nbsp;
-                                       <button type="button" class="btn btn-secondary">Editar &#9998;</button></td>
-                                </tr>
-                                </tr>
-                                  <tr>
-                                    <td>Promocion3</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td><button type="button" class="btn btn-danger">Borrar &#10060;</button>&nbsp;&nbsp;
-                                       <button type="button" class="btn btn-secondary">Editar &#9998;</button></td>
-                                </tr>
-                                </tr>
-                                  <tr>
-                                    <td>Promocion4</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td><button type="button" class="btn btn-danger">Borrar &#10060;</button>&nbsp;&nbsp;
-                                       <button type="button" class="btn btn-secondary">Editar &#9998;</button></td>
-                                </tr>
-                                </tr>
-                                </tr>
+                         	</c:forEach> 
                             </tbody>
                         </table>
                     </div>

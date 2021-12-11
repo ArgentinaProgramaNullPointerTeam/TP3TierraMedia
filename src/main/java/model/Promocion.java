@@ -150,7 +150,15 @@ public abstract class Promocion extends Producto {
 				+ this.getTiempoDeVisita() + " horas";
 
 	}
-
+	
+	public String getIncluye() {
+		String ofertaAtracciones = "";
+		for (Atraccion cadaAtraccion : this.atracciones) {
+			ofertaAtracciones = ofertaAtracciones + " " + cadaAtraccion.getNombre() + ". ";
+		}
+		return ofertaAtracciones;
+		
+	}
 	public String getTipoDePromocion() {
 		return tipoDePromocion;
 	}
