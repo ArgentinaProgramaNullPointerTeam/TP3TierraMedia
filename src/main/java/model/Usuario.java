@@ -131,12 +131,12 @@ public class Usuario {
 	}
 
 	public boolean puedeComprar(Producto producto) {
-		// Verifica que el usuario tenga tiempo, dinero y no haya comprado el mismo
+		// Verifica que el usuario tenga tiempo y dinero y no haya comprado el mismo
 		// producto.
 		return (this.dineroDisponible >= producto.getCostoDeVisita())
 				&& (this.tiempoDisponible >= producto.getTiempoDeVisita()) && !itinerario.yaCompro(producto);
 	}
-
+	
 	@Override
 	public String toString() {
 		return "Nombre de usuario= " + nombre + ", Atraccion preferida= " + atraccionPreferida + ", Dinero disponible= "

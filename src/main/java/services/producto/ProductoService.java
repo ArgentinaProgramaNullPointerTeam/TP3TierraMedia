@@ -46,7 +46,7 @@ public class ProductoService {
 			Usuario usuario = DAOFactory.getUsuarioDAO().find(id);
 			Collections.sort(productos, new ComparadorDeProductos(usuario.getAtraccionPreferida()));
 			for (Producto cadaProducto : productos) {
-				if (usuario.puedeComprar(cadaProducto) && cadaProducto.hayCupo()) {
+				if (cadaProducto.hayCupo()) {
 					productosComprables.add(cadaProducto);
 				}
 			}
