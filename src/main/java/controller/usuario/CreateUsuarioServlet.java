@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import model.Usuario;
 import services.usuario.UsuarioService;
 
-@WebServlet("/usuario/create.adm")
+@WebServlet("/create.adm")
 public class CreateUsuarioServlet extends HttpServlet {
 	private static final long serialVersionUID = -5021110797245542845L;
 	private UsuarioService usuarioService;
@@ -40,11 +40,11 @@ public class CreateUsuarioServlet extends HttpServlet {
 		
 		Usuario usuario = usuarioService.create(nombre, password, atraccionPreferida, dineroDisponible, tiempoDisponible, isAdmin);
 		if (usuario.isValid()) {
-			resp.sendRedirect("/turismo/attractions/index.do");
+			resp.sendRedirect("/TP3TierraMedia/abm.adm");
 		} else {
 			req.setAttribute("usuario", usuario);
 
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/attractions/create.jsp");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/formUsuarios.jsp");
 			dispatcher.forward(req, resp);
 		}
 	}

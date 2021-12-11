@@ -36,14 +36,13 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="well well-sm">
-						<form action="login" method="post">
 							<fieldset>
 								<legend style="margin-top: 40px" class="text-right header">Completar
 									los campos de un nuevo Usuario:</legend>
 								<form action="create.adm" method="post">
 									<div class="mb-3">
 											<label for="admin-select">¿Es administrador?</label> <select
-											name="admin" id="admin">
+											name="isAdmin" id="isAdmin">
 											<option value="">--Elegir opción--</option>
 											<option value="1">Si</option>
 											<option value="2">No</option>
@@ -52,7 +51,7 @@
 								
 									<div class="mb-3">
 										<label for="name" class="col-form-label">Nombre de usuario:</label> <input
-											type="text" class="form-control" id="name" name="nombre"
+											type="text" class="form-control" id="nombre" name="nombre"
 											required value="">
 									</div>
 									<div class="mb-3">
@@ -66,7 +65,7 @@
 									</div>
 									<div class="mb-3">
 										<label for="atraccion-select">¿Qué le gusta?</label> <select
-											name="queLeGusta" id="queLeGUSTA">
+											name="atraccionPreferida" id="atraccionPreferida">
 											<option value="">--Elegir atracción--</option>
 											<option value="1">Aventura</option>
 											<option value="2">Paisaje</option>
@@ -76,8 +75,8 @@
 									<div class="mb-3">
 										<label for="coins"
 											class='col-form-label ${usuarios.errors.get("coins") != null ? "is-invalid" : "" }'>Monedas:</label>
-										<input class="form-control" type="number" id="coins"
-											name="coins" required
+										<input class="form-control" type="number" id="dineroDisponible"
+											name="dineroDisponible" required
 											value="${usuarios.setDineroDisponible()}"></input>
 										<div class="invalid-feedback">
 											<c:out value='${usuarios.errors.get("coins")}'></c:out>
@@ -87,8 +86,8 @@
 									<div class="mb-3">
 										<label for="time"
 											class='col-form-label ${usuarios.errors.get("time") != null ? "is-invalid" : "" }'>Tiempo:</label>
-										<input class="form-control" type="number" id="time"
-											name="time" required
+										<input class="form-control" type="number" id="tiempoDisponible"
+											name="tiempoDisponible" required
 											value="${usuarios.setTiempoDisponible()}"></input>
 										<div class="invalid-feedback">
 											<c:out value='${usuarios.errors.get("time")}'></c:out>
@@ -103,9 +102,8 @@
 											role="button">Cancelar</a>
 									</div>
 									<br> <br>
+									</form>
 							</fieldset>
-						</form>
-						</form>
 					</div>
 				</div>
 			</div>
