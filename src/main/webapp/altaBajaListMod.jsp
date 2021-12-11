@@ -61,7 +61,6 @@
                                      <td><c:choose><c:when test="${usuarios.isAdmin()}">Si</c:when>    
                                      <c:otherwise>No</c:otherwise>
                                      </c:choose></td>
-                                    <td></td>
                                     <td><button type="button" class="btn btn-danger">Borrar &#10060;</button>&nbsp;&nbsp;
                                        <button type="button" class="btn btn-secondary">Editar &#9998;</button></td>
                                 </tr>

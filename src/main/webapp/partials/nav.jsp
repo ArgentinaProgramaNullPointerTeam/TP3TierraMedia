@@ -19,12 +19,13 @@
 			<div class="navbar-nav">
 				<a class="nav-link" style="margin-left: 5px" aria-current="page"
 					href="index.jsp">Inicio</a> <a class="nav-link"
-					href="itinerario.jsp">Itinerario Comprado</a> <a class="nav-link"
-					href="nosotros.jsp">Sobre nosotros</a>
+					href="itinerario.jsp">Itinerario</a> 
 					<c:if test="${ usuario.isAdmin() }">
 			<a class="nav-link"
 					href="abm.adm">ABM</a>
 		</c:if>
+		<a class="nav-link"
+					href="nosotros.jsp">Sobre nosotros</a>
 			</div>
 
 			<ul class="navbar-nav">
