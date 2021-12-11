@@ -48,43 +48,25 @@
                                     <th>Le gusta</th>
                                     <th>Tiempo disponible</th>
                                     <th>Monedas</th>
+                                    <th>Es admin</th>
                                    
                                 </tr>
                             </thead>
                             <tbody>
+                            <c:forEach items="${usuarios}" var="usuarios">
                                 <tr>
-                                    <td>Usuario1</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td><button type="button" class="btn btn-danger">Borrar &#10060;</button>&nbsp;&nbsp;
-                                       <button type="button" class="btn btn-secondary">Editar &#9998;</button></td>
-                                </tr>
-                                <tr>
-                                    <td>Usuario2</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                  <td><button type="button" class="btn btn-danger">Borrar &#10060;</button>&nbsp;&nbsp;
-                                       <button type="button" class="btn btn-secondary">Editar &#9998;</button></td>
-                                </tr>
-                                 <tr>
-                                    <td>Usuario3</td>
-                                    <td></td>
-                                    <td></td>
+                                    <td><c:out value="${ usuarios.getNombre() }"></c:out></td>
+                                    <td><c:out value="${ usuarios.getAtraccionPreferida() }"></c:out></td>
+                                     <td><c:out value="${ usuarios.getTiempoDisponible() }"></c:out></td>
+                                     <td><c:out value="${ usuarios.getDineroDisponible() }"></c:out></td>
+                                     <td><c:choose><c:when test="${usuarios.isAdmin()}">Si</c:when>    
+                                     <c:otherwise>No</c:otherwise>
+                                     </c:choose></td>
                                     <td></td>
                                     <td><button type="button" class="btn btn-danger">Borrar &#10060;</button>&nbsp;&nbsp;
                                        <button type="button" class="btn btn-secondary">Editar &#9998;</button></td>
                                 </tr>
-                                 <tr>
-                                    <td>Usuario4</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td><button type="button" class="btn btn-danger">Borrar &#10060;</button>&nbsp;&nbsp;
-                                       <button type="button" class="btn btn-secondary">Editar &#9998;</button></td>
-                                </tr>
-                               
+                         	</c:forEach>                               
                             </tbody>
                         </table>
                     </div>
