@@ -121,7 +121,12 @@ public class Atraccion extends Producto {
 		return "Atracción disponible para adquirir: " + this.nombre + "\n" + "Costo total: " + this.getCostoDeVisita()
 				+ " monedas." + "\n" + "Tiempo total: " + this.getTiempoDeVisita() + " horas";
 	}
-
+	
+	@Override
+	public String getIncluye() {
+		return this.nombre;
+	}
+	
 	@Override
 	public boolean esOContiene(Producto otro) {
 		return this.equals(otro);

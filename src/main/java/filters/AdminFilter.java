@@ -12,7 +12,7 @@ import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.HttpServletRequest;
 import model.Usuario;
 
-@WebFilter(urlPatterns = "*.admin")
+@WebFilter(urlPatterns = "*.adm")
 public class AdminFilter implements Filter {
 
 	@Override

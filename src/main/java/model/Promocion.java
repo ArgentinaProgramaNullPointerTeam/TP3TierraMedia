@@ -151,6 +151,7 @@ public abstract class Promocion extends Producto {
 
 	}
 	
+	@Override
 	public String getIncluye() {
 		String ofertaAtracciones = "";
 		for (Atraccion cadaAtraccion : this.atracciones) {

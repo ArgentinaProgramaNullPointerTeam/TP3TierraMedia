@@ -31,7 +31,10 @@ public abstract class Producto {
 
 	// Devuelve String concatenado
 	public abstract String ofertas();
-
+	
+	// Devuelve String concatenado
+	public abstract String getIncluye();
+	
 	// Retorna los cupos
 	public abstract int getCupo();
 

@@ -19,7 +19,7 @@
 			<div class="navbar-nav">
 				<a class="nav-link" style="margin-left: 5px" aria-current="page"
 					href="index.do">Inicio</a> <a class="nav-link"
-					href="itinerario.jsp">Itinerario</a> 
+					href="itinerario.do">Itinerario</a> 
 					<c:if test="${ usuario.isAdmin() }">
 			<a class="nav-link"
 					href="abm.adm">ABM</a>

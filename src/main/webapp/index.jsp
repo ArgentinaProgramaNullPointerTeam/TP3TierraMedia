@@ -38,7 +38,8 @@
 			<div class="bg-light p-4 rounded">
 				<h1 style="margin-top: 5%">
 					¡Hola,
-					<c:out value="${usuario.getNombre()}" />! estás en Turismo en la Tierra Media
+					<c:out value="${usuario.getNombre()}" />
+					! estás en Turismo en la Tierra Media
 				</h1>
 			</div>
 		</main>
@@ -46,51 +47,45 @@
 		<nav>
 			<div class="container-fluid">
 		</nav>
-		
+
 
 	</header>
-	
-<!-- Cards -->
 
-<div class="wrapper">
+	<!-- Cards -->
 
-<c:forEach items="${productos}" var="productos">
-		
-				<div class="card" style="width: 18rem;">
-						<h5 class="card-title">${productos.getNombre()}</h5>
-						
-						 <img class="card-img-top" src="assets/img/fondo.jpg" alt="Card image cap">
-						<ul class="list-group list-group-flush">
-							<li class="list-group-item">Cupos: ${productos.getCupo()}</li>
-							<li class="list-group-item">Tiempo:
-								${productos.getTiempoDeVisita()} Hs</li>
-							<li class="list-group-item">Costo:
-								${productos.getCostoDeVisita()} monedas</li>
-							<li class="list-group-item">Tipo:
-								${productos.getTipoAtracciones()}</li>
-						</ul>
-	
-						<c:choose>
-							<c:when
-								test="${ usuario.puedeComprar(productos) && productos.hayCupo() }">
-								<a href="buy.do?id=${ product.getId() }" class="btn btn-success">Comprar</a></div>
-							</c:when>
-								
-							<c:otherwise>
-								<span>No disponible</span>
-							</c:otherwise>
-							
-						</c:choose>
-						</c:forEach>
-						
-					</div>
-					</div>
-					
-			
-				
-	
+	<div class="wrapper">
 
+		<c:forEach items="${productos}" var="productos">
 
+			<div class="card" style="width: 18rem;">
+				<h5 class="card-title">${productos.getNombre()}</h5>
+
+				<img class="card-img-top" src="assets/img/fondo.jpg"
+					alt="Card image cap">
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item">Cupos: ${productos.getCupo()}</li>
+					<li class="list-group-item">Tiempo:
+						${productos.getTiempoDeVisita()} Hs</li>
+					<li class="list-group-item">Costo:
+						${productos.getCostoDeVisita()} monedas</li>
+					<li class="list-group-item">Incluye: ${productos.getIncluye()}</li>
+					<li class="list-group-item">Tipo:
+						${productos.getTipoAtracciones()}</li>
+				</ul>
+
+				<c:choose>
+					<c:when
+						test="${ usuario.puedeComprar(productos) && productos.hayCupo() }">
+						<a href="buy.do?id=${ productos.getId() }" class="btn btn-success">Comprar</a>
+					</c:when>
+					<c:otherwise>
+						<a href="buy.do?id=${ productos.getId() }" class="btn disabled">Comprar</a>
+					</c:otherwise>
+				</c:choose>
+			</div>
+		</c:forEach>
+
+	</div>
 
 
 	<footer> </footer>
