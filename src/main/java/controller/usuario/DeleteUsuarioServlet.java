@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import services.usuario.UsuarioService;
 
-@WebServlet("/usuario/delete.adm")
+@WebServlet("/delete.adm")
 public class DeleteUsuarioServlet extends HttpServlet {
 	private static final long serialVersionUID = -3813984032345940903L;
 	private UsuarioService usuarioService;
@@ -26,6 +26,6 @@ public class DeleteUsuarioServlet extends HttpServlet {
 
 		usuarioService.delete(id);
 
-		resp.sendRedirect("/turismo/attractions/index.do");
+		resp.sendRedirect("/TP3TierraMedia/abm.adm");
 	}
 }

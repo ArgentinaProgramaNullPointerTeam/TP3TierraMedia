@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import model.Usuario;
 import services.usuario.UsuarioService;
 
-@WebServlet("/usuario/edit.adm")
+@WebServlet("/edit.adm")
 public class EditUsuarioServlet extends HttpServlet {
 	private static final long serialVersionUID = -4574907080780188953L;
 	private UsuarioService usuarioService;
@@ -29,7 +29,7 @@ public class EditUsuarioServlet extends HttpServlet {
 		Usuario usuario = usuarioService.find(id);
 		req.setAttribute("usuario", usuario);
 
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/attractions/edit.jsp");
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/formUsuarios.jsp");
 		dispatcher.forward(req, resp);
 	}
 
@@ -49,11 +49,11 @@ public class EditUsuarioServlet extends HttpServlet {
 		Usuario usuario = usuarioService.update(id, nombre, password, atraccionPreferida, dineroDisponible, tiempoDisponible, isAdmin, status);
 	
 		if (usuario.isValid()) {
-			resp.sendRedirect("/turismo/attractions/index.do");
+			resp.sendRedirect("/TP3TierraMedia/abm.adm");
 		} else {
 			req.setAttribute("usuario", usuario);
 			req.setAttribute("errores", usuario.getErrores());
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/attractions/edit.jsp");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/formUsuarios.jsp");
 			dispatcher.forward(req, resp);
 		}
 	}
