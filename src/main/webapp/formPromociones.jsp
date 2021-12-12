@@ -42,6 +42,16 @@
 		}
 	}
 </script>
+<script type="text/javascript">
+function verificarDesc(tipo) {
+	   let campo = document.getElementById('descuento');
+	   if (tipo == 'Porcentual'){
+	   if( parseFloat(campo.value) > 100) { 
+	          campo.value= 100;
+	     }
+	   }
+}
+</script>
 <title>Tierra Media</title>
 </head>
 <!-- Nav -->
@@ -94,7 +104,7 @@
 								<span class="col-md-1 col-md-offset-2 text-center"><i
 									class="fa fa-user bigicon"></i></span>
 								<div class="col-md-8">
-									<input id="descuento" name="descuento" type="number"
+									<input id="descuento" onchange="verificarDesc(document.getElementById('tipo').value);" name="descuento" type="number"
 										placeholder="Descuento" class="form-control"
 										style="display: none;">
 								</div>
