@@ -44,9 +44,8 @@ public class EditUsuarioServlet extends HttpServlet {
 		Integer dineroDisponible = Integer.parseInt(req.getParameter("dineroDisponible"));
 		Double tiempoDisponible = Double.parseDouble(req.getParameter("tiempoDisponible"));
 		Integer isAdmin = Integer.parseInt(req.getParameter("isAdmin"));
-		Integer status = Integer.parseInt(req.getParameter("status"));
 
-		Usuario usuario = usuarioService.update(id, nombre, password, atraccionPreferida, dineroDisponible, tiempoDisponible, isAdmin, status);
+		Usuario usuario = usuarioService.update(id, nombre, password, atraccionPreferida, dineroDisponible, tiempoDisponible, isAdmin, 1);
 	
 		if (usuario.isValid()) {
 			resp.sendRedirect("/TP3TierraMedia/abm.adm");

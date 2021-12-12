@@ -56,8 +56,8 @@
                                 <tr>
                                     <td><c:out value="${ usuarios.getNombre() }"></c:out></td>
                                     <td><c:out value="${ usuarios.getAtraccionPreferida() }"></c:out></td>
-                                     <td><c:out value="${ usuarios.getTiempoDisponible() }"></c:out></td>
-                                     <td><c:out value="${ usuarios.getDineroDisponible() }"></c:out></td>
+                                     <td><c:out value="${ usuarios.getTiempoDisponible() }"></c:out> Hs</td>
+                                     <td><c:out value="${ usuarios.getDineroDisponible() }"></c:out> Monedas </td>
                                      <td><c:choose><c:when test="${usuarios.isAdmin()}">Si</c:when>    
                                      <c:otherwise>No</c:otherwise>
                                      </c:choose></td>

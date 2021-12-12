@@ -46,6 +46,7 @@ function seleccionado(valueToSelect, id) {
 							<legend style="margin-top: 40px" class="text-right header">Completar
 								los campos de un nuevo Usuario:</legend>
 							<form action="editarUsuario.adm" method="post">
+							<input type="hidden" name="id" value="${ usuario.getId() }">
 								<div class="mb-3">
 									<label for="admin-select">¿Es administrador?</label> <select
 										name="isAdmin" id="isAdmin"
