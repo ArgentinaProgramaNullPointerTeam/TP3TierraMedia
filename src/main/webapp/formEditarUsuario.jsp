@@ -39,10 +39,10 @@
 							<fieldset>
 								<legend style="margin-top: 40px" class="text-right header">Completar
 									los campos de un nuevo Usuario:</legend>
-								<form action="create.adm" method="post">
+								<form action="editarUsuario.adm" method="post">
 									<div class="mb-3">
 											<label for="admin-select">¿Es administrador?</label> <select
-											name="isAdmin" id="isAdmin" required="required">
+											name="isAdmin" id="isAdmin" selected="${usuario.isAdmin() ? 1 : 0}">
 											<option value="">--Elegir opción--</option>
 											<option value="1">Si</option>
 											<option value="2">No</option>
@@ -51,20 +51,22 @@
 								
 									<div class="mb-3">
 										<label for="name" class="col-form-label">Nombre de usuario:</label> <input
-											type="text" class="form-control" id="nombre" name="nombre" required="required">
+											type="text" class="form-control" id="nombre" name="nombre"
+											required value="${usuario.getNombre()}">
 									</div>
 									
 									<div class="mb-3">
 										<label for="password"
 											class='col-form-label ${usuarios.errores.get("password") != null ? "is-invalid" : "" }'>Contraseña:</label>
-										<input class="form-control" id="password" name="password" required="required"></input>
+										<input class="form-control" id="password" name="password"
+											required value="${usuario.getPassword()}"></input>
 										<div class="invalid-feedback">
 											<c:out value='${usuarios.errores.get("password")}'></c:out>
 										</div>
 									</div>
 									<div class="mb-3">
 										<label for="atraccion-select">¿Qué le gusta?</label> <select
-											name="atraccionPreferida" id="atraccionPreferida" required="required">
+											name="atraccionPreferida" id="atraccionPreferida">
 											<option value="">--Elegir atracción--</option>
 											<option value="1">Aventura</option>
 											<option value="2">Paisaje</option>
@@ -75,7 +77,8 @@
 										<label for="coins"
 											class='col-form-label ${usuarios.errores.get("dineroDisponible") != null ? "is-invalid" : "" }'>Monedas:</label>
 										<input class="form-control" type="number" id="dineroDisponible"
-											name="dineroDisponible" required="required"></input>
+											name="dineroDisponible" required
+											value="${usuario.getDineroDisponible()}"></input>
 										<div class="invalid-feedback">
 											<c:out value='${usuarios.errores.get("dineroDisponible")}'></c:out>
 										</div>
@@ -85,7 +88,8 @@
 										<label for="time"
 											class='col-form-label ${usuarios.errores.get("tiempoDisponible") != null ? "is-invalid" : "" }'>Tiempo:</label>
 										<input class="form-control" type="number" id="tiempoDisponible"
-											name="tiempoDisponible" required="required"></input>
+											name="tiempoDisponible" required
+											value="${usuario.getTiempoDisponible()}"></input>
 										<div class="invalid-feedback">
 											<c:out value='${usuarios.errores.get("tiempoDisponible")}'></c:out>
 										</div>

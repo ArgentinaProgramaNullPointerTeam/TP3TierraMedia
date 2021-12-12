@@ -62,7 +62,7 @@
                                      <c:otherwise>No</c:otherwise>
                                      </c:choose></td>
                                     <td><button type="button" class="btn btn-danger" onclick ="document.location.href='delete.adm?id=${ usuarios.getId() }'">Borrar &#10060;</button>&nbsp;&nbsp;
-                                       <button type="button" class="btn btn-secondary"  onclick ="document.location.href='edit.adm?id=${ usuarios.getId() }'">Editar &#9998;</button></td>
+                                       <button type="button" class="btn btn-secondary"  onclick ="document.location.href='editarUsuario.adm?id=${ usuarios.getId() }'">Editar &#9998;</button></td>
                                 </tr>
                          	</c:forEach>                               
                             </tbody>
