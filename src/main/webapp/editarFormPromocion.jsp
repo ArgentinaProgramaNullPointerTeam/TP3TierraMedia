@@ -171,7 +171,7 @@ function seleccionado(valueToSelect, id) {
 
 							<div class="form-group">
 								<div class="col-md-8 text-right">
-									<button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+									<button type="submit" class="btn btn-primary btn-lg">Hecho</button>
 									<a onclick="window.history.back();" class="btn btn-secondary"
 										role="button">Cancelar</a>
 								</div>
