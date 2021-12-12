@@ -141,7 +141,7 @@
                                      <td><c:out value="${ promociones.getCostoDeVisita() }"></c:out> Monedas </td>
                                      <td><c:out value="${ promociones.getTiempoDeVisita() }"></c:out> Hs </td>
                                      <td><c:out value="${ promociones.getCupo() }"></c:out></td>
-                                    <td><button type="button" class="btn btn-danger">Borrar &#10060;</button>&nbsp;&nbsp;
+                                    <td><button type="button" class="btn btn-danger" onclick ="document.location.href='deletePromo.adm?id=${ promociones.getId() }'">Borrar &#10060;</button>&nbsp;&nbsp;
                                        <button type="button" class="btn btn-secondary">Editar &#9998;</button></td>
                                 </tr>
                          	</c:forEach> 
