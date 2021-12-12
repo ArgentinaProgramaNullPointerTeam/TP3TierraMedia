@@ -19,6 +19,12 @@
 	src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <title>Tierra Media</title>
+<script type="text/javascript">
+function seleccionado(valueToSelect, id) {   
+    let element = document.getElementById(id);
+    element.value = valueToSelect;
+}
+</script>
 </head>
 <!-- Nav -->
 <jsp:include page="/partials/nav.jsp"></jsp:include>
@@ -34,7 +40,7 @@
 								<legend style="margin-top: 40px" class="text-right header">Completar
 									los campos de una Atracción:</legend>
 								<form action="editAtraccion.adm" method="post">
-
+							<input type="hidden" name="id" value="${ atraccion.getId() }">
 									<div class="mb-3">
 										<label for="name" class="col-form-label">Nombre de la
 											atracción:</label> <input type="text" class="form-control" id="nombre"
@@ -52,7 +58,7 @@
 										<label for="duracion"
 											class='col-form-label ${atraccion.errors.get("time") != null ? "is-invalid" : "" }'>Tiempo:</label>
 										<input class="form-control" type="number" id="duracion"
-											name="duracion" required value="${atraccion.setTiempoDeVisita()}"></input>
+											name="duracion" required value="${atraccion.getTiempoDeVisita()}"></input>
 										<div class="invalid-feedback">
 											<c:out value='${atraccion.errors.get("time")}'></c:out>
 										</div>
@@ -62,7 +68,7 @@
 										<label for="costo"
 											class='col-form-label ${atraccion.errors.get("costo") != null ? "is-invalid" : "" }'>Costo:</label>
 										<input class="form-control" type="number" id="costo"
-											name="costo" required value="${atraccion.setCostoDeVisita()}"></input>
+											name="costo" required value="${atraccion.getCostoDeVisita()}"></input>
 										<div class="invalid-feedback">
 											<c:out value='${atraccion.errors.get("costo")}'></c:out>
 										</div>
@@ -76,7 +82,7 @@
 											<option value="2">Paisaje</option>
 											<option value="3">Degustación</option>
 										</select>
-										<script type="text/javascript"> seleccionado(${atraccion.getTipoAtraccion()}, 'tipoAtraccion');</script>
+										<script type="text/javascript"> seleccionado(${atraccion.getTipoAtracciones() }, 'tipoAtraccion');</script>
 									</div>
 
 									<div>

@@ -29,7 +29,7 @@ public class EditAtraccionServlet extends HttpServlet {
 		Atraccion atraccion = atraccionService.find(id);
 		req.setAttribute("atraccion", atraccion);
 
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/EditarFormAtraccion.jsp");
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/editarFormAtraccion.jsp");
 		dispatcher.forward(req, resp);
 	}
 
@@ -51,7 +51,7 @@ public class EditAtraccionServlet extends HttpServlet {
 		} else {
 			req.setAttribute("atraccion", atraccion);
 			req.setAttribute("errores", atraccion.getErrors());
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/EditarFormAtraccion.jsp");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/editarFormAtraccion.jsp");
 			dispatcher.forward(req, resp);
 		}
 	}
