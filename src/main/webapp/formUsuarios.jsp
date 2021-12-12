@@ -52,8 +52,9 @@
 									<div class="mb-3">
 										<label for="name" class="col-form-label">Nombre de usuario:</label> <input
 											type="text" class="form-control" id="nombre" name="nombre"
-											required value="">
+											required value="${usuarios.getNombre}">
 									</div>
+									
 									<div class="mb-3">
 										<label for="password"
 											class='col-form-label ${usuarios.errors.get("password") != null ? "is-invalid" : "" }'>Contraseña:</label>
