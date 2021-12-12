@@ -119,7 +119,7 @@
             <div class="row">
                 <div class="col-12">
                     <h1>Promociones:</h1> 
-                    <h4><button type="button" class="btn btn-success"><a href="formPromociones.jsp">Agregar &#x2795;</button></a></h4>
+                    <h4><button type="button" class="btn btn-success"><a href="createPromo.adm">Agregar &#x2795;</button></a></h4>
                     <div class="table-responsive">
                         <table class="table table-bordered" table style= "background-color:#FFE4C4">
                             <thead>

@@ -41,99 +41,104 @@
 <jsp:include page="/partials/nav.jsp"></jsp:include>
 
 <body>
-
-	<form action="list" method="post">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="well well-sm">
-						<form class="form-horizontal" method="post">
-							<fieldset>
-								<legend class="text-right header">Completar los campos</legend>
-
-								<div class="form-group">
-									<span class="col-md-1 col-md-offset-2 text-center"><i
-										class="fa fa-user bigicon"></i></span>
-									<div class="col-md-8">
-										<input id="nombrePromocion" name="nombrePromocion" type="text"
-											placeholder="Nombre de la promoción" class="form-control">
-									</div>
+	<c:if test="${promociones != null && !promociones.isValid()}">
+		<div class="alert alert-danger">
+			<p>Se encontraron errores al crear el usuario.</p>
+		</div>
+	</c:if>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="well well-sm">
+					<fieldset>
+						<legend style="margin-top: 40px" class="text-right header">Completar
+							los campos de una nueva promo:</legend>
+						<form action="createPromo.adm" method="post">
+							<div class="form-group">
+								<span class="col-md-1 col-md-offset-2 text-center"><i
+									class="fa fa-user bigicon"></i></span>
+								<div class="col-md-8">
+									<input id="nombre" name="nombre" type="text"
+										placeholder="Nombre de la promoción" required="required"
+										class="form-control">
 								</div>
-								<div class="mb-3">
+							</div>
+							<div class="mb-3">
 
-									<label for="atraccion-select">Tipo de promoción</label> <select
-										name="tipoAtraccion" id="tipoAtraccion"
-										onclick="esconder(document.getElementById('tipoAtraccion').value)">
-										<option value="">--Elegir tipo--</option>
-										<option value="Porcentual">Porcentual</option>
-										<option value="Absoluta">Absoluta</option>
-										<option value="AXB">AXB</option>
-									</select>
+								<label for="atraccion-select">Tipo de promoción</label> <select
+									name="tipo" id="tipo" required="required"
+									onclick="esconder(document.getElementById('tipo').value)">
+									<option value="">--Elegir tipo--</option>
+									<option value="Porcentual">Porcentual</option>
+									<option value="Absoluta">Absoluta</option>
+									<option value="AXB">AXB</option>
+								</select>
+							</div>
+							<div class="mb-3" id="combo" style="display: none;">
+
+								<label for="atraccion-select">Gratuita</label> <select
+									name="atraccion3" id="atraccion3">
+									<option value="">--Elegir atracción--</option>
+									<c:forEach items="${atracciones}" var="atracciones">
+										<option value="${atracciones.getId()}">${atracciones.getNombre()}</option>
+									</c:forEach>
+								</select>
+							</div>
+							<div class="form-group">
+								<span class="col-md-1 col-md-offset-2 text-center"><i
+									class="fa fa-user bigicon"></i></span>
+								<div class="col-md-8">
+									<input id="descuento" name="descuento" type="number"
+										placeholder="Descuento" class="form-control"
+										style="display: none;">
 								</div>
-								<div class="mb-3" id="combo" style="display: none;">
+							</div>
+							<div class="mb-3">
 
-									<label for="atraccion-select">Tipo de promoción</label> <select
-										name="gratuita" id="gratuita">
-										<option value="">--Elegir tipo--</option>
-										<option value="Porcentual">Porcentual</option>
-										<option value="Absoluta">Absoluta</option>
-										<option value="AXB">AXB</option>
-									</select>
+								<label for="atraccion-select">¿Qué le gusta?</label> <select
+									name="tipoAtraccion" id="tipoAtraccion" required="required">
+									<option value="">--Elegir tipo--</option>
+									<option value="1">Aventura</option>
+									<option value="2">Paisaje</option>
+									<option value="3">Degustación</option>
+								</select>
+							</div>
+
+							<div class="mb-3">
+
+								<label for="atraccion-select">Atraccion 1</label> <select
+									name="atraccion1" id="atraccion1" required="required">
+									<option value="">--Elegir atracción--</option>
+									<c:forEach items="${atracciones}" var="atracciones">
+										<option value="${atracciones.getId()}">${atracciones.getNombre()}</option>
+									</c:forEach>
+								</select>
+							</div>
+
+							<div class="mb-3">
+
+								<label for="atraccion-select">Atraccion 2</label> <select
+									name="atraccion2" id="atraccion2" required="required">
+									<option value="">--Elegir atracción--</option>
+									<c:forEach items="${atracciones}" var="atracciones">
+										<option value="${atracciones.getId()}">${atracciones.getNombre()}</option>
+									</c:forEach>
+								</select>
+							</div>
+
+
+							<div class="form-group">
+								<div class="col-md-8 text-right">
+									<button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+									<a onclick="window.history.back();" class="btn btn-secondary"
+										role="button">Cancelar</a>
 								</div>
-								<div class="form-group">
-									<span class="col-md-1 col-md-offset-2 text-center"><i
-										class="fa fa-user bigicon"></i></span>
-									<div class="col-md-8">
-										<input id="descuento" name="descuento" type="number"
-											placeholder="Descuento" class="form-control"
-											style="display: none;">
-									</div>
-								</div>
-								<div class="mb-3">
-
-									<label for="atraccion-select">¿Qué le gusta?</label> <select
-										name="atraccionPreferida" id="atraccionPreferida">
-										<option value="">--Elegir atracción--</option>
-										<option value="1">Aventura</option>
-										<option value="2">Paisaje</option>
-										<option value="3">Degustación</option>
-									</select>
-								</div>
-
-								<div class="mb-3">
-
-									<label for="atraccion-select">Atraccion 2</label> <select
-										name="atraccionPreferida" id="atraccionPreferida">
-										<option value="">--Elegir atracción--</option>
-										<option value="1">Aventura</option>
-										<option value="2">Paisaje</option>
-										<option value="3">Degustación</option>
-									</select>
-								</div>
-								
-								<div class="mb-3">
-
-									<label for="atraccion-select">Atraccion 2</label> <select
-										name="atraccionPreferida" id="atraccionPreferida">
-										<option value="">--Elegir atracción--</option>
-										<option value="1">Aventura</option>
-										<option value="2">Paisaje</option>
-										<option value="3">Degustación</option>
-									</select>
-								</div>
-
-
-								<div class="form-group">
-									<div class="col-md-8 text-right">
-										<button type="submit" class="btn btn-primary btn-lg">Enviar</button>
-									</div>
-								</div>
-							</fieldset>
+							</div>
 						</form>
-					</div>
+					</fieldset>
 				</div>
 			</div>
 		</div>
-	</form>
+	</div>
 </body>
 </html>
