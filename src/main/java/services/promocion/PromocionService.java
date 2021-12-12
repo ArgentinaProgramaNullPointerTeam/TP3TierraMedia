@@ -36,7 +36,7 @@ public class PromocionService {
 		} else if (tipo.equals("Porcentual")) {
 			atracciones.add(atraccionDAO.find(atraccion1));
 			atracciones.add(atraccionDAO.find(atraccion2));
-			promocion = new PromocionPorcentual(nombre, tipoAtraccion, cantAtracciones, atracciones, tipo, descuentoP);
+			promocion = new PromocionPorcentual(nombre, tipoAtraccion, cantAtracciones, atracciones, tipo, descuentoP > 0 ? descuentoP/100 : 0);
 		} else if (tipo.equals("AXB")) {
 			atracciones.add(atraccionDAO.find(atraccion1));
 			atracciones.add(atraccionDAO.find(atraccion2));
@@ -72,15 +72,15 @@ public class PromocionService {
 		atraccionesEnPromo.add(atraccionDAO.find(atraccion1));
 		atraccionesEnPromo.add(atraccionDAO.find(atraccion2));
 		if (tipo.equals("AXB")) {
-			PromocionAXB nuevaPromo = (PromocionAXB) promocion;
-			nuevaPromo.setIdAtraccionGratuita(atraccion3);
+			PromocionAXB nuevaPromo1 = (PromocionAXB) promocion;
+			nuevaPromo1.setIdAtraccionGratuita(atraccion3);
 			atraccionesEnPromo.add(atraccionDAO.find(atraccion3));
 		} else if (tipo.equals("Absoluta")) {
-			PromocionAbsoluta nuevaPromo = (PromocionAbsoluta) promocion;
-			nuevaPromo.setDescuento(descuentoA);
+			PromocionAbsoluta nuevaPromo2 = (PromocionAbsoluta) promocion;
+			nuevaPromo2.setDescuento(descuentoA);
 		} else if (tipo.equals("Porcentual")) {
-			PromocionPorcentual nuevaPromo = (PromocionPorcentual) promocion;
-			nuevaPromo.setDescuento(descuentoP);
+			PromocionPorcentual nuevaPromo3 = (PromocionPorcentual) promocion;
+			nuevaPromo3.setDescuento(descuentoP);
 		}
 		promocion.setAtracciones(atraccionesEnPromo);
 		promocion.setTipoAtracciones(tipoAtraccion);
