@@ -48,6 +48,30 @@ function seleccionado(valueToSelect, id) {
     element.value = valueToSelect;
 }
 </script>
+<script type="text/javascript">
+	function mostrar(tipo) {
+		let select = document.getElementById('combo');
+		let campo = document.getElementById('descuento');
+		let seleccion = document.getElementById('atraccion3');
+		if (tipo == 'AXB') {
+			select.style.display = "block";
+			campo.style.display = "none";
+			campo.removeAttribute("required");
+			seleccion.setAttribute("required", "true");
+		} else {
+			campo.style.display = "block";
+			select.style.display = "none";
+			seleccion.removeAttribute("required");
+			campo.setAttribute("required", "true");
+		}
+		if (tipo == "") {
+			campo.style.display = "none";
+			select.style.display = "none";
+			campo.removeAttribute("required");
+			seleccion.removeAttribute("required");
+		}
+	}
+</script>
 <title>Tierra Media</title>
 </head>
 <!-- Nav -->
@@ -67,14 +91,14 @@ function seleccionado(valueToSelect, id) {
 						<legend style="margin-top: 40px" class="text-right header">Completar
 							los campos de una nueva promo:</legend>
 						<form action="editPromo.adm" method="post">
-						<input type="hidden" name="id" value="${ promocion.getId() }">
+							<input type="hidden" name="id" value="${ promocion.getId() }">
 							<div class="form-group">
 								<span class="col-md-1 col-md-offset-2 text-center"><i
 									class="fa fa-user bigicon"></i></span>
 								<div class="col-md-8">
 									<input id="nombre" name="nombre" type="text"
-										placeholder="Nombre de la promoción" required value="${promocion.getNombre()}
-										class="form-control">
+										placeholder="Nombre de la promoción" required
+										value="${promocion.getNombre()}" class="form-control">
 								</div>
 							</div>
 							<div class="mb-3">
@@ -87,11 +111,11 @@ function seleccionado(valueToSelect, id) {
 									<option value="Absoluta">Absoluta</option>
 									<option value="AXB">AXB</option>
 								</select>
-								<script type="text/javascript"> seleccionado(${promocion.getTipoDePromocion()}, 'tipo');</script>
+								<script type="text/javascript"> seleccionado('${promocion.getTipoDePromocion()}', 'tipo');</script>
 							</div>
 							<div class="mb-3" id="combo" style="display: none;">
-								<label for="atraccion-select">Gratuita</label> 
-								<select name="atraccion3" id="atraccion3">
+								<label for="atraccion-select">Gratuita</label> <select
+									name="atraccion3" id="atraccion3">
 									<option value="">--Elegir atracción--</option>
 									<c:forEach items="${atracciones}" var="atracciones">
 										<option value="${atracciones.getId()}">${atracciones.getNombre()}</option>
@@ -107,10 +131,10 @@ function seleccionado(valueToSelect, id) {
 										style="display: none;">
 								</div>
 							</div>
+							<script type="text/javascript"> mostrar('${promocion.getTipoDePromocion()}');</script>
 							<div class="mb-3">
-
 								<label for="atraccion-select">¿Qué le gusta?</label> <select
-									name="tipoAtraccion" id="tipoAtraccion" required="required">
+									name="tipoAtraccion" id="tipoAtraccion">
 									<option value="">--Elegir tipo--</option>
 									<option value="1">Aventura</option>
 									<option value="2">Paisaje</option>
@@ -128,6 +152,8 @@ function seleccionado(valueToSelect, id) {
 										<option value="${atracciones.getId()}">${atracciones.getNombre()}</option>
 									</c:forEach>
 								</select>
+								<script type="text/javascript"> seleccionado(${promocion.getAtracciones().get(0).getId()}, 'atraccion1');</script>
+
 							</div>
 
 							<div class="mb-3">
@@ -139,6 +165,7 @@ function seleccionado(valueToSelect, id) {
 										<option value="${atracciones.getId()}">${atracciones.getNombre()}</option>
 									</c:forEach>
 								</select>
+								<script type="text/javascript"> seleccionado(${promocion.getAtracciones().get(1).getId()}, 'atraccion2');</script>
 							</div>
 
 

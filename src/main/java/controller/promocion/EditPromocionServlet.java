@@ -1,6 +1,7 @@
 package controller.promocion;
 
 import java.io.IOException;
+import java.util.List;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -8,18 +9,22 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import model.Atraccion;
 import model.Promocion;
+import services.atraccion.AtraccionService;
 import services.promocion.PromocionService;
 
 @WebServlet("/editPromo.adm")
 public class EditPromocionServlet extends HttpServlet {
 	private static final long serialVersionUID = -3169608166770960069L;
 	private PromocionService promocionService;
+	private AtraccionService atraccionService;
 
 	@Override
 	public void init() throws ServletException {
 		super.init();
 		this.promocionService = new PromocionService();
+		this.atraccionService = new AtraccionService();
 	}
 
 	@Override
@@ -28,6 +33,8 @@ public class EditPromocionServlet extends HttpServlet {
 
 		Promocion promocion = promocionService.find(id);
 		req.setAttribute("promocion", promocion);
+		List<Atraccion> atracciones = atraccionService.list();
+		req.setAttribute("atracciones", atracciones);
 
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/editarFormPromocion.jsp");
 		dispatcher.forward(req, resp);
