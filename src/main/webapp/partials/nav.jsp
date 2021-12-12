@@ -23,6 +23,8 @@
 					<c:if test="${ usuario.isAdmin() }">
 			<a class="nav-link"
 					href="abm.adm">ABM</a>
+					<a class="nav-link"
+					href="itinerarioUsuarios.adm">Ventas</a>
 		</c:if>
 		<a class="nav-link"
 					href="nosotros.jsp">Sobre nosotros</a>
