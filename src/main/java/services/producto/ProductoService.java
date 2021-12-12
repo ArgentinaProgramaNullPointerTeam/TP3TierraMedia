@@ -79,7 +79,7 @@ public class ProductoService {
 			ItinerarioDAO itinerarioDAO = DAOFactory.getItinerarioDAO();
 			usuario.comprar(producto);
 			usuarioDAO.update(usuario); //se modifica las monedas y el tiempo
-			itinerarioDAO.insert(usuario.getItinerario());
+			itinerarioDAO.comprar(usuario, producto);
 			// el update de atraccion se hace de forma individual
 			// por eso no se usa una lista sino que se recorre la lista antes y se envia la
 			// atraccion a updatear

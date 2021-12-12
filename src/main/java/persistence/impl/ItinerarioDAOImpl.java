@@ -12,6 +12,7 @@ import model.Atraccion;
 import model.Itinerario;
 import model.Producto;
 import model.Promocion;
+import model.Usuario;
 import persistence.ItinerarioDAO;
 import persistence.commons.ConnectionProvider;
 import persistence.commons.MissingDataException;
@@ -41,8 +42,8 @@ public class ItinerarioDAOImpl implements ItinerarioDAO {
 				ResultSet resultIdPromociones = declarIdPromociones.executeQuery();
 				ResultSet resultIdAtracciones = declarIdAtracciones.executeQuery();
 
-				itinerario = toItinerario(idItinerario, idUsuario, atracciones, promociones,
-						resultIdPromociones, resultIdAtracciones);
+				itinerario = toItinerario(idItinerario, idUsuario, atracciones, promociones, resultIdPromociones,
+						resultIdAtracciones);
 			}
 			return itinerario;
 		} catch (Exception e) {
@@ -91,7 +92,32 @@ public class ItinerarioDAOImpl implements ItinerarioDAO {
 		// TODO Auto-generated method stub
 		return 0;
 	}
-	
+
+	@Override
+	public int comprar(Usuario usuario, Producto producto) {
+		int rows = 0;
+		try {
+			String sqlPromo = "INSERT INTO itinerario (id_usuario, id_promocion) VALUES (?, ?)";
+			String sqlAtraccion = "INSERT INTO itinerario (id_usuario, id_atraccion) VALUES (?, ?)";
+			Connection conn = ConnectionProvider.getConnection();
+			PreparedStatement promoComprada = conn.prepareStatement(sqlPromo);
+			PreparedStatement atracComprada = conn.prepareStatement(sqlAtraccion);
+
+			if (producto.esPromocion()) {
+				promoComprada.setInt(1, usuario.getId());
+				promoComprada.setInt(2, producto.getId());
+				rows = promoComprada.executeUpdate();
+			} else {
+				atracComprada.setInt(1, usuario.getId());
+				atracComprada.setInt(2, producto.getId());
+				rows = atracComprada.executeUpdate();
+			}
+			return rows;
+		} catch (Exception e) {
+			throw new MissingDataException(e);
+		}
+	}
+
 	private Itinerario toItinerario(int idItinerario, int idUsuario, HashMap<Integer, Atraccion> atracciones,
 			HashMap<Integer, Promocion> promociones, ResultSet resultIdPromo, ResultSet resultIdAtrac) {
 		try {
@@ -110,4 +136,5 @@ public class ItinerarioDAOImpl implements ItinerarioDAO {
 			throw new MissingDataException(e);
 		}
 	}
+
 }
