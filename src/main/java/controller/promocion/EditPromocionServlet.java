@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import model.Promocion;
 import services.promocion.PromocionService;
 
-@WebServlet("/promocion/edit.adm")
+@WebServlet("/editPromo.adm")
 public class EditPromocionServlet extends HttpServlet {
 	private static final long serialVersionUID = -3169608166770960069L;
 	private PromocionService promocionService;
@@ -29,7 +29,7 @@ public class EditPromocionServlet extends HttpServlet {
 		Promocion promocion = promocionService.find(id);
 		req.setAttribute("promocion", promocion);
 
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/attractions/edit.jsp");
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/editarFormPromocion.jsp");
 		dispatcher.forward(req, resp);
 	}
 
@@ -57,11 +57,11 @@ public class EditPromocionServlet extends HttpServlet {
 				atraccion1, atraccion2, atraccion3);
 
 		if (promocion.isValid()) {
-			resp.sendRedirect("/turismo/attractions/index.do");
+			resp.sendRedirect("/TP3TierraMedia/abm.adm");
 		} else {
 			req.setAttribute("atraccion", promocion);
 			req.setAttribute("errores", promocion.getErrors());
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/attractions/edit.jsp");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/editarFormPromocion.jsp");;
 			dispatcher.forward(req, resp);
 		}
 	}
