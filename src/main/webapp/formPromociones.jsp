@@ -15,61 +15,52 @@
 	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <title>Tierra Media</title>
 </head>
+<!-- Nav -->
 <jsp:include page="/partials/nav.jsp"></jsp:include>
 
 <body>
 
+	<form action="list" method="post">
 	<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="well well-sm">
-							<fieldset>
-								<legend style="margin-top: 40px" class="text-right header">Completar
-									los campos de una nueva Promoción:</legend>
-								<form action="create.adm" method="post">
-								
-									<div class="mb-3">
-										<label for="name" class="col-form-label">Nombre de la promoción:</label> <input
-											type="text" class="form-control" id="nombre" name="nombre"
-											required value="">
-									</div>
-									
-									
-									</div>
-									<div class="mb-3">
-										<label for="promocion-select">Tipo</label> <select
-											name="tipo" id="tipo">
-											<option value="">--Elegir opción--</option>
-											<option value="1">AxB</option>
-											<option value="2">Porcentual</option>
-											<option value="3">Absoluta</option>
-										</select>
-									</div>
-									
-									<div class="mb-3">
-										<label for="costo"
-											class='col-form-label ${promocion.errors.get("costo") != null ? "is-invalid" : "" }'>Costo:</label>
-										<input class="form-control" type="number" id="costo"
-											name="costo" required value="${promocion.setCostoDeVisita()}"></input>
-										<div class="invalid-feedback">
-											<c:out value='${promocion.errors.get("costo")}'></c:out>
-										</div>
-									</div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="well well-sm">
+                <form class="form-horizontal" method="post">
+                    <fieldset>
+                        <legend class="text-right header">Completar los campos</legend>
 
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="nombrePromocion" name="nombrePromocion" type="text" placeholder="Nombre de la promoción" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="queIncluye" name="queIncluye" type="text" placeholder="¿Qué incluye?" class="form-control">
+                            </div>
+                        </div>
 
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="costo" name="costo" type="text" placeholder="Costo" class="form-control">
+                            </div>
+                        </div>
+                        
 
-									<div>
-										<button type="submit" class="btn btn-primary">Hecho</button>
-										<a onclick="window.history.back();" class="btn btn-secondary"
-											role="button">Cancelar</a>
-									</div>
-									<br> <br>
-									</form>
-							</fieldset>
-					</div>
-				</div>
-			</div>
-		</div>
-
+                        <div class="form-group">
+                            <div class="col-md-8 text-right">
+                                <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+	</form>
 </body>
 </html>
