@@ -33,19 +33,19 @@
 							<fieldset>
 								<legend style="margin-top: 40px" class="text-right header">Completar
 									los campos de una Atracción:</legend>
-								<form action="createAtraccion.adm" method="post">
+								<form action="editAtraccion.adm" method="post">
 
 									<div class="mb-3">
 										<label for="name" class="col-form-label">Nombre de la
 											atracción:</label> <input type="text" class="form-control" id="nombre"
-											name="nombre" required value="">
+											name="nombre" required value="${atraccion.getNombre() }">
 									</div>
 
 
 									<div class="mb-3">
 										<label for="cupo" class="col-form-label">Cupos:</label> <input
 											type="text" class="form-control" id="cupo" name="cupo"
-											required value="">
+											required value="${atraccion.getCupo() }">
 									</div>
 
 									<div class="mb-3">
@@ -76,6 +76,7 @@
 											<option value="2">Paisaje</option>
 											<option value="3">Degustación</option>
 										</select>
+										<script type="text/javascript"> seleccionado(${atraccion.getTipoAtraccion()}, 'tipoAtraccion');</script>
 									</div>
 
 									<div>

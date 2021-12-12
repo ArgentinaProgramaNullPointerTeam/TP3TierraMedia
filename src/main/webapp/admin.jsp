@@ -100,8 +100,8 @@
                                      <td><c:out value="${ atracciones.getTiempoDeVisita() }"></c:out> Hs </td>
                                      <td><c:out value="${ atracciones.getCostoDeVisita() }"></c:out> Monedas </td>
                                      <td><c:out value="${ atracciones.getTipoAtracciones() }"></c:out></td>
-                                    <td><button type="button" class="btn btn-danger">Borrar &#10060;</button>&nbsp;&nbsp;
-                                       <button type="button" class="btn btn-secondary">Editar &#9998;</button></td>
+                                    <td><button type="button" class="btn btn-danger" onclick ="document.location.href='deleteAtraccion.adm?id=${ atraccion.getId() }'">Borrar &#10060;</button>&nbsp;&nbsp;
+                                       <button type="button" class="btn btn-secondary"  onclick ="document.location.href='editAtraccion.adm?id=${ atraccion.getId() }'">Editar &#9998;</button></td>
                                 </tr>
                          	</c:forEach> 
                          </tbody>
