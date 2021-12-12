@@ -55,15 +55,25 @@ public class UsuarioDAOTests {
 	@Test
 	public void findUsuarioNameTest() {
 		UsuarioDAO usuarioDAO = DAOFactory.getUsuarioDAO();
+		Atraccion atraccion1 = new Atraccion(1, "Moria", 1, 1, 6, 1, true);
+		ArrayList<Producto> compra = new ArrayList<Producto>();
+		compra.add(atraccion1);
 		Usuario usuarioEsperado = new Usuario(1, "Eowyn", "pass", 1, 10, 8, false, true);
+		Itinerario itinerarioEsperado = new Itinerario(1, usuarioEsperado.getId(), compra);
+		usuarioEsperado.setItinerario(itinerarioEsperado);
 		Usuario usuarioObtenido = usuarioDAO.findByUsername("Eowyn");
 		assertEquals(usuarioEsperado, usuarioObtenido);
 	}
 
 	@Test
 	public void findUsuarioTest() {
+		Atraccion atraccion1 = new Atraccion(1, "Moria", 1, 1, 6, 1, true);
+		ArrayList<Producto> compra = new ArrayList<Producto>();
+		compra.add(atraccion1);
 		UsuarioDAO usuarioDAO = DAOFactory.getUsuarioDAO();
 		Usuario usuarioEsperado = new Usuario(1, "Eowyn", "pass", 1, 10, 8, false, true);
+		Itinerario itinerarioEsperado = new Itinerario(1, usuarioEsperado.getId(), compra);
+		usuarioEsperado.setItinerario(itinerarioEsperado);
 		Usuario usuarioObtenido = usuarioDAO.find(1);
 		assertEquals(usuarioEsperado, usuarioObtenido);
 	}
