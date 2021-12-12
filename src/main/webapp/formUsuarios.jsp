@@ -36,71 +36,74 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="well well-sm">
-							<fieldset>
-								<legend style="margin-top: 40px" class="text-right header">Completar
-									los campos de un nuevo Usuario:</legend>
-								<form action="create.adm" method="post">
-									<div class="mb-3">
-											<label for="admin-select">¿Es administrador?</label> <select
-											name="isAdmin" id="isAdmin" required="required">
-											<option value="">--Elegir opción--</option>
-											<option value="1">Si</option>
-											<option value="2">No</option>
-										</select>
-									</div>
-								
-									<div class="mb-3">
-										<label for="name" class="col-form-label">Nombre de usuario:</label> <input
-											type="text" class="form-control" id="nombre" name="nombre" required="required">
-									</div>
-									
-									<div class="mb-3">
-										<label for="password"
-											class='col-form-label ${usuarios.errores.get("password") != null ? "is-invalid" : "" }'>Contraseña:</label>
-										<input class="form-control" id="password" name="password" required="required"></input>
-										<div class="invalid-feedback">
-											<c:out value='${usuarios.errores.get("password")}'></c:out>
-										</div>
-									</div>
-									<div class="mb-3">
-										<label for="atraccion-select">¿Qué le gusta?</label> <select
-											name="atraccionPreferida" id="atraccionPreferida" required="required">
-											<option value="">--Elegir atracción--</option>
-											<option value="1">Aventura</option>
-											<option value="2">Paisaje</option>
-											<option value="3">Degustación</option>
-										</select>
-									</div>
-									<div class="mb-3">
-										<label for="coins"
-											class='col-form-label ${usuarios.errores.get("dineroDisponible") != null ? "is-invalid" : "" }'>Monedas:</label>
-										<input class="form-control" type="number" id="dineroDisponible"
-											name="dineroDisponible" required="required"></input>
-										<div class="invalid-feedback">
-											<c:out value='${usuarios.errores.get("dineroDisponible")}'></c:out>
-										</div>
-									</div>
+						<fieldset>
+							<legend style="margin-top: 40px" class="text-right header">Completar
+								los campos de un nuevo Usuario:</legend>
+							<form action="create.adm" method="post">
+								<div class="mb-3">
+									<label for="admin-select">¿Es administrador?</label> <select
+										name="isAdmin" id="isAdmin" required="required">
+										<option value="">--Elegir opción--</option>
+										<option value="1">Si</option>
+										<option value="2">No</option>
+									</select>
+								</div>
 
-									<div class="mb-3">
-										<label for="time"
-											class='col-form-label ${usuarios.errores.get("tiempoDisponible") != null ? "is-invalid" : "" }'>Tiempo:</label>
-										<input class="form-control" type="number" id="tiempoDisponible"
-											name="tiempoDisponible" required="required"></input>
-										<div class="invalid-feedback">
-											<c:out value='${usuarios.errores.get("tiempoDisponible")}'></c:out>
-										</div>
+								<div class="mb-3">
+									<label for="name" class="col-form-label">Nombre de
+										usuario:</label> <input type="text" class="form-control" id="nombre"
+										name="nombre" required="required">
+								</div>
+
+								<div class="mb-3">
+									<label for="password"
+										class='col-form-label ${usuarios.errores.get("password") != null ? "is-invalid" : "" }'>Contraseña:</label>
+									<input class="form-control" id="password" name="password"
+										required="required"></input>
+									<div class="invalid-feedback">
+										<c:out value='${usuarios.errores.get("password")}'></c:out>
 									</div>
-
-
-
-									<div>
-										<button type="submit" class="btn btn-primary">Hecho</button>
-										<a onclick="window.history.back();" class="btn btn-secondary"
-											role="button">Cancelar</a>
+								</div>
+								<div class="mb-3">
+									<label for="atraccion-select">¿Qué le gusta?</label> <select
+										name="atraccionPreferida" id="atraccionPreferida"
+										required="required">
+										<option value="">--Elegir atracción--</option>
+										<option value="1">Aventura</option>
+										<option value="2">Paisaje</option>
+										<option value="3">Degustación</option>
+									</select>
+								</div>
+								<div class="mb-3">
+									<label for="coins"
+										class='col-form-label ${usuarios.errores.get("dineroDisponible") != null ? "is-invalid" : "" }'>Monedas:</label>
+									<input class="form-control" type="number" id="dineroDisponible"
+										name="dineroDisponible" required="required"></input>
+									<div class="invalid-feedback">
+										<c:out value='${usuarios.errores.get("dineroDisponible")}'></c:out>
 									</div>
-									<br> <br>
-									</form>
-							</fieldset>
+								</div>
+
+								<div class="mb-3">
+									<label for="time"
+										class='col-form-label ${usuarios.errores.get("tiempoDisponible") != null ? "is-invalid" : "" }'>Tiempo:</label>
+									<input class="form-control" type="number" id="tiempoDisponible"
+										name="tiempoDisponible" required="required"></input>
+									<div class="invalid-feedback">
+										<c:out value='${usuarios.errores.get("tiempoDisponible")}'></c:out>
+									</div>
+								</div>
+
+
+
+								<div>
+									<button type="submit" class="btn btn-primary">Hecho</button>
+									<a onclick="window.history.back();" class="btn btn-secondary"
+										role="button">Cancelar</a>
+								</div>
+								<br> <br>
+							</form>
+						</fieldset>
 					</div>
 				</div>
 			</div>
