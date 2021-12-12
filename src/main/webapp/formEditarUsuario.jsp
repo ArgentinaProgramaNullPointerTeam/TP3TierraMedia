@@ -55,7 +55,7 @@ function seleccionado(valueToSelect, id) {
 										<option value="1">Si</option>
 										<option value="2">No</option>
 									</select>
-									<script type="text/javascript"> seleccionado(${usuario.isAdmin() ? 1 : 0}, 'isAdmin');</script>
+									<script type="text/javascript"> seleccionado(${usuario.isAdmin() ? 1 : 2}, 'isAdmin');</script>
 								</div>
 
 								<div class="mb-3">
