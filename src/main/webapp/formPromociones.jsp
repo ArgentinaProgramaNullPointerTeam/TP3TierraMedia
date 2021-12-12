@@ -22,16 +22,23 @@
 	function esconder(tipo) {
 		let select = document.getElementById('combo');
 		let campo = document.getElementById('descuento');
+		let seleccion = document.getElementById('atraccion3');
 		if (tipo == 'AXB') {
 			select.style.display = "block";
 			campo.style.display = "none";
+			campo.removeAttribute("required");
+			seleccion.setAttribute("required", "true");
 		} else {
 			campo.style.display = "block";
 			select.style.display = "none";
+			seleccion.removeAttribute("required");
+			campo.setAttribute("required", "true");
 		}
 		if (tipo == "") {
 			campo.style.display = "none";
 			select.style.display = "none";
+			campo.removeAttribute("required");
+			seleccion.removeAttribute("required");
 		}
 	}
 </script>
@@ -75,9 +82,8 @@
 								</select>
 							</div>
 							<div class="mb-3" id="combo" style="display: none;">
-
-								<label for="atraccion-select">Gratuita</label> <select
-									name="atraccion3" id="atraccion3">
+								<label for="atraccion-select">Gratuita</label> 
+								<select name="atraccion3" id="atraccion3">
 									<option value="">--Elegir atracción--</option>
 									<c:forEach items="${atracciones}" var="atracciones">
 										<option value="${atracciones.getId()}">${atracciones.getNombre()}</option>

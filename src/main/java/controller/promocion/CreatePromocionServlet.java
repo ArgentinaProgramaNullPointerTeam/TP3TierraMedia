@@ -43,28 +43,15 @@ public class CreatePromocionServlet extends HttpServlet {
 		Integer tipoAtraccion = Integer.parseInt(req.getParameter("tipoAtraccion"));
 		String tipo = req.getParameter("tipo");
 		if (tipo.equals("AXB")) {
-			try {
-				cantAtracciones = 3;
-				atraccion3 = Integer.parseInt(req.getParameter("atraccion3"));
-				}catch(NumberFormatException e) {
-					req.setAttribute("error", "Ingrese un número");
-					RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/formPromociones.jsp");
-					dispatcher.forward(req, resp);
-				}
-			
+			cantAtracciones = 3;
+			atraccion3 = Integer.parseInt(req.getParameter("atraccion3"));
 		} else {
 			cantAtracciones = 2;
 		}
 		if (tipo.equals("Porcentual")) {
-			try {
 			descuentoP = Double.parseDouble(req.getParameter("descuento"));
-			}catch(NumberFormatException e) {
-				req.setAttribute("error", "Ingrese un número");
-				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/formPromociones.jsp");
-				dispatcher.forward(req, resp);
-			}
-			
-		} else if (tipo.equals("Absoluta")){
+
+		} else if (tipo.equals("Absoluta")) {
 			descuentoA = Integer.parseInt(req.getParameter("descuento"));
 		}
 		Integer atraccion1 = Integer.parseInt(req.getParameter("atraccion1"));
