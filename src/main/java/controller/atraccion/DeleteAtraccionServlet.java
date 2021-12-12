@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import services.atraccion.AtraccionService;
 
-@WebServlet("/atracciones/delete.adm")
+@WebServlet("/deleteAtraccion.adm")
 public class DeleteAtraccionServlet extends HttpServlet {
 	private static final long serialVersionUID = 4307383395129280909L;
 	private AtraccionService atraccionService;
@@ -26,6 +26,6 @@ public class DeleteAtraccionServlet extends HttpServlet {
 
 		atraccionService.delete(id);
 
-		resp.sendRedirect("/turismo/attractions/index.do");
+		resp.sendRedirect("/TP3TierraMedia/abm.adm");
 	}
 }

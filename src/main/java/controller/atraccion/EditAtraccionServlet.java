@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import model.Atraccion;
 import services.atraccion.AtraccionService;
 
-@WebServlet("/atracciones/edit.adm")
+@WebServlet("/editAtraccion.adm")
 public class EditAtraccionServlet extends HttpServlet {
 	private static final long serialVersionUID = 6362079201415839496L;
 	private AtraccionService atraccionService;
@@ -29,7 +29,7 @@ public class EditAtraccionServlet extends HttpServlet {
 		Atraccion atraccion = atraccionService.find(id);
 		req.setAttribute("atraccion", atraccion);
 
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/attractions/edit.jsp");
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/EditarFormAtraccion.jsp");
 		dispatcher.forward(req, resp);
 	}
 
@@ -47,11 +47,11 @@ public class EditAtraccionServlet extends HttpServlet {
 		Atraccion atraccion = atraccionService.update(id, nombre, costo, cupo, duracion, tipoAtraccion);
 
 		if (atraccion.isValid()) {
-			resp.sendRedirect("/turismo/attractions/index.do");
+			resp.sendRedirect("/TP3TierraMedia/abm.adm");
 		} else {
 			req.setAttribute("atraccion", atraccion);
 			req.setAttribute("errores", atraccion.getErrors());
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/attractions/edit.jsp");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/EditarFormAtraccion.jsp");
 			dispatcher.forward(req, resp);
 		}
 	}

@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import model.Atraccion;
 import services.atraccion.AtraccionService;
 
-@WebServlet("/atracciones/create.adm")
+@WebServlet("/createAtraccion.adm")
 public class CreateAtraccionServlet extends HttpServlet {
 	private static final long serialVersionUID = 3455721046062278592L;
 	private AtraccionService atraccionService;
@@ -25,7 +25,7 @@ public class CreateAtraccionServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/attractions/create.jsp");
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("formAtracciones.jsp");
 		dispatcher.forward(req, resp);
 	}
 
@@ -39,11 +39,11 @@ public class CreateAtraccionServlet extends HttpServlet {
 
 		Atraccion atraccion = atraccionService.create(nombre, costo, duracion, cupo, tipoAtraccion);
 		if (atraccion.isValid()) {
-			resp.sendRedirect("/turismo/attractions/index.do");
+			resp.sendRedirect("/TP3TierraMedia/abm.adm");
 		} else {
 			req.setAttribute("atraccion", atraccion);
 
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/attractions/create.jsp");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("formAtracciones.jsp");
 			dispatcher.forward(req, resp);
 		}
 	}
