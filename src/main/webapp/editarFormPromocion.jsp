@@ -105,8 +105,7 @@ function seleccionado(valueToSelect, id) {
 
 								<label for="atraccion-select">Tipo de promoción</label> <select
 									name="tipo" id="tipo" required="required"
-									onclick="esconder(document.getElementById('tipo').value)"
-									disabled>
+									onclick="esconder(document.getElementById('tipos').value)">
 									<option value="">--Elegir tipo--</option>
 									<option value="Porcentual">Porcentual</option>
 									<option value="Absoluta">Absoluta</option>

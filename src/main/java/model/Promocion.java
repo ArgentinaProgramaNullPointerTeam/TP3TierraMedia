@@ -175,9 +175,6 @@ public abstract class Promocion extends Producto {
 		if (isNumeric) {
 			errores.put("nombre", "No debe contener numeros");
 		}
-		if (this.nombre.contains(" ")) {
-			errores.put("nombre", "No debe ingresar espacios");
-		}
 		if (this.nombre.equals("")) {
 			errores.put("nombre", "Debe ingresar un nombre");
 		}

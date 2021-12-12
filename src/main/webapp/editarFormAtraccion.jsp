@@ -91,9 +91,8 @@ function seleccionado(valueToSelect, id) {
 											role="button">Cancelar</a>
 									</div>
 									<br> <br>
+									</form>
 							</fieldset>
-						</form>
-						</form>
 					</div>
 				</div>
 			</div>
