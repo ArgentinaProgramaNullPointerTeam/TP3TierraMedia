@@ -27,7 +27,8 @@ INSERT INTO usuario(nombre, password, dinero_disponible, tiempo_disponible, id_t
  ('Gandalf', 'pass', '100', '5', '2', '0'),
  ('Sam', 'pass', '36', '8','3', '0'), 
  ('Galandriel', 'pass','5', '6','2', '0'),
- ('Millonario', 'pass', '1000', '1000', '1', '1');
+ ('Millonario', 'pass', '1000', '1000', '1', '1'),
+ ('Igna', 'Igna', '1000', '1000', '1', '1');
 
 
 CREATE TABLE IF NOT EXISTS "atraccion" (
