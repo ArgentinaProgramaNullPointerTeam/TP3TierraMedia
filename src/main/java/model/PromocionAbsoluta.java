@@ -35,4 +35,9 @@ public class PromocionAbsoluta extends Promocion {
 	public Map<String, String> getErrors() {
 		return errores;
 	}
+	
+	@Override
+	public String getDesc() {
+		return String.valueOf(descuento);
+	}
 }

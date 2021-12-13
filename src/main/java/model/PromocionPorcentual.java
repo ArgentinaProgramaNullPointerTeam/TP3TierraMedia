@@ -39,4 +39,9 @@ public class PromocionPorcentual extends Promocion {
 	public void setDescuento(double descuento) {
 		this.descuento = descuento;
 	}
+	
+	@Override
+	public String getDesc() {
+		return String.valueOf(descuento * 100);
+	}
 }

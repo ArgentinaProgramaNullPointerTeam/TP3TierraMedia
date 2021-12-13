@@ -33,7 +33,7 @@
 				<div class="well well-sm">
 					<fieldset>
 						<legend style="margin-top: 40px" class="text-right header">Completar
-							los campos de una nueva promo:</legend>
+							los campos de la promo:</legend>
 						<c:if test="${promociones != null && !promociones.isValid()}">
 							<div class="alert alert-danger">
 								<p>Se encontraron errores la promo.</p>
@@ -81,6 +81,7 @@
 							</div>
 							<input type="hidden" name="tipos" value="${ promociones.getTipoDePromocion() }">
 							<script type="text/javascript"> mostrar('${promociones.getTipoDePromocion()}');</script>
+							<script type="text/javascript"> promo('${promociones.getTipoDePromocion()}', ${promociones.getDesc()});</script>
 							<div class="mb-3">
 								<label for="atraccion-select">¿Qué le gusta?</label> <select
 									name="tipoAtraccion" id="tipoAtraccion">

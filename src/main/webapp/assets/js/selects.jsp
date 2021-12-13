@@ -57,3 +57,13 @@ function mostrar(tipo) {
 			seleccion.removeAttribute("required");
 		}
 }
+
+function promo(tipo, dato){
+	let campo = document.getElementById('descuento');
+	let seleccion = document.getElementById('atraccion3');
+	if (tipo == 'AXB') {
+		seleccion.value = dato;
+	} else {
+		campo.value = dato;
+	}
+}

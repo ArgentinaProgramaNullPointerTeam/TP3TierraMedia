@@ -40,4 +40,8 @@ public class PromocionAXB extends Promocion {
 		this.idAtraccionGratuita = idAtraccionGratuita;
 	}
 	
+	@Override
+	public String getDesc() {
+		return Double.toString(idAtraccionGratuita);
+	}
 }

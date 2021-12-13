@@ -188,6 +188,8 @@ public abstract class Promocion extends Producto {
 	public Map<String, String> getErrors() {
 		return errores;
 	}
+	
+	public abstract String getDesc();
 
 	@Override
 	public String getTipo() {
