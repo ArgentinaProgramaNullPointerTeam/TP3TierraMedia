@@ -153,6 +153,9 @@ public class Atraccion extends Producto {
 		if (this.nombre.equals("")) {
 			errores.put("nombre", "Debe ingresar un nombre");
 		}
+		if (this.nombre.length() <=3) {
+			errores.put("nombre", "Debe ingresar un nombre correcto");
+		}
 		if (this.costoDeVisita <= 0) {
 			errores.put("costoDeVisita", "El costo debe ser positivo");
 		}

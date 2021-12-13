@@ -27,7 +27,7 @@ public class EditAtraccionServlet extends HttpServlet {
 		Integer id = Integer.parseInt(req.getParameter("id"));
 
 		Atraccion atraccion = atraccionService.find(id);
-		req.setAttribute("atraccion", atraccion);
+		req.setAttribute("atraccionEditar", atraccion);
 
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/editarFormAtraccion.jsp");
 		dispatcher.forward(req, resp);
@@ -49,7 +49,7 @@ public class EditAtraccionServlet extends HttpServlet {
 		if (atraccion.isValid()) {
 			resp.sendRedirect("/TP3TierraMedia/abm.adm");
 		} else {
-			req.setAttribute("atraccion", atraccion);
+			req.setAttribute("atraccionEditar", atraccion);
 			req.setAttribute("errores", atraccion.getErrors());
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/editarFormAtraccion.jsp");
 			dispatcher.forward(req, resp);

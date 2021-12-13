@@ -19,12 +19,8 @@
 	src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <title>Tierra Media</title>
-<script type="text/javascript">
-function seleccionado(valueToSelect, id) {   
-    let element = document.getElementById(id);
-    element.value = valueToSelect;
-}
-</script>
+<!-- Script para los selects -->
+<script src="assets/js/selects.jsp"></script>
 </head>
 <!-- Nav -->
 <jsp:include page="/partials/nav.jsp"></jsp:include>
@@ -36,63 +32,68 @@ function seleccionado(valueToSelect, id) {
 				<div class="col-md-12">
 					<div class="well well-sm">
 
-							<fieldset>
-								<legend style="margin-top: 40px" class="text-right header">Completar
-									los campos de una Atracción:</legend>
-								<form action="editAtraccion.adm" method="post">
-							<input type="hidden" name="id" value="${ atraccion.getId() }">
-									<div class="mb-3">
-										<label for="name" class="col-form-label">Nombre de la
-											atracción:</label> <input type="text" class="form-control" id="nombre"
-											name="nombre" required value="${atraccion.getNombre() }">
-									</div>
+						<fieldset>
+							<legend style="margin-top: 40px" class="text-right header">Completar
+								los campos de una Atracción:</legend>
+							<c:if test="${atraccionEditar != null && !atraccionEditar.isValid()}">
+								<div class="alert alert-danger">
+									<p>Se encontraron errores al crear la atracción.</p>
+								</div>
+							</c:if>
+							<form action="editAtraccion.adm" method="post">
+								<input type="hidden" name="id" value="${ atraccionEditar.getId() }">
+								<div class="mb-3">
+									<label for="name" class="col-form-label">Nombre de la
+										atracción:</label> <input type="text" class="form-control" id="nombre"
+										name="nombre" required value="${atraccionEditar.getNombre() }">
+								</div>
 
 
-									<div class="mb-3">
-										<label for="cupo" class="col-form-label">Cupos:</label> <input
-											type="text" class="form-control" id="cupo" name="cupo"
-											required value="${atraccion.getCupo() }">
-									</div>
+								<div class="mb-3">
+									<label for="cupo" class="col-form-label">Cupos:</label> <input
+										type="text" class="form-control" id="cupo" name="cupo"
+										required value="${atraccionEditar.getCupo() }">
+								</div>
 
-									<div class="mb-3">
-										<label for="duracion"
-											class='col-form-label ${atraccion.errors.get("time") != null ? "is-invalid" : "" }'>Tiempo:</label>
-										<input class="form-control" type="number" id="duracion"
-											name="duracion" required value="${atraccion.getTiempoDeVisita()}"></input>
-										<div class="invalid-feedback">
-											<c:out value='${atraccion.errors.get("time")}'></c:out>
-										</div>
+								<div class="mb-3">
+									<label for="duracion"
+										class='col-form-label ${atraccionEditar.errors.get("tiempoDeVisita") != null ? "is-invalid" : "" }'>Tiempo:</label>
+									<input class="form-control" type="number" id="duracion"
+										name="duracion" required
+										value="${atraccionEditar.getTiempoDeVisita()}"></input>
+									<div class="invalid-feedback">
+										<c:out value='${atraccionEditar.errors.get("tiempoDeVisita")}'></c:out>
 									</div>
+								</div>
 
-									<div class="mb-3">
-										<label for="costo"
-											class='col-form-label ${atraccion.errors.get("costo") != null ? "is-invalid" : "" }'>Costo:</label>
-										<input class="form-control" type="number" id="costo"
-											name="costo" required value="${atraccion.getCostoDeVisita()}"></input>
-										<div class="invalid-feedback">
-											<c:out value='${atraccion.errors.get("costo")}'></c:out>
-										</div>
+								<div class="mb-3">
+									<label for="costo"
+										class='col-form-label ${atraccionEditar.errors.get("costoDeVisita") != null ? "is-invalid" : "" }'>Costo:</label>
+									<input class="form-control" type="number" id="costo"
+										name="costo" required value="${atraccionEditar.getCostoDeVisita()}"></input>
+									<div class="invalid-feedback">
+										<c:out value='${atraccionEditar.errors.get("costoDeVisita")}'></c:out>
 									</div>
-									
-									<div class="mb-3">
-										<label for="atraccion-select">Tipo</label> <select
-											name="tipoAtraccion" id="tipoAtraccion">
-											<option value="">--Elegir atracción--</option>
-											<option value="1">Aventura</option>
-											<option value="2">Paisaje</option>
-											<option value="3">Degustación</option>
-										</select>
-										<script type="text/javascript"> seleccionado(${atraccion.getTipoAtracciones() }, 'tipoAtraccion');</script>
-									</div>
+								</div>
 
-									<div>
-										<button type="submit" class="btn btn-primary">Hecho</button>
-										<a onclick="window.history.back();" class="btn btn-secondary"
-											role="button">Cancelar</a>
-									</div>
-									<br> <br>
-									</form>
-							</fieldset>
+								<div class="mb-3">
+									<label for="atraccion-select">Tipo</label> <select
+										name="tipoAtraccion" id="tipoAtraccion" required="required">
+										<option value="">--Elegir atracción--</option>
+										<option value="1">Aventura</option>
+										<option value="2">Paisaje</option>
+										<option value="3">Degustación</option>
+									</select>
+								</div>
+								<script type="text/javascript"> seleccionado(${atraccionEditar.getTipoAtracciones() }, 'tipoAtraccion');</script>
+								<div>
+									<button type="submit" class="btn btn-primary">Hecho</button>
+									<a onclick="window.history.back();" class="btn btn-secondary"
+										role="button">Cancelar</a>
+								</div>
+								<br> <br>
+							</form>
+						</fieldset>
 					</div>
 				</div>
 			</div>

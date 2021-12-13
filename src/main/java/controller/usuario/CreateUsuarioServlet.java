@@ -42,7 +42,7 @@ public class CreateUsuarioServlet extends HttpServlet {
 		if (usuario.isValid()) {
 			resp.sendRedirect("/TP3TierraMedia/abm.adm");
 		} else {
-			req.setAttribute("usuario", usuario);
+			req.setAttribute("usuarioCreate", usuario);
 			req.setAttribute("errores", usuario.getErrores());
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/formUsuarios.jsp");
 			dispatcher.forward(req, resp);

@@ -25,7 +25,7 @@ public class CreateAtraccionServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("formAtracciones.jsp");
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/formAtracciones.jsp");
 		dispatcher.forward(req, resp);
 	}
 
@@ -42,8 +42,8 @@ public class CreateAtraccionServlet extends HttpServlet {
 			resp.sendRedirect("/TP3TierraMedia/abm.adm");
 		} else {
 			req.setAttribute("atraccion", atraccion);
-
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("formAtracciones.jsp");
+			req.setAttribute("errores", atraccion.getErrors());
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/formAtracciones.jsp");
 			dispatcher.forward(req, resp);
 		}
 	}

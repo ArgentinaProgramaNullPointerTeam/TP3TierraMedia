@@ -46,7 +46,7 @@
             <div class="row">
                 <div class="col-12">
                     <h1>Usuarios:</h1> 
-                    <h4><button type="button" class="btn btn-success" onclick = "document.location.href='formUsuarios.jsp'" >Agregar &#x2795;</button></h4>
+                    <h4><button type="button" class="btn btn-success" onclick = "document.location.href='create.adm'" >Agregar &#x2795;</button></h4>
                     <div class="table-responsive">
                         <table class="table table-bordered" table style= "background-color:#FFE4C4">
                             <thead>

@@ -25,13 +25,6 @@
 <body>
 
 	<main class="container">
-
-		<c:if test="${usuario != null && !usuario.isValid()}">
-			<div class="alert alert-danger">
-				<p>Se encontraron errores al crear el usuario.</p>
-			</div>
-		</c:if>
-
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
@@ -39,6 +32,11 @@
 						<fieldset>
 							<legend style="margin-top: 40px" class="text-right header">Completar
 								los campos de un nuevo Usuario:</legend>
+							<c:if test="${usuarioCreate != null && !usuarioCreate.isValid()}">
+								<div class="alert alert-danger">
+									<p>Se encontraron errores al crear el usuario.</p>
+								</div>
+							</c:if>
 							<form action="create.adm" method="post">
 								<div class="mb-3">
 									<label for="admin-select">¿Es administrador?</label> <select
@@ -53,6 +51,9 @@
 									<label for="name" class="col-form-label">Nombre de
 										usuario:</label> <input type="text" class="form-control" id="nombre"
 										name="nombre" required="required">
+									<div class="invalid-feedback">
+										<c:out value='${usuarioCreate.errores.get("nombre")}'></c:out>
+									</div>
 								</div>
 
 								<div class="mb-3">
@@ -61,7 +62,7 @@
 									<input class="form-control" id="password" name="password"
 										required="required"></input>
 									<div class="invalid-feedback">
-										<c:out value='${usuarios.errores.get("password")}'></c:out>
+										<c:out value='${usuarioCreate.errores.get("password")}'></c:out>
 									</div>
 								</div>
 								<div class="mb-3">
@@ -80,7 +81,7 @@
 									<input class="form-control" type="number" id="dineroDisponible"
 										name="dineroDisponible" required="required"></input>
 									<div class="invalid-feedback">
-										<c:out value='${usuarios.errores.get("dineroDisponible")}'></c:out>
+										<c:out value='${usuarioCreate.errores.get("dineroDisponible")}'></c:out>
 									</div>
 								</div>
 
@@ -90,7 +91,7 @@
 									<input class="form-control" type="number" id="tiempoDisponible"
 										name="tiempoDisponible" required="required"></input>
 									<div class="invalid-feedback">
-										<c:out value='${usuarios.errores.get("tiempoDisponible")}'></c:out>
+										<c:out value='${usuarioCreate.errores.get("tiempoDisponible")}'></c:out>
 									</div>
 								</div>
 

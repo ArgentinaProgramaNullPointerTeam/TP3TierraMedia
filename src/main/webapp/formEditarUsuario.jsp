@@ -18,12 +18,7 @@
 <script
 	src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<script type="text/javascript">
-function seleccionado(valueToSelect, id) {   
-    let element = document.getElementById(id);
-    element.value = valueToSelect;
-}
-</script>
+<script src="assets/js/selects.jsp"></script>
 <title>Tierra Media</title>
 </head>
 <!-- Nav -->
@@ -31,13 +26,6 @@ function seleccionado(valueToSelect, id) {
 <body>
 
 	<main class="container">
-
-		<c:if test="${usuarioEditar != null && !usuarioEditar.isValid()}">
-			<div class="alert alert-danger">
-				<p>Se encontraron errores al crear el usuario.</p>
-			</div>
-		</c:if>
-
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
@@ -45,8 +33,14 @@ function seleccionado(valueToSelect, id) {
 						<fieldset>
 							<legend style="margin-top: 40px" class="text-right header">Completar
 								los campos de un nuevo Usuario:</legend>
+							<c:if test="${usuarioEditar != null && !usuarioEditar.isValid()}">
+								<div class="alert alert-danger">
+									<p>Se encontraron errores al crear el usuario.</p>
+								</div>
+							</c:if>
 							<form action="editarUsuario.adm" method="post">
-							<input type="hidden" name="id" value="${ usuarioEditar.getId() }">
+								<input type="hidden" name="id"
+									value="${ usuarioEditar.getId() }">
 								<div class="mb-3">
 									<label for="admin-select">¿Es administrador?</label> <select
 										name="isAdmin" id="isAdmin"
@@ -62,6 +56,9 @@ function seleccionado(valueToSelect, id) {
 									<label for="name" class="col-form-label">Nombre de
 										usuario:</label> <input type="text" class="form-control" id="nombre"
 										name="nombre" required value="${usuarioEditar.getNombre()}">
+									<div class="invalid-feedback">
+										<c:out value='${usuarioEditar.errores.get("nombre")}'></c:out>
+									</div>
 								</div>
 
 								<div class="mb-3">
@@ -91,7 +88,8 @@ function seleccionado(valueToSelect, id) {
 										name="dineroDisponible" required
 										value="${usuarioEditar.getDineroDisponible()}"></input>
 									<div class="invalid-feedback">
-										<c:out value='${usuarioEditar.errores.get("dineroDisponible")}'></c:out>
+										<c:out
+											value='${usuarioEditar.errores.get("dineroDisponible")}'></c:out>
 									</div>
 								</div>
 
@@ -102,12 +100,10 @@ function seleccionado(valueToSelect, id) {
 										name="tiempoDisponible" required
 										value="${usuarioEditar.getTiempoDisponible()}"></input>
 									<div class="invalid-feedback">
-										<c:out value='${usuarioEditar.errores.get("tiempoDisponible")}'></c:out>
+										<c:out
+											value='${usuarioEditar.errores.get("tiempoDisponible")}'></c:out>
 									</div>
 								</div>
-
-
-
 								<div>
 									<button type="submit" class="btn btn-primary">Hecho</button>
 									<a onclick="window.history.back();" class="btn btn-secondary"
