@@ -27,7 +27,7 @@ public class EditUsuarioServlet extends HttpServlet {
 		Integer id = Integer.parseInt(req.getParameter("id"));
 
 		Usuario usuario = usuarioService.find(id);
-		req.setAttribute("usuario", usuario);
+		req.setAttribute("usuarioEditar", usuario);
 
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/formEditarUsuario.jsp");
 		dispatcher.forward(req, resp);
@@ -50,7 +50,7 @@ public class EditUsuarioServlet extends HttpServlet {
 		if (usuario.isValid()) {
 			resp.sendRedirect("/TP3TierraMedia/abm.adm");
 		} else {
-			req.setAttribute("usuario", usuario);
+			req.setAttribute("usuarioEditar", usuario);
 			req.setAttribute("errores", usuario.getErrores());
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/formEditarUsuario.jsp");
 			dispatcher.forward(req, resp);

@@ -32,7 +32,7 @@ function seleccionado(valueToSelect, id) {
 
 	<main class="container">
 
-		<c:if test="${usuario != null && !usuario.isValid()}">
+		<c:if test="${usuarioEditar != null && !usuarioEditar.isValid()}">
 			<div class="alert alert-danger">
 				<p>Se encontraron errores al crear el usuario.</p>
 			</div>
@@ -46,31 +46,31 @@ function seleccionado(valueToSelect, id) {
 							<legend style="margin-top: 40px" class="text-right header">Completar
 								los campos de un nuevo Usuario:</legend>
 							<form action="editarUsuario.adm" method="post">
-							<input type="hidden" name="id" value="${ usuario.getId() }">
+							<input type="hidden" name="id" value="${ usuarioEditar.getId() }">
 								<div class="mb-3">
 									<label for="admin-select">¿Es administrador?</label> <select
 										name="isAdmin" id="isAdmin"
-										selected="${usuario.isAdmin() ? 1 : 0}">
+										selected="${usuarioEditar.isAdmin() ? 1 : 0}">
 										<option value="">--Elegir opción--</option>
 										<option value="1">Si</option>
 										<option value="2">No</option>
 									</select>
-									<script type="text/javascript"> seleccionado(${usuario.isAdmin() ? 1 : 2}, 'isAdmin');</script>
+									<script type="text/javascript"> seleccionado(${usuarioEditar.isAdmin() ? 1 : 2}, 'isAdmin');</script>
 								</div>
 
 								<div class="mb-3">
 									<label for="name" class="col-form-label">Nombre de
 										usuario:</label> <input type="text" class="form-control" id="nombre"
-										name="nombre" required value="${usuario.getNombre()}">
+										name="nombre" required value="${usuarioEditar.getNombre()}">
 								</div>
 
 								<div class="mb-3">
 									<label for="password"
-										class='col-form-label ${usuarios.errores.get("password") != null ? "is-invalid" : "" }'>Contraseña:</label>
+										class='col-form-label ${usuarioEditar.errores.get("password") != null ? "is-invalid" : "" }'>Contraseña:</label>
 									<input class="form-control" id="password" name="password"
-										required value="${usuario.getPassword()}"></input>
+										required value="${usuarioEditar.getPassword()}"></input>
 									<div class="invalid-feedback">
-										<c:out value='${usuarios.errores.get("password")}'></c:out>
+										<c:out value='${usuarioEditar.errores.get("password")}'></c:out>
 									</div>
 								</div>
 								<div class="mb-3">
@@ -82,27 +82,27 @@ function seleccionado(valueToSelect, id) {
 										<option value="2">Paisaje</option>
 										<option value="3">Degustación</option>
 									</select>
-									<script type="text/javascript"> seleccionado(${usuario.getAtraccionPreferida()}, 'atraccionPreferida');</script>
+									<script type="text/javascript"> seleccionado(${usuarioEditar.getAtraccionPreferida()}, 'atraccionPreferida');</script>
 								</div>
 								<div class="mb-3">
 									<label for="coins"
-										class='col-form-label ${usuarios.errores.get("dineroDisponible") != null ? "is-invalid" : "" }'>Monedas:</label>
+										class='col-form-label ${usuarioEditar.errores.get("dineroDisponible") != null ? "is-invalid" : "" }'>Monedas:</label>
 									<input class="form-control" type="number" id="dineroDisponible"
 										name="dineroDisponible" required
-										value="${usuario.getDineroDisponible()}"></input>
+										value="${usuarioEditar.getDineroDisponible()}"></input>
 									<div class="invalid-feedback">
-										<c:out value='${usuarios.errores.get("dineroDisponible")}'></c:out>
+										<c:out value='${usuarioEditar.errores.get("dineroDisponible")}'></c:out>
 									</div>
 								</div>
 
 								<div class="mb-3">
 									<label for="time"
-										class='col-form-label ${usuarios.errores.get("tiempoDisponible") != null ? "is-invalid" : "" }'>Tiempo:</label>
+										class='col-form-label ${usuarioEditar.errores.get("tiempoDisponible") != null ? "is-invalid" : "" }'>Tiempo:</label>
 									<input class="form-control" type="number" id="tiempoDisponible"
 										name="tiempoDisponible" required
-										value="${usuario.getTiempoDisponible()}"></input>
+										value="${usuarioEditar.getTiempoDisponible()}"></input>
 									<div class="invalid-feedback">
-										<c:out value='${usuarios.errores.get("tiempoDisponible")}'></c:out>
+										<c:out value='${usuarioEditar.errores.get("tiempoDisponible")}'></c:out>
 									</div>
 								</div>
 
