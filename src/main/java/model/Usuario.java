@@ -12,15 +12,17 @@ public class Usuario {
 	private double tiempoDisponible;
 	private Itinerario itinerario;
 	private boolean isAdmin;
+	private String tipo;
 	private boolean status = true;
 	private Map<String, String> errores;
 
-	public Usuario(int id, String nombre, String password, int atraccionPreferida, int dineroDisponible,
+	public Usuario(int id, String nombre, String password, int atraccionPreferida, String tipo, int dineroDisponible,
 			double tiempoDisponible, Boolean isAdmin, Boolean status) {
 		this.id = id;
 		this.nombre = nombre;
 		this.password = password;
 		this.atraccionPreferida = atraccionPreferida;
+		this.tipo = tipo;
 		this.dineroDisponible = dineroDisponible;
 		this.tiempoDisponible = tiempoDisponible;
 		this.itinerario = new Itinerario(id);
@@ -173,6 +175,10 @@ public class Usuario {
 
 	public Map<String, String> getErrores() {
 		return errores;
+	}
+	
+	public String getTipo() {
+		return this.tipo;
 	}
 
 	@Override

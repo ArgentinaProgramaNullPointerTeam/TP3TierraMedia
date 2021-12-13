@@ -24,15 +24,15 @@ public class PromocionAXBTest {
 
 	@Before
 	public void setup() {
-		atraccion1 = new Atraccion(1, "Rivendel", 10, 2, 6, 1, true);
-		atraccion2 = new Atraccion(2, "Hobbiton", 40, 3.5, 8, 1, true);
-		atraccion3 = new Atraccion(3, "Edoras", 60, 0.5, 9, 1, true);
+		atraccion1 = new Atraccion(1, "Rivendel", 10, 2, 6, 1, "Aventura", true);
+		atraccion2 = new Atraccion(2, "Hobbiton", 40, 3.5, 8, 1, "Aventura", true);
+		atraccion3 = new Atraccion(3, "Edoras", 60, 0.5, 9, 1, "Aventura", true);
 
 		pack.add(atraccion1);
 		pack.add(atraccion2);
 		pack.add(atraccion3);
 
-		promo = new PromocionAXB(1, "Pack 1", 1, 3, pack, "AXB", 3, true);
+		promo = new PromocionAXB(1, "Pack 1", 1, "Aventura", 3, pack, "AXB", 3, true);
 	}
 
 	@Test
@@ -78,8 +78,8 @@ public class PromocionAXBTest {
 
 	@Test
 	public void noEstaIncluidaTest() {
-		Producto atraccionIncluida = new Atraccion(1, "Rivendel", 10, 2, 6, 1, true);
-		Producto atraccionNoIncluida = new Atraccion(2, "Isengard", 10, 2.5, 23, 1, true);
+		Producto atraccionIncluida = new Atraccion(1, "Rivendel", 10, 2, 6, 1, "Aventura", true);
+		Producto atraccionNoIncluida = new Atraccion(2, "Isengard", 10, 2.5, 23, 1, "Aventura", true);
 
 		assertTrue(promo.esOContiene(atraccionIncluida));
 		assertFalse(promo.esOContiene(atraccionNoIncluida));

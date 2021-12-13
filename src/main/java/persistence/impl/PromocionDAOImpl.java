@@ -174,14 +174,14 @@ public class PromocionDAOImpl implements PromocionDAO {
 			model.Promocion promocion = null;
 			if (resultados.getString(3).equals("Porcentual")) {
 				promocion = new model.PromocionPorcentual(resultados.getInt(1), resultados.getString(2),
-						resultados.getInt(7), cantAtracciones, atraccionesEnPromo, resultados.getString(3),
+						resultados.getInt(7), resultados.getString(8), cantAtracciones, atraccionesEnPromo, resultados.getString(3),
 						resultados.getDouble(5), resultados.getInt(12) == 1);
 			} else if (resultados.getString(3).equals("Absoluta")) {
 				promocion = new model.PromocionAbsoluta(resultados.getInt(1), resultados.getString(2),
-						resultados.getInt(7), cantAtracciones, atraccionesEnPromo, resultados.getString(3),
+						resultados.getInt(7), resultados.getString(8), cantAtracciones, atraccionesEnPromo, resultados.getString(3),
 						resultados.getInt(6), resultados.getInt(12) == 1);
 			} else if (resultados.getString(3).equals("AXB")) {
-				promocion = new model.PromocionAXB(resultados.getInt(1), resultados.getString(2), resultados.getInt(7),
+				promocion = new model.PromocionAXB(resultados.getInt(1), resultados.getString(2), resultados.getInt(7), resultados.getString(8),
 						cantAtracciones, atraccionesEnPromo, resultados.getString(3), resultados.getInt(4),
 						resultados.getInt(12) == 1);
 			}

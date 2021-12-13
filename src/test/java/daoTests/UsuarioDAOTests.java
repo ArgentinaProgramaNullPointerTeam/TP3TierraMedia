@@ -37,11 +37,11 @@ public class UsuarioDAOTests {
 	public void cargarUsuariosTest() {
 		UsuarioDAO usuarioDAO = DAOFactory.getUsuarioDAO();
 
-		Atraccion atraccion1 = new Atraccion(1, "Moria", 1, 1, 6, 1, true);
+		Atraccion atraccion1 = new Atraccion(1, "Moria", 1, 1, 6, 1, "Aventura", true);
 		ArrayList<Producto> compra = new ArrayList<Producto>();
 		compra.add(atraccion1);
 
-		Usuario usuarioEsperado = new Usuario(1, "Eowyn", "pass", 1, 10, 8, false, true);
+		Usuario usuarioEsperado = new Usuario(1, "Eowyn", "pass", 1, "Aventura", 10, 8, false, true);
 		Itinerario itinerarioEsperado = new Itinerario(1, usuarioEsperado.getId(), compra);
 		usuarioEsperado.setItinerario(itinerarioEsperado);
 		HashMap<Integer, Usuario> usuariosEsperados = new HashMap<Integer, Usuario>();
@@ -55,10 +55,10 @@ public class UsuarioDAOTests {
 	@Test
 	public void findUsuarioNameTest() {
 		UsuarioDAO usuarioDAO = DAOFactory.getUsuarioDAO();
-		Atraccion atraccion1 = new Atraccion(1, "Moria", 1, 1, 6, 1, true);
+		Atraccion atraccion1 = new Atraccion(1, "Moria", 1, 1, 6, 1, "Aventura", true);
 		ArrayList<Producto> compra = new ArrayList<Producto>();
 		compra.add(atraccion1);
-		Usuario usuarioEsperado = new Usuario(1, "Eowyn", "pass", 1, 10, 8, false, true);
+		Usuario usuarioEsperado = new Usuario(1, "Eowyn", "pass", 1, "Aventura", 10, 8, false, true);
 		Itinerario itinerarioEsperado = new Itinerario(1, usuarioEsperado.getId(), compra);
 		usuarioEsperado.setItinerario(itinerarioEsperado);
 		Usuario usuarioObtenido = usuarioDAO.findByUsername("Eowyn");
@@ -67,11 +67,11 @@ public class UsuarioDAOTests {
 
 	@Test
 	public void findUsuarioTest() {
-		Atraccion atraccion1 = new Atraccion(1, "Moria", 1, 1, 6, 1, true);
+		Atraccion atraccion1 = new Atraccion(1, "Moria", 1, 1, 6, 1, "Aventura", true);
 		ArrayList<Producto> compra = new ArrayList<Producto>();
 		compra.add(atraccion1);
 		UsuarioDAO usuarioDAO = DAOFactory.getUsuarioDAO();
-		Usuario usuarioEsperado = new Usuario(1, "Eowyn", "pass", 1, 10, 8, false, true);
+		Usuario usuarioEsperado = new Usuario(1, "Eowyn", "pass", 1, "Aventura", 10, 8, false, true);
 		Itinerario itinerarioEsperado = new Itinerario(1, usuarioEsperado.getId(), compra);
 		usuarioEsperado.setItinerario(itinerarioEsperado);
 		Usuario usuarioObtenido = usuarioDAO.find(1);
@@ -83,12 +83,12 @@ public class UsuarioDAOTests {
 
 		UsuarioDAO usuarioDAO = DAOFactory.getUsuarioDAO();
 
-		Atraccion atraccion1 = new Atraccion(1, "Moria", 1, 1, 6, 1, true);
+		Atraccion atraccion1 = new Atraccion(1, "Moria", 1, 1, 6, 1, "Aventura", true);
 		ArrayList<Producto> compra = new ArrayList<Producto>();
 		compra.add(atraccion1);
 
-		Usuario usuarioEsperado1 = new Usuario(1, "Eowyn", "pass", 1, 10, 8, false, true);
-		Usuario usuarioEsperado2 = new Usuario(2, "Gandalf", "pass", 1, 8, 5.5, false, true);
+		Usuario usuarioEsperado1 = new Usuario(1, "Eowyn", "pass", 1, "Aventura", 10, 8, false, true);
+		Usuario usuarioEsperado2 = new Usuario(2, "Gandalf", "pass", 1, "Aventura", 8, 5.5, false, true);
 		Itinerario itinerarioEsperado = new Itinerario(1, usuarioEsperado1.getId(), compra);
 		usuarioEsperado1.setItinerario(itinerarioEsperado);
 
@@ -105,11 +105,11 @@ public class UsuarioDAOTests {
 	public void updateUsuarioTest() {
 		UsuarioDAO usuarioDAO = DAOFactory.getUsuarioDAO();
 
-		Atraccion atraccion1 = new Atraccion(1, "Moria", 1, 1, 6, 1, true);
+		Atraccion atraccion1 = new Atraccion(1, "Moria", 1, 1, 6, 1, "Aventura", true);
 		ArrayList<Producto> compra = new ArrayList<Producto>();
 		compra.add(atraccion1);
 
-		Usuario usuarioEsperado1 = new Usuario(1, "Eowyn", "pass", 1, 8, 8, false, true);
+		Usuario usuarioEsperado1 = new Usuario(1, "Eowyn", "pass", 1, "Aventura", 8, 8, false, true);
 
 		Itinerario itinerarioEsperado = new Itinerario(1, usuarioEsperado1.getId(), compra);
 		usuarioEsperado1.setItinerario(itinerarioEsperado);
@@ -126,7 +126,7 @@ public class UsuarioDAOTests {
 	public void deleteUsuarioTest() {
 		UsuarioDAO usuarioDAO = DAOFactory.getUsuarioDAO();
 
-		Usuario usuario = new Usuario(1, "Eowyn", "pass", 1, 10, 8, false, true);
+		Usuario usuario = new Usuario(1, "Eowyn", "pass", 1, "Aventura", 10, 8, false, true);
 
 		HashMap<Integer, Usuario> usuariosEsperados = new HashMap<Integer, Usuario>();
 

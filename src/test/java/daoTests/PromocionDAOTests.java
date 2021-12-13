@@ -37,12 +37,12 @@ public class PromocionDAOTests {
 
 	@Test
 	public void cargarPromocionesTest() {
-		Atraccion atraccion1 = new Atraccion(2, "Minas Tirith", 2, 2.5, 25, 1, true);
-		Atraccion atraccion2 = new Atraccion(3, "La Comarca", 3, 1, 150, 1, true);
+		Atraccion atraccion1 = new Atraccion(2, "Minas Tirith", 2, 2.5, 25, 1, "Aventura", true);
+		Atraccion atraccion2 = new Atraccion(3, "La Comarca", 3, 1, 150, 1, "Aventura", true);
 		ArrayList<Atraccion> atraccionesEsperadas = new ArrayList<Atraccion>();
 		atraccionesEsperadas.add(atraccion1);
 		atraccionesEsperadas.add(atraccion2);
-		Promocion promoEsperada = new PromocionPorcentual(1, "Pack Aventura", 1, 2, atraccionesEsperadas, "Porcentual",
+		Promocion promoEsperada = new PromocionPorcentual(1, "Pack Aventura", 1, "Aventura", 2, atraccionesEsperadas, "Porcentual",
 				0.2, true);
 		HashMap<Integer, Promocion> promocionesEsperadas = new HashMap<Integer, Promocion>();
 		promocionesEsperadas.put(promoEsperada.getId(), promoEsperada);
@@ -57,14 +57,14 @@ public class PromocionDAOTests {
 
 	@Test
 	public void insertPromocionesTest() {
-		Atraccion atraccion1 = new Atraccion(2, "Minas Tirith", 2, 2.5, 25, 1, true);
-		Atraccion atraccion2 = new Atraccion(3, "La Comarca", 3, 1, 150, 1, true);
+		Atraccion atraccion1 = new Atraccion(2, "Minas Tirith", 2, 2.5, 25, 1, "Aventura", true);
+		Atraccion atraccion2 = new Atraccion(3, "La Comarca", 3, 1, 150, 1, "Aventura", true);
 		ArrayList<Atraccion> atraccionesEsperadas = new ArrayList<Atraccion>();
 		atraccionesEsperadas.add(atraccion1);
 		atraccionesEsperadas.add(atraccion2);
-		Promocion promoEsperada1 = new PromocionPorcentual(1, "Pack Aventura", 1, 2, atraccionesEsperadas, "Porcentual",
+		Promocion promoEsperada1 = new PromocionPorcentual(1, "Pack Aventura", 1, "Aventura", 2, atraccionesEsperadas, "Porcentual",
 				0.2, true);
-		Promocion promoEsperada2 = new PromocionAbsoluta(2, "Pack Aventura", 1, 2, atraccionesEsperadas, "Absoluta", 50,
+		Promocion promoEsperada2 = new PromocionAbsoluta(2, "Pack Aventura", 1, "Aventura", 2, atraccionesEsperadas, "Absoluta", 50,
 				true);
 
 		HashMap<Integer, Promocion> promocionesEsperadas = new HashMap<Integer, Promocion>();
@@ -82,12 +82,12 @@ public class PromocionDAOTests {
 
 	@Test
 	public void deletePromocionesTest() {
-		Atraccion atraccion1 = new Atraccion(2, "Minas Tirith", 2, 2.5, 25, 1, true);
-		Atraccion atraccion2 = new Atraccion(3, "La Comarca", 3, 1, 150, 1, true);
+		Atraccion atraccion1 = new Atraccion(2, "Minas Tirith", 2, 2.5, 25, 1, "Aventura", true);
+		Atraccion atraccion2 = new Atraccion(3, "La Comarca", 3, 1, 150, 1, "Aventura", true);
 		ArrayList<Atraccion> atraccionesEsperadas = new ArrayList<Atraccion>();
 		atraccionesEsperadas.add(atraccion1);
 		atraccionesEsperadas.add(atraccion2);
-		Promocion promo = new PromocionPorcentual(1, "Pack Aventura", 1, 2, atraccionesEsperadas, "Porcentual", 0.2, true);
+		Promocion promo = new PromocionPorcentual(1, "Pack Aventura", 1, "Aventura", 2, atraccionesEsperadas, "Porcentual", 0.2, true);
 		HashMap<Integer, Promocion> promocionesEsperadas = new HashMap<Integer, Promocion>();
 
 		AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
@@ -101,12 +101,12 @@ public class PromocionDAOTests {
 
 	@Test
 	public void updatePromocionesTest() {
-		Atraccion atraccion1 = new Atraccion(2, "Minas Tirith", 2, 2.5, 25, 1, true);
-		Atraccion atraccion2 = new Atraccion(3, "La Comarca", 3, 1, 150, 1, true);
+		Atraccion atraccion1 = new Atraccion(2, "Minas Tirith", 2, 2.5, 25, 1, "Aventura", true);
+		Atraccion atraccion2 = new Atraccion(3, "La Comarca", 3, 1, 150, 1, "Aventura", true);
 		ArrayList<Atraccion> atraccionesEsperadas = new ArrayList<Atraccion>();
 		atraccionesEsperadas.add(atraccion1);
 		atraccionesEsperadas.add(atraccion2);
-		Promocion promo = new PromocionPorcentual(1, "Pack Aventura", 1, 2, atraccionesEsperadas, "Porcentual", 0.4, true);
+		Promocion promo = new PromocionPorcentual(1, "Pack Aventura", 1, "Aventura", 2, atraccionesEsperadas, "Porcentual", 0.4, true);
 		HashMap<Integer, Promocion> promocionesEsperadas = new HashMap<Integer, Promocion>();
 		promocionesEsperadas.put(promo.getId(), promo);
 		AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
@@ -120,13 +120,13 @@ public class PromocionDAOTests {
 	
 	@Test
 	public void findTest() {
-		Atraccion atraccion1 = new Atraccion(2, "Minas Tirith", 2, 2.5, 25, 1, true);
-		Atraccion atraccion2 = new Atraccion(3, "La Comarca", 3, 1, 150, 1, true);
+		Atraccion atraccion1 = new Atraccion(2, "Minas Tirith", 2, 2.5, 25, 1, "Aventura", true);
+		Atraccion atraccion2 = new Atraccion(3, "La Comarca", 3, 1, 150, 1, "Aventura", true);
 		ArrayList<Atraccion> atraccionesEsperadas = new ArrayList<Atraccion>();
 		atraccionesEsperadas.add(atraccion1);
 		atraccionesEsperadas.add(atraccion2);
 		PromocionDAO promocionDAO = DAOFactory.getPromocionDAO();
-		Promocion promoEsperada = new PromocionPorcentual(1, "Pack Aventura", 1, 2, atraccionesEsperadas, "Porcentual",
+		Promocion promoEsperada = new PromocionPorcentual(1, "Pack Aventura", 1, "Aventura", 2, atraccionesEsperadas, "Porcentual",
 				0.4, true);
 		AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
 		HashMap<Integer, Atraccion> atraccionesObtenidas = atraccionDAO.findAll();

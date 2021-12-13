@@ -12,15 +12,17 @@ public class Atraccion extends Producto {
 	private int tipoAtraccion;
 	private boolean status;
 	private Map<String, String> errores;
+	private String tipo;
 
 	public Atraccion(int id, String nombre, int costoDeVisita, double tiempoDeVisita, int cupo, int tipoAtraccion,
-			Boolean status) {
+			String tipo, Boolean status) {
 		this.id = id;
 		this.nombre = nombre;
 		this.costoDeVisita = costoDeVisita;
 		this.tiempoDeVisita = tiempoDeVisita;
 		this.cupo = cupo;
 		this.tipoAtraccion = tipoAtraccion;
+		this.tipo = tipo;
 		this.status = status;
 	}
 
@@ -108,6 +110,11 @@ public class Atraccion extends Producto {
 
 	public int getCupo() {
 		return this.cupo;
+	}
+	
+	@Override
+	public String getTipo() {
+		return this.tipo;
 	}
 
 	@Override

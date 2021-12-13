@@ -174,7 +174,7 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 	private Usuario toUsuario(ResultSet resultados) {
 		try {
 			return new Usuario(resultados.getInt(1), resultados.getString(2), resultados.getString(3),
-					resultados.getInt(6), resultados.getInt(4), resultados.getDouble(5), resultados.getInt(8) == 1,
+					resultados.getInt(6), resultados.getString(7), resultados.getInt(4), resultados.getDouble(5), resultados.getInt(8) == 1,
 					resultados.getInt(9) == 1);
 		} catch (Exception e) {
 			throw new MissingDataException(e);

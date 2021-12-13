@@ -13,13 +13,15 @@ public abstract class Promocion extends Producto {
 	private int tipoAtraccion;
 	private double tiempoDeVisita;
 	private boolean status;
+	private String tipo;
 	private Map<String, String> errores;
 
-	public Promocion(int id, String nombre, int tipoAtraccion, int cantAtracciones, List<Atraccion> atracciones,
+	public Promocion(int id, String nombre, int tipoAtraccion, String tipo, int cantAtracciones, List<Atraccion> atracciones,
 			String tipoPromocion, Boolean status) {
 		this.id = id;
 		this.nombre = nombre;
 		this.tipoAtraccion = tipoAtraccion;
+		this.tipo = tipo;
 		this.tipoDePromocion = tipoPromocion;
 		this.cantAtracciones = cantAtracciones;
 		this.atracciones = atracciones;
@@ -184,6 +186,11 @@ public abstract class Promocion extends Producto {
 		return errores;
 	}
 
+	@Override
+	public String getTipo() {
+		return this.tipo;
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;

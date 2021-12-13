@@ -28,7 +28,7 @@ public class UsuarioService {
 	}
 	
 	public void delete(Integer id) {
-		Usuario usuario = new Usuario(id, "", "", 0, 0, 0.0, false, false);
+		Usuario usuario = new Usuario(id, "", "", 0, "", 0, 0.0, false, false);
 
 		UsuarioDAO usuarioDAO = DAOFactory.getUsuarioDAO();
 		usuarioDAO.delete(usuario);

@@ -63,7 +63,7 @@
                             <c:forEach items="${usuarios}" var="usuarios">
                                 <tr>
                                     <td><c:out value="${ usuarios.getNombre() }"></c:out></td>
-                                    <td><c:out value="${ usuarios.getAtraccionPreferida() }"></c:out></td>
+                                    <td><c:out value="${ usuarios.getTipo() }"></c:out></td>
                                      <td><c:out value="${ usuarios.getTiempoDisponible() }"></c:out> Hs</td>
                                      <td><c:out value="${ usuarios.getDineroDisponible() }"></c:out> Monedas </td>
                                      <td><c:choose><c:when test="${usuarios.isAdmin()}">Si</c:when>    
@@ -107,7 +107,7 @@
                                     <td><c:out value="${ atracciones.getCupo() }"></c:out></td>
                                      <td><c:out value="${ atracciones.getTiempoDeVisita() }"></c:out> Hs </td>
                                      <td><c:out value="${ atracciones.getCostoDeVisita() }"></c:out> Monedas </td>
-                                     <td><c:out value="${ atracciones.getTipoAtracciones() }"></c:out></td>
+                                     <td><c:out value="${ atracciones.getTipo() }"></c:out></td>
                                     <td><button type="button" class="btn btn-danger" onclick ="document.location.href='deleteAtraccion.adm?id=${ atracciones.getId() }'">Borrar &#10060;</button>&nbsp;&nbsp;
                                        <button type="button" class="btn btn-secondary"  onclick ="document.location.href='editAtraccion.adm?id=${ atracciones.getId() }'">Editar &#9998;</button></td>
                                 </tr>
@@ -147,7 +147,7 @@
                                     <td><c:out value="${ promociones.getNombre() }"></c:out></td>
                                     <td><c:out value="${ promociones.getTipoDePromocion() }"></c:out></td>
                                      <td><c:out value="${ promociones.getIncluye() }"></c:out></td>
-                                     <td><c:out value="${ promociones.getTipoAtracciones() }"></c:out></td>
+                                     <td><c:out value="${ promociones.getTipo() }"></c:out></td>
                                      <td><c:out value="${ promociones.getCostoDeVisita() }"></c:out> Monedas </td>
                                      <td><c:out value="${ promociones.getTiempoDeVisita() }"></c:out> Hs </td>
                                      <td><c:out value="${ promociones.getCupo() }"></c:out></td>

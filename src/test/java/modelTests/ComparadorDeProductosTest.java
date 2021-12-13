@@ -29,27 +29,27 @@ public class ComparadorDeProductosTest {
 
 	@Before
 	public void setup() {
-		u1 = new Usuario(1, "pepito", "pass", 1, 100, 100, false, true);
-		a1 = new Atraccion(1, "a1", 10, 3, 20, 1, true);
-		a2 = new Atraccion(2, "a2", 4, 2.5, 20, 1, true);
-		a3 = new Atraccion(3, "a3", 10, 5, 20, 1, true);
-		a4 = new Atraccion(4, "a4", 8, 4, 20, 1, true);
+		u1 = new Usuario(1, "pepito", "pass", 1, "Aventura", 100, 100, false, true);
+		a1 = new Atraccion(1, "a1", 10, 3, 20, 1, "Aventura", true);
+		a2 = new Atraccion(2, "a2", 4, 2.5, 20, 1, "Aventura", true);
+		a3 = new Atraccion(3, "a3", 10, 5, 20, 1, "Aventura", true);
+		a4 = new Atraccion(4, "a4", 8, 4, 20, 1, "Aventura", true);
 
 		List<Atraccion> packUno = new ArrayList<Atraccion>();
 		packUno.add(a1);
 		packUno.add(a2);
-		p1 = new PromocionAbsoluta(1, "Pack uno", 1, 2, packUno, "Absoluta", 10, true);
+		p1 = new PromocionAbsoluta(1, "Pack uno", 1, "Aventura", 2, packUno, "Absoluta", 10, true);
 
 		List<Atraccion> packDos = new ArrayList<Atraccion>();
 		packDos.add(a1);
 		packDos.add(a3);
-		p2 = new PromocionPorcentual(2, "Pack dos", 1, 2, packDos, "Porcentual", 0.3, true);
+		p2 = new PromocionPorcentual(2, "Pack dos", 1, "Aventura", 2, packDos, "Porcentual", 0.3, true);
 
 		List<Atraccion> packTres = new ArrayList<Atraccion>();
 		packTres.add(a1);
 		packTres.add(a3);
 		packTres.add(a2);
-		p3 = new PromocionAXB(3, "Pack tres", 1, 3, packTres, "AXB", 3, true);
+		p3 = new PromocionAXB(3, "Pack tres", 1, "Aventura", 3, packTres, "AXB", 3, true);
 
 	}
 

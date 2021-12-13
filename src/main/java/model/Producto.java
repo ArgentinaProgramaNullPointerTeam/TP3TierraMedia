@@ -47,4 +47,6 @@ public abstract class Producto {
 	public abstract boolean isStatus();
 
 	public abstract void setStatus(boolean status);
+	
+	public abstract String getTipo();
 }

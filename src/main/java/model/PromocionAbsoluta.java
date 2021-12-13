@@ -7,9 +7,9 @@ public class PromocionAbsoluta extends Promocion {
 	private int descuento;
 	private Map<String, String> errores;
 
-	public PromocionAbsoluta(int id, String nombre, int tipoAtraccion, int cantAtracciones, List<Atraccion> atracciones,
+	public PromocionAbsoluta(int id, String nombre, int tipoAtraccion, String tipo, int cantAtracciones, List<Atraccion> atracciones,
 			String tipoPromocion, int descuento, Boolean status) {
-		super(id, nombre, tipoAtraccion, cantAtracciones, atracciones, tipoPromocion, status);
+		super(id, nombre, tipoAtraccion, tipo, cantAtracciones, atracciones, tipoPromocion, status);
 		this.descuento = descuento;
 	}
 

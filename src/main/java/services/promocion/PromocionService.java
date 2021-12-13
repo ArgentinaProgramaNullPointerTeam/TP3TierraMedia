@@ -93,7 +93,7 @@ public class PromocionService {
 	}
 
 	public void delete(Integer id) {
-		Promocion promocion = new PromocionAbsoluta(id, "", 0, 0, null, "", 0, false);
+		Promocion promocion = new PromocionAbsoluta(id, "", 0, "", 0, null, "", 0, false);
 
 		PromocionDAO promocionDAO = DAOFactory.getPromocionDAO();
 		promocionDAO.delete(promocion);

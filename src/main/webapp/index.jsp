@@ -37,8 +37,7 @@
 			<div class="bg-light p-1 rounded">
 				<h1 style="margin-top: 8%">
 					¡Hola,
-					<b><c:out value="${usuario.getNombre()}" /></b>
-					! estás en Turismo en la Tierra Media
+					<b><c:out value="${usuario.getNombre()}"/></b>! estás en Turismo en la Tierra Media
 				</h1>
 			</div>
 			<c:if test="${flash != null}">
@@ -84,7 +83,7 @@
 						${productos.getCostoDeVisita()} monedas</li>
 					<li class="list-group-item">Incluye: ${productos.getIncluye()}</li>
 					<li class="list-group-item">Tipo:
-						${productos.getTipoAtracciones()}</li>
+						${productos.getTipo()}</li>
 				</ul>
 
 				<c:choose>
