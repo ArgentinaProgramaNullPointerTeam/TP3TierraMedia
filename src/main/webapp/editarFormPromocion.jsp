@@ -53,8 +53,7 @@
 							<div class="mb-3">
 
 								<label for="atraccion-select">Tipo de promoción</label> <select
-									name="tipo" id="tipo" required="required"
-									onclick="esconder(document.getElementById('tipo').value)">
+									name="tipo" id="tipo" required="required" disabled>
 									<option value="">--Elegir tipo--</option>
 									<option value="Porcentual">Porcentual</option>
 									<option value="Absoluta">Absoluta</option>
@@ -80,6 +79,7 @@
 										style="display: none;">
 								</div>
 							</div>
+							<input type="hidden" name="tipos" value="${ promociones.getTipoDePromocion() }">
 							<script type="text/javascript"> mostrar('${promociones.getTipoDePromocion()}');</script>
 							<div class="mb-3">
 								<label for="atraccion-select">¿Qué le gusta?</label> <select

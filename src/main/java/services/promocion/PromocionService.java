@@ -80,7 +80,7 @@ public class PromocionService {
 			nuevaPromo2.setDescuento(descuentoA);
 		} else if (tipo.equals("Porcentual")) {
 			PromocionPorcentual nuevaPromo3 = (PromocionPorcentual) promocion;
-			nuevaPromo3.setDescuento(descuentoP);
+			nuevaPromo3.setDescuento(descuentoP > 0 ? descuentoP/100 : 0);
 		}
 		promocion.setAtracciones(atraccionesEnPromo);
 		promocion.setTipoAtracciones(tipoAtraccion);

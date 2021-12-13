@@ -35,10 +35,10 @@ function esconder(tipo) {
 		}
 	}
 	
-		function mostrar(tipo) {
-		let select = document.getElementById('combo');
-		let campo = document.getElementById('descuento');
-		let seleccion = document.getElementById('atraccion3');
+function mostrar(tipo) {
+	let select = document.getElementById('combo');
+	let campo = document.getElementById('descuento');
+	let seleccion = document.getElementById('atraccion3');
 		if (tipo == 'AXB') {
 			select.style.display = "block";
 			campo.style.display = "none";
@@ -56,4 +56,4 @@ function esconder(tipo) {
 			campo.removeAttribute("required");
 			seleccion.removeAttribute("required");
 		}
-	}
+}

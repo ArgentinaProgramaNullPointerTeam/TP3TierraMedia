@@ -46,7 +46,7 @@ public class EditPromocionServlet extends HttpServlet {
 		Double descuentoP = 0.0;
 		Integer id = Integer.parseInt(req.getParameter("id"));
 		String nombre = req.getParameter("nombre");
-		String tipo = req.getParameter("tipo");
+		String tipo = req.getParameter("tipos");
 		// Integer cost = req.getParameter("cost").trim() == "" ? null :
 		// Integer.parseInt(req.getParameter("cost"));
 		if (tipo.equals("AXB")) {
