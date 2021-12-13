@@ -4,6 +4,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="shortcut icon"
+	href="https://http2.mlstatic.com/anillo-unico-poder-el-hobbit-el-senor-de-los-anillos-titanio-D_NQ_NP_626248-MLM25995146386_092017-O.jpg">
 <link rel="stylesheet" href="assets/css/estiloLogin.css">
 <jsp:include page="partials/head.jsp"></jsp:include>
 </head>

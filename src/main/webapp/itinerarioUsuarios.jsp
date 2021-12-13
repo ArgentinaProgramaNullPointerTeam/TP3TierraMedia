@@ -15,7 +15,7 @@
 	rel="stylesheet"
 	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
 	crossorigin="anonymous">
-<link rel="stylesheet" href="assets/css/estiloIndex.css">
+<link rel="stylesheet" href="assets/css/estiloABM&Ventas.css">
 <link rel="shortcut icon"
 	href="https://http2.mlstatic.com/anillo-unico-poder-el-hobbit-el-senor-de-los-anillos-titanio-D_NQ_NP_626248-MLM25995146386_092017-O.jpg">
 <title>Tierra Media</title>
@@ -33,7 +33,7 @@
 <!-- CUERPO -->
 <body>
 
-	<main role="main" class="container">
+	<main style="margin-top: 5.5%" role="main" class="container">
 		<div class="row">
 			<div class="col-12">
 				<h2 style="margin-top: 7%">Las compras de cada usuario:</h2>

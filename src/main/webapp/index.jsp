@@ -34,10 +34,10 @@
 	<header>
 
 		<main class="container">
-			<div class="bg-light p-4 rounded">
-				<h1 style="margin-top: 5%">
+			<div class="bg-light p-1 rounded">
+				<h1 style="margin-top: 8%">
 					¡Hola,
-					<c:out value="${usuario.getNombre()}" />
+					<b><c:out value="${usuario.getNombre()}" /></b>
 					! estás en Turismo en la Tierra Media
 				</h1>
 			</div>
@@ -101,8 +101,6 @@
 
 	</div>
 
-
-	<footer> </footer>
 	<!-- Option 1: Bootstrap Bundle with Popper -->
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

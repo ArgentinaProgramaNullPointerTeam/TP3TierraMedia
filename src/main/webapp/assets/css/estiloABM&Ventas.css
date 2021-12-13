@@ -1,0 +1,43 @@
+@charset "utf-8";
+
+
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+body{
+    font-family: 'Inconsolata', monospace;
+}
+
+body, nav{
+    background-color: #FAD6A5;
+}
+
+.container {
+	background-color: #D2B48C;
+}
+
+h5 {
+	font-weight: 900;
+	text-decoration: underline;
+	margin-left: 75px;
+}
+
+
+
+
+/*.tarjetasAtracciones-wrap {
+	overflow-x: scroll;
+	display: flex;
+} */
+iframe{
+
+  width: 500px;
+  height: 300px;
+  /*Sólo para que se vea, ya que la dirección al parecer está mal*/
+  border: 10px solid white;
+  margin-left: 65%;
+  margin-top: 5%;
+}
+
