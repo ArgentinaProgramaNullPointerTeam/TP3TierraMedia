@@ -65,6 +65,8 @@ public class CreatePromocionServlet extends HttpServlet {
 		} else {
 			req.setAttribute("promocion", promocion);
 			req.setAttribute("errores", promocion.getErrors());
+			List<Atraccion> atracciones = atraccionService.list();
+			req.setAttribute("atracciones", atracciones);
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/formPromociones.jsp");
 			dispatcher.forward(req, resp);
 		}

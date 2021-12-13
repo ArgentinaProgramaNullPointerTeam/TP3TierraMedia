@@ -18,71 +18,15 @@
 <script
 	src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<script type="text/javascript">
-	function esconder(tipo) {
-		let select = document.getElementById('combo');
-		let campo = document.getElementById('descuento');
-		let seleccion = document.getElementById('atraccion3');
-		if (tipo == 'AXB') {
-			select.style.display = "block";
-			campo.style.display = "none";
-			campo.removeAttribute("required");
-			seleccion.setAttribute("required", "true");
-		} else {
-			campo.style.display = "block";
-			select.style.display = "none";
-			seleccion.removeAttribute("required");
-			campo.setAttribute("required", "true");
-		}
-		if (tipo == "") {
-			campo.style.display = "none";
-			select.style.display = "none";
-			campo.removeAttribute("required");
-			seleccion.removeAttribute("required");
-		}
-	}
-</script>
-<script type="text/javascript">
-function seleccionado(valueToSelect, id) {   
-    let element = document.getElementById(id);
-    element.value = valueToSelect;
-}
-</script>
-<script type="text/javascript">
-	function mostrar(tipo) {
-		let select = document.getElementById('combo');
-		let campo = document.getElementById('descuento');
-		let seleccion = document.getElementById('atraccion3');
-		if (tipo == 'AXB') {
-			select.style.display = "block";
-			campo.style.display = "none";
-			campo.removeAttribute("required");
-			seleccion.setAttribute("required", "true");
-		} else {
-			campo.style.display = "block";
-			select.style.display = "none";
-			seleccion.removeAttribute("required");
-			campo.setAttribute("required", "true");
-		}
-		if (tipo == "") {
-			campo.style.display = "none";
-			select.style.display = "none";
-			campo.removeAttribute("required");
-			seleccion.removeAttribute("required");
-		}
-	}
-</script>
+
+<!-- script de los selects -->
+<script src="assets/js/selects.jsp"></script>
 <title>Tierra Media</title>
 </head>
 <!-- Nav -->
 <jsp:include page="/partials/nav.jsp"></jsp:include>
 
 <body>
-	<c:if test="${promociones != null && !promociones.isValid()}">
-		<div class="alert alert-danger">
-			<p>Se encontraron errores al crear el usuario.</p>
-		</div>
-	</c:if>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
@@ -90,15 +34,20 @@ function seleccionado(valueToSelect, id) {
 					<fieldset>
 						<legend style="margin-top: 40px" class="text-right header">Completar
 							los campos de una nueva promo:</legend>
+						<c:if test="${promociones != null && !promociones.isValid()}">
+							<div class="alert alert-danger">
+								<p>Se encontraron errores la promo.</p>
+							</div>
+						</c:if>
 						<form action="editPromo.adm" method="post">
-							<input type="hidden" name="id" value="${ promocion.getId() }">
+							<input type="hidden" name="id" value="${ promociones.getId() }">
 							<div class="form-group">
 								<span class="col-md-1 col-md-offset-2 text-center"><i
 									class="fa fa-user bigicon"></i></span>
 								<div class="col-md-8">
 									<input id="nombre" name="nombre" type="text"
 										placeholder="Nombre de la promoción" required
-										value="${promocion.getNombre()}" class="form-control">
+										value="${promociones.getNombre()}" class="form-control">
 								</div>
 							</div>
 							<div class="mb-3">
@@ -111,7 +60,7 @@ function seleccionado(valueToSelect, id) {
 									<option value="Absoluta">Absoluta</option>
 									<option value="AXB">AXB</option>
 								</select>
-								<script type="text/javascript"> seleccionado('${promocion.getTipoDePromocion()}', 'tipo');</script>
+								<script type="text/javascript"> seleccionado('${promociones.getTipoDePromocion()}', 'tipo');</script>
 							</div>
 							<div class="mb-3" id="combo" style="display: none;">
 								<label for="atraccion-select">Gratuita</label> <select
@@ -131,7 +80,7 @@ function seleccionado(valueToSelect, id) {
 										style="display: none;">
 								</div>
 							</div>
-							<script type="text/javascript"> mostrar('${promocion.getTipoDePromocion()}');</script>
+							<script type="text/javascript"> mostrar('${promociones.getTipoDePromocion()}');</script>
 							<div class="mb-3">
 								<label for="atraccion-select">¿Qué le gusta?</label> <select
 									name="tipoAtraccion" id="tipoAtraccion">
@@ -140,7 +89,7 @@ function seleccionado(valueToSelect, id) {
 									<option value="2">Paisaje</option>
 									<option value="3">Degustación</option>
 								</select>
-								<script type="text/javascript"> seleccionado(${promocion.getTipoAtracciones()}, 'tipoAtraccion');</script>
+								<script type="text/javascript"> seleccionado(${promociones.getTipoAtracciones()}, 'tipoAtraccion');</script>
 							</div>
 
 							<div class="mb-3">
@@ -152,7 +101,7 @@ function seleccionado(valueToSelect, id) {
 										<option value="${atracciones.getId()}">${atracciones.getNombre()}</option>
 									</c:forEach>
 								</select>
-								<script type="text/javascript"> seleccionado(${promocion.getAtracciones().get(0).getId()}, 'atraccion1');</script>
+								<script type="text/javascript"> seleccionado(${promociones.getAtracciones().get(0).getId()}, 'atraccion1');</script>
 
 							</div>
 
@@ -165,7 +114,7 @@ function seleccionado(valueToSelect, id) {
 										<option value="${atracciones.getId()}">${atracciones.getNombre()}</option>
 									</c:forEach>
 								</select>
-								<script type="text/javascript"> seleccionado(${promocion.getAtracciones().get(1).getId()}, 'atraccion2');</script>
+								<script type="text/javascript"> seleccionado(${promociones.getAtracciones().get(1).getId()}, 'atraccion2');</script>
 							</div>
 
 

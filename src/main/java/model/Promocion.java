@@ -180,6 +180,9 @@ public abstract class Promocion extends Producto {
 		if (this.nombre.equals("")) {
 			errores.put("nombre", "Debe ingresar un nombre");
 		}
+		if (this.nombre.length() <=3) {
+			errores.put("nombre", "Debe ingresar un nombre correcto");
+		}
 	}
 
 	public Map<String, String> getErrors() {

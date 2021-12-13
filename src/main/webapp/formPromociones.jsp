@@ -18,51 +18,14 @@
 <script
 	src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<script type="text/javascript">
-	function esconder(tipo) {
-		let select = document.getElementById('combo');
-		let campo = document.getElementById('descuento');
-		let seleccion = document.getElementById('atraccion3');
-		if (tipo == 'AXB') {
-			select.style.display = "block";
-			campo.style.display = "none";
-			campo.removeAttribute("required");
-			seleccion.setAttribute("required", "true");
-		} else {
-			campo.style.display = "block";
-			select.style.display = "none";
-			seleccion.removeAttribute("required");
-			campo.setAttribute("required", "true");
-		}
-		if (tipo == "") {
-			campo.style.display = "none";
-			select.style.display = "none";
-			campo.removeAttribute("required");
-			seleccion.removeAttribute("required");
-		}
-	}
-</script>
-<script type="text/javascript">
-function verificarDesc(tipo) {
-	   let campo = document.getElementById('descuento');
-	   if (tipo == 'Porcentual'){
-	   if( parseFloat(campo.value) > 100) { 
-	          campo.value= 100;
-	     }
-	   }
-}
-</script>
+<!-- script de los selects -->
+<script src="assets/js/selects.jsp"></script>
 <title>Tierra Media</title>
 </head>
 <!-- Nav -->
 <jsp:include page="/partials/nav.jsp"></jsp:include>
 
 <body>
-	<c:if test="${promociones != null && !promociones.isValid()}">
-		<div class="alert alert-danger">
-			<p>Se encontraron errores al crear la nueva promoción.</p>
-		</div>
-	</c:if>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
@@ -70,6 +33,11 @@ function verificarDesc(tipo) {
 					<fieldset>
 						<legend style="margin-top: 40px" class="text-right header">Completar
 							los campos de una nueva promoción:</legend>
+						<c:if test="${promocion != null && !promocion.isValid()}">
+							<div class="alert alert-danger">
+								<p>Se encontraron errores al crear la nueva promoción.</p>
+							</div>
+						</c:if>
 						<form action="createPromo.adm" method="post">
 							<div class="form-group">
 								<span class="col-md-1 col-md-offset-2 text-center"><i
@@ -92,8 +60,8 @@ function verificarDesc(tipo) {
 								</select>
 							</div>
 							<div class="mb-3" id="combo" style="display: none;">
-								<label for="atraccion-select">Gratuita</label> 
-								<select name="atraccion3" id="atraccion3">
+								<label for="atraccion-select">Gratuita</label> <select
+									name="atraccion3" id="atraccion3">
 									<option value="">--Elegir atracción--</option>
 									<c:forEach items="${atracciones}" var="atracciones">
 										<option value="${atracciones.getId()}">${atracciones.getNombre()}</option>
@@ -104,9 +72,10 @@ function verificarDesc(tipo) {
 								<span class="col-md-1 col-md-offset-2 text-center"><i
 									class="fa fa-user bigicon"></i></span>
 								<div class="col-md-8">
-									<input id="descuento" onchange="verificarDesc(document.getElementById('tipo').value);" name="descuento" type="number"
-										placeholder="Descuento" class="form-control"
-										style="display: none;">
+									<input id="descuento"
+										onchange="verificarDesc(document.getElementById('tipo').value);"
+										name="descuento" type="number" placeholder="Descuento"
+										class="form-control" style="display: none;">
 								</div>
 							</div>
 							<div class="mb-3">

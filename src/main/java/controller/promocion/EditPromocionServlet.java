@@ -32,7 +32,7 @@ public class EditPromocionServlet extends HttpServlet {
 		Integer id = Integer.parseInt(req.getParameter("id"));
 
 		Promocion promocion = promocionService.find(id);
-		req.setAttribute("promocion", promocion);
+		req.setAttribute("promociones", promocion);
 		List<Atraccion> atracciones = atraccionService.list();
 		req.setAttribute("atracciones", atracciones);
 
@@ -66,8 +66,10 @@ public class EditPromocionServlet extends HttpServlet {
 		if (promocion.isValid()) {
 			resp.sendRedirect("/TP3TierraMedia/abm.adm");
 		} else {
-			req.setAttribute("atraccion", promocion);
+			req.setAttribute("promociones", promocion);
 			req.setAttribute("errores", promocion.getErrors());
+			List<Atraccion> atracciones = atraccionService.list();
+			req.setAttribute("atracciones", atracciones);
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/editarFormPromocion.jsp");;
 			dispatcher.forward(req, resp);
 		}
