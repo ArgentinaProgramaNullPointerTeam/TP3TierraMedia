@@ -93,7 +93,7 @@
 						<a href="buy.do?id=${ productos.getId() }&esPromo=${ productos.esPromocion() ? 1 : 0 }" class="btn btn-success">Comprar</a>
 					</c:when>
 					<c:otherwise>
-						<a href="buy.do?id=${ productos.getId() }&esPromo=${ productos.esPromocion() ? 1 : 0 }" class="btn disabled">No puede comprar</a>
+						<a href="buy.do?id=${ productos.getId() }&esPromo=${ productos.esPromocion() ? 1 : 0 }" class="btn btn-secondary disabled">No puede comprar</a>
 					</c:otherwise>
 				</c:choose>
 			</div>

@@ -60,7 +60,7 @@ function verificarDesc(tipo) {
 <body>
 	<c:if test="${promociones != null && !promociones.isValid()}">
 		<div class="alert alert-danger">
-			<p>Se encontraron errores al crear el usuario.</p>
+			<p>Se encontraron errores al crear la nueva promoción.</p>
 		</div>
 	</c:if>
 	<div class="container">
@@ -69,7 +69,7 @@ function verificarDesc(tipo) {
 				<div class="well well-sm">
 					<fieldset>
 						<legend style="margin-top: 40px" class="text-right header">Completar
-							los campos de una nueva promo:</legend>
+							los campos de una nueva promoción:</legend>
 						<form action="createPromo.adm" method="post">
 							<div class="form-group">
 								<span class="col-md-1 col-md-offset-2 text-center"><i
