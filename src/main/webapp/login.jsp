@@ -18,7 +18,6 @@
 				style="border-radius: 60px 60px 60px 60px; margin-left:4%; font-weight: bold; padding: 4px; background-color: #808080;">Turismo
 				en la Tierra Media</h1>
 			<br>
-
 			<c:if test="${flash != null}">
 				<div class="alert alert-danger">
 					<p>
