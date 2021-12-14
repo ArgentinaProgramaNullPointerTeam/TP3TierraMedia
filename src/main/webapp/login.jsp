@@ -15,7 +15,7 @@
 
 		<main>
 			<h1
-				style="font-weight: bold; padding: 1px; background-color: #808080;">Turismo
+				style="border-radius: 60px 60px 60px 60px; margin-left:4%; font-weight: bold; padding: 4px; background-color: #808080;">Turismo
 				en la Tierra Media</h1>
 			<br>
 
@@ -39,14 +39,14 @@
 
 				<div class="mb-3">
 					<label
-						style="padding: 10px; background-color: #808080; color: black; font-family: arial, helvetica; font-size: 14px; font-weight: bold"
+						style="border-radius: 60px 60px 60px 60px; padding: 10px; background-color: #808080; color: black; font-family: arial, helvetica; font-size: 14px; font-weight: bold"
 						for="username" class="form-label">Usuario:</label> <input
 						class="form-control" name="username">
 				</div>
 
 				<div class="mb-3">
 					<label
-						style="padding: 10px; background-color: #808080; color: black; font-family: arial, helvetica; font-size: 14px; font-weight: bold"
+						style="border-radius: 60px 60px 60px 60px; padding: 10px; background-color: #808080; color: black; font-family: arial, helvetica; font-size: 14px; font-weight: bold"
 						for="password" class="form-label">Contraseña:</label> <input
 						type="password" class="form-control" name="password">
 				</div>
