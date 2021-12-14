@@ -41,10 +41,10 @@
 				<c:choose>
 					<c:when test="${flash != null}">
 						<div class="alert alert-danger">
-					<p>
-						<c:out value="${flash}" />
-					</p>
-				</div>
+							<p>
+								<c:out value="${flash}" />
+							</p>
+						</div>
 					</c:when>
 
 					<c:otherwise>
@@ -61,18 +61,31 @@
 									</tr>
 								</thead>
 								<tbody>
-									<c:forEach items = "${itinerario.getListaCompra()}" var="productos">
-									<tr>
-										<td><c:out value="${productos.getNombre()}"></c:out></td>
-										<td><c:out value="${productos.getIncluye()}"></c:out></td>
-										<td><c:out value="${productos.getCostoDeVisita()}"></c:out></td>
-										<td><c:out value="${productos.getTiempoDeVisita()}"></c:out></td>
-									</tr>
+									<c:forEach items="${itinerario.getListaCompra()}"
+										var="productos">
+										<tr>
+											<td><c:out value="${productos.getNombre()}"></c:out></td>
+											<td><c:out value="${productos.getIncluye()}"></c:out></td>
+											<td><c:out value="${productos.getCostoDeVisita()}"></c:out></td>
+											<td><c:out value="${productos.getTiempoDeVisita()}"></c:out></td>
+										</tr>
 									</c:forEach>
 								</tbody>
 							</table>
-							<h2 style="margin-top: 7%">Usted gastó:<c:out value="${itinerario.getCostoItinerario()}" /> Monedas y <c:out value="${itinerario.getDuracionItinerario()}" /> Hs </h2>
-							<h2 style="margin-top: 7%">Le queda:<c:out value="${usuario.getDineroDisponible()}"/> Monedas y <c:out value="${usuario.getTiempoDisponible()}" /> Hs</h2>
+							<h2 style="margin-top: 7%">
+								Usted gastó:
+								<c:out value="${itinerario.getCostoItinerario()}" />
+								Monedas y
+								<c:out value="${itinerario.getDuracionItinerario()}" />
+								Hs
+							</h2>
+							<h2 style="margin-top: 7%">
+								Le queda:
+								<c:out value="${usuario.getDineroDisponible()}" />
+								Monedas y
+								<c:out value="${usuario.getTiempoDisponible()}" />
+								Hs
+							</h2>
 						</div>
 					</c:otherwise>
 

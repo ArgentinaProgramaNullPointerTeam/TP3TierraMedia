@@ -35,13 +35,15 @@
 						<fieldset>
 							<legend style="margin-top: 40px" class="text-right header">Completar
 								los campos de una Atracción:</legend>
-							<c:if test="${atraccionEditar != null && !atraccionEditar.isValid()}">
+							<c:if
+								test="${atraccionEditar != null && !atraccionEditar.isValid()}">
 								<div class="alert alert-danger">
 									<p>Se encontraron errores al crear la atracción.</p>
 								</div>
 							</c:if>
 							<form action="editAtraccion.adm" method="post">
-								<input type="hidden" name="id" value="${ atraccionEditar.getId() }">
+								<input type="hidden" name="id"
+									value="${ atraccionEditar.getId() }">
 								<div class="mb-3">
 									<label for="name" class="col-form-label">Nombre de la
 										atracción:</label> <input type="text" class="form-control" id="nombre"
@@ -70,7 +72,8 @@
 									<label for="costo"
 										class='col-form-label ${atraccionEditar.errors.get("costoDeVisita") != null ? "is-invalid" : "" }'>Costo:</label>
 									<input class="form-control" type="number" id="costo"
-										name="costo" required value="${atraccionEditar.getCostoDeVisita()}"></input>
+										name="costo" required
+										value="${atraccionEditar.getCostoDeVisita()}"></input>
 									<div class="invalid-feedback">
 										<c:out value='${atraccionEditar.errors.get("costoDeVisita")}'></c:out>
 									</div>
@@ -99,7 +102,7 @@
 			</div>
 		</div>
 	</main>
-		<!-- Option 1: Bootstrap Bundle with Popper -->
+	<!-- Option 1: Bootstrap Bundle with Popper -->
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"

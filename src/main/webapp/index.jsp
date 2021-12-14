@@ -36,8 +36,8 @@
 		<main class="container">
 			<div class="bg-light p-1 rounded">
 				<h1 style="margin-top: 8%">
-					¡Hola,
-					<b><c:out value="${usuario.getNombre()}"/></b>! estás en Turismo en la Tierra Media
+					¡Hola, <b><c:out value="${usuario.getNombre()}" /></b>! estás en
+					Turismo en la Tierra Media
 				</h1>
 			</div>
 			<c:if test="${flash != null}">
@@ -47,7 +47,7 @@
 					</p>
 				</div>
 			</c:if>
-			
+
 			<c:if test="${success != null}">
 				<div class="alert alert-success">
 					<p>
@@ -82,17 +82,20 @@
 					<li class="list-group-item">Costo:
 						${productos.getCostoDeVisita()} monedas</li>
 					<li class="list-group-item">Incluye: ${productos.getIncluye()}</li>
-					<li class="list-group-item">Tipo:
-						${productos.getTipo()}</li>
+					<li class="list-group-item">Tipo: ${productos.getTipo()}</li>
 				</ul>
 
 				<c:choose>
 					<c:when
 						test="${ usuario.puedeComprar(productos) && productos.hayCupo() }">
-						<a href="buy.do?id=${ productos.getId() }&esPromo=${ productos.esPromocion() ? 1 : 0 }" class="btn btn-success">Comprar</a>
+						<a
+							href="buy.do?id=${ productos.getId() }&esPromo=${ productos.esPromocion() ? 1 : 0 }"
+							class="btn btn-success">Comprar</a>
 					</c:when>
 					<c:otherwise>
-						<a href="buy.do?id=${ productos.getId() }&esPromo=${ productos.esPromocion() ? 1 : 0 }" class="btn btn-secondary disabled">No puede comprar</a>
+						<a
+							href="buy.do?id=${ productos.getId() }&esPromo=${ productos.esPromocion() ? 1 : 0 }"
+							class="btn btn-secondary disabled">No puede comprar</a>
 					</c:otherwise>
 				</c:choose>
 			</div>
