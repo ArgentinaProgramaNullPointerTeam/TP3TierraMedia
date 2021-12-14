@@ -1,12 +1,8 @@
 @charset "utf-8";
 
-.box {
-  background-image: 'assets/img/fondologin.jpg';
-  background-repeat: no-repeat;
-  background-size: 100px 10em;
-
-
-	
-
-	
+body {
+    background: url('../img/fondologin.jpg');
+    background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% 100%;
 }
