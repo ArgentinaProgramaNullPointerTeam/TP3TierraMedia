@@ -1,10 +1,12 @@
 @charset "utf-8";
 
-body {
-	background-image: 'assets/img/fondo login.jpg';
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: 100% 100%;
-	margin: 0px;
+.box {
+  background-image: 'assets/img/fondologin.jpg';
+  background-repeat: no-repeat;
+  background-size: 100px 10em;
+
+
+	
+
 	
 }
