@@ -36,7 +36,7 @@
 	<main style="margin-top: 5.5%" role="main" class="container">
 		<div class="row">
 			<div class="col-12">
-				<h2 style="margin-top: 7%">Su itinerario de compras:</h2>
+				<h2 style="margin-top: 3.5%; border-radius: 0px 0px 100px 0px; padding: 5px; background-color: #9ACD32;">Su itinerario de compras:</h2>
 
 				<c:choose>
 					<c:when test="${flash != null}">
@@ -72,20 +72,21 @@
 									</c:forEach>
 								</tbody>
 							</table>
-							<h2 style="margin-top: 7%">
-								Usted gastó:
+							&#9660;
+							<h3 style=" margin-top: 2%">
+								<u>Usted gastó</u>:
 								<c:out value="${itinerario.getCostoItinerario()}" />
 								Monedas y
 								<c:out value="${itinerario.getDuracionItinerario()}" />
 								Hs
-							</h2>
-							<h2 style="margin-top: 7%">
-								Le queda:
+							</h3>
+							<h3 style="margin-top: 2%; margin-">
+								<u>Le queda</u>:
 								<c:out value="${usuario.getDineroDisponible()}" />
 								Monedas y
 								<c:out value="${usuario.getTiempoDisponible()}" />
 								Hs
-							</h2>
+							</h3>
 						</div>
 					</c:otherwise>
 

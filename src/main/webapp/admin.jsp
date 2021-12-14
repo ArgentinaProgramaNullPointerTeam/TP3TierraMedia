@@ -45,7 +45,7 @@
 	<main style="margin-top: 2%" role="main" class="container">
 		<div class="row">
 			<div class="col-12">
-				<h1>Usuarios:</h1>
+				<h1>&#8226;Usuarios:</h1>
 				<h4>
 					<button type="button" class="btn btn-success"
 						onclick="document.location.href='create.adm'">Agregar
@@ -98,7 +98,7 @@
 	<main role="main" class="container">
 		<div class="row">
 			<div class="col-12">
-				<h1>Atracciones:</h1>
+				<h1>&#8226;Atracciones:</h1>
 				<h4>
 					<button type="button" class="btn btn-success"
 						onclick="document.location.href='formAtracciones.jsp'">Agregar
@@ -149,7 +149,7 @@
 	<main role="main" class="container">
 		<div class="row">
 			<div class="col-12">
-				<h1>Promociones:</h1>
+				<h1>&#8226;Promociones:</h1>
 				<h4>
 					<button type="button" class="btn btn-success"
 						onclick="document.location.href='createPromo.adm'">Agregar

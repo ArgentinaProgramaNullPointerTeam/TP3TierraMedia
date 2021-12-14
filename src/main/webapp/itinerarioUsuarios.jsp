@@ -36,7 +36,7 @@
 	<main style="margin-top: 5.5%" role="main" class="container">
 		<div class="row">
 			<div class="col-12">
-				<h2 style="margin-top: 7%">Las compras de cada usuario:</h2>
+				<h2 style="margin-top: 3.5%; border-radius: 0px 0px 100px 0px; padding: 5px; background-color: #9ACD32;">Las compras de cada usuario:</h2>
 
 				<c:choose>
 					<c:when test="${flash != null}">
