@@ -183,8 +183,8 @@
 									<td><c:out value="${ promociones.getCupo() }"></c:out></td>
 									<td><button type="button" class="btn btn-danger"
 											onclick="document.location.href='deletePromo.adm?id=${ promociones.getId() }'">Borrar
-											&#10060;</button>&nbsp;&nbsp;
-										<button type="button" class="btn btn-secondary"
+											&#10060;</button>&nbsp;&nbsp; <br>
+										<button style= "margin-top:7px" type="button" class="btn btn-secondary"
 											onclick="document.location.href='editPromo.adm?id=${ promociones.getId() }'">Editar
 											&#9998;</button></td>
 								</tr>

@@ -39,15 +39,14 @@
 							</div>
 						</c:if>
 						<form action="createPromo.adm" method="post">
-							<div class="form-group">
-								<span class="col-md-1 col-md-offset-2 text-center"><i
-									class="fa fa-user bigicon"></i></span>
-								<div class="col-md-8">
-									<input id="nombre" name="nombre" type="text"
-										placeholder="Nombre de la promoción" required="required"
-										class="form-control">
+						
+									<div class="mb-3">
+									<label for="name" class="col-form-label">Nombre de
+										promoción:</label> <input type="text" class="form-control" id="nombre"
+										name="nombre" required="required" >
 								</div>
-							</div>
+							
+							
 							<div class="mb-3">
 
 								<label for="atraccion-select">Tipo de promoción</label> <select
@@ -112,13 +111,13 @@
 							</div>
 
 
-							<div class="form-group">
-								<div class="col-md-8 text-right">
-									<button type="submit" class="btn btn-primary btn-lg">Hecho</button>
+							
+								<div>
+									<button type="submit" class="btn btn-primary">Hecho</button>
 									<a onclick="window.history.back();" class="btn btn-secondary"
 										role="button">Cancelar</a>
 								</div>
-							</div>
+							
 						</form>
 					</fieldset>
 				</div>

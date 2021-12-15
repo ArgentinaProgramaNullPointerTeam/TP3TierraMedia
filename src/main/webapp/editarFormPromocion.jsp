@@ -33,7 +33,7 @@
 				<div class="well well-sm">
 					<fieldset>
 						<legend style="margin-top: 40px" class="text-right header">Completar
-							los campos de la promo:</legend>
+							los campos de la promoción:</legend>
 						<c:if test="${promociones != null && !promociones.isValid()}">
 							<div class="alert alert-danger">
 								<p>Se encontraron errores la promo.</p>
@@ -120,12 +120,10 @@
 							</div>
 
 
-							<div class="form-group">
-								<div class="col-md-8 text-right">
-									<button type="submit" class="btn btn-primary btn-lg">Hecho</button>
-									<a onclick="window.history.back();" class="btn btn-secondary"
-										role="button">Cancelar</a>
-								</div>
+							<div>
+								<button type="submit" class="btn btn-primary">Hecho</button>
+								<a onclick="window.history.back();" class="btn btn-secondary"
+									role="button">Cancelar</a>
 							</div>
 						</form>
 					</fieldset>
